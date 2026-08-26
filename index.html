@@ -21,7 +21,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%}
 body{background:var(--bg0);font-family:'EB Garamond',Georgia,serif;color:var(--ink);overflow:hidden;font-size:15px}
-#bgMap{position:fixed;inset:0;background:url('https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1b12b60dd-96ad-4620-853f-978158a98239.png') center/cover no-repeat;opacity:.30;filter:brightness(.7) sepia(.2)}
+#bgMap{position:fixed;inset:0;background:url('https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1b12b60dd-96ad-4620-853f-978158a98239.png') center/cover no-repeat;opacity:.28;filter:brightness(.7) sepia(.2)}
 #vignette{position:fixed;inset:0;background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,.78) 100%);pointer-events:none}
 #scan{position:fixed;inset:0;pointer-events:none;opacity:.05;background:repeating-linear-gradient(0deg,transparent 0 2px,#000 2px 3px)}
 h1,h2,h3,.cinzel{font-family:'Cinzel',serif}
@@ -40,7 +40,6 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .portraitWrap img{width:100%;height:100%;object-fit:cover;border:1px solid var(--brass);display:block;background:#000;filter:sepia(.1) contrast(1.05)}
 .reacc svg{width:10px;height:10px;fill:currentColor;vertical-align:-1px}
 .effChip svg{width:10px;height:10px;fill:currentColor;vertical-align:-1px}
-/* ===== TOPBAR ===== */
 #topbar{position:relative;z-index:5;height:64px;display:flex;align-items:center;gap:12px;padding:0 12px;background:linear-gradient(#332f26,#211f18);border-bottom:2px solid var(--brass);box-shadow:0 3px 12px rgba(0,0,0,.8);flex-wrap:nowrap}
 #topbar .emblem{width:46px;height:46px;border:1px solid var(--brass);object-fit:cover;background:#000}
 #natTitle b{font-family:'Cinzel',serif;font-weight:900;font-size:15px;letter-spacing:2px;color:var(--gold);text-shadow:0 1px 3px #000;display:block}
@@ -64,12 +63,10 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .stat .sbar{height:4px;background:#12100c;margin-top:3px;border:1px solid #000}
 .stat .sbar i{display:block;height:100%;transition:width .5s}
 .stat .trend{position:absolute;top:3px;right:6px;font-size:9px;font-style:normal}
-/* ===== SECCIONES ===== */
 #sec1{position:relative;z-index:4;display:grid;grid-template-columns:305px 1fr 305px;gap:10px;padding:10px;height:calc(100vh - 64px)}
 #sec2{position:relative;z-index:4;display:grid;grid-template-columns:1.55fr 1fr;gap:10px;padding:10px;height:calc(100vh - 64px)}
 .col{display:flex;flex-direction:column;gap:10px;min-height:0}
 .scroll{overflow-y:auto;min-height:0}
-/* congreso */
 #seatsBar{display:flex;height:20px;border:1px solid #000;box-shadow:0 0 0 1px var(--brass2);margin:10px}
 #seatsBar i{display:block;height:100%}
 .frow{display:flex;gap:9px;padding:8px 10px;border-top:1px solid #1a1812;align-items:center}
@@ -85,7 +82,6 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 #effectsList{padding:8px 10px;display:flex;flex-wrap:wrap;gap:5px}
 .effChip{font-size:10px;border:1px solid var(--brass2);background:#1c1a14;padding:3px 7px;color:var(--dim)}
 .effChip b{color:var(--ink)}
-/* centro */
 #centerHead{display:flex;align-items:center;justify-content:space-between;padding:8px 12px}
 #centerHead .sess{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;color:var(--gold)}
 #cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 12px 12px;overflow-y:auto}
@@ -105,7 +101,6 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .card .btn{margin:0 10px 10px}
 #centerFoot{padding:0 12px 12px;display:flex;align-items:center;gap:14px;justify-content:space-between}
 #centerFoot .hint{font-size:12px;color:var(--dim);font-style:italic}
-/* derecha sec1 */
 #spark{width:100%;display:block;background:#171510;border:1px solid #000}
 #legend{display:flex;flex-wrap:wrap;gap:8px;padding:7px 10px;font-size:10px;color:var(--dim)}
 #legend i{display:inline-block;width:9px;height:9px;margin-right:4px;vertical-align:-1px}
@@ -113,11 +108,16 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .logEntry{margin-bottom:8px;padding-bottom:7px;border-bottom:1px dashed #3a352a}
 .logEntry .ld{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;color:var(--gold2)}
 .logEntry .dot{display:inline-block;width:7px;height:7px;margin-right:5px}
-/* ===== MAPA GUERRA FRÍA ===== */
-#worldMap{width:100%;height:auto;display:block;background:#0e141c;border:1px solid #000}
-.region{stroke:#080706;stroke-width:1.2;cursor:pointer;transition:filter .15s}
-.region:hover{filter:brightness(1.35)}
-.mapLabel{font-family:'Cinzel',serif;font-size:11px;fill:#d8c48a;pointer-events:none;text-shadow:0 1px 2px #000}
+/* ===== MAPA ===== */
+#worldMap{width:100%;height:auto;display:block;border:1px solid #000;border-radius:2px}
+.region{stroke:#0a0906;stroke-width:1.1;cursor:pointer;transition:filter .2s,stroke .2s;filter:drop-shadow(0 1px 1px rgba(0,0,0,.65))}
+.region:hover{filter:brightness(1.35) drop-shadow(0 0 6px rgba(216,196,138,.55));stroke:#d8c48a;stroke-width:1.5}
+.region.val{animation:valPulse 2.4s ease-in-out infinite}
+@keyframes valPulse{0%,100%{filter:drop-shadow(0 0 2px rgba(200,162,74,.6))}50%{filter:drop-shadow(0 0 8px rgba(200,162,74,.95))}}
+.grat{stroke:#1d2b3d;stroke-width:.5;fill:none;opacity:.55}
+.equator{stroke:#34486a;stroke-width:.7;stroke-dasharray:5 4;opacity:.7}
+.oceanLabel{font-family:'Cinzel',serif;font-size:12px;fill:#27384f;letter-spacing:5px;pointer-events:none;text-anchor:middle}
+.mapLabel{font-family:'Cinzel',serif;font-size:10px;fill:#d8c48a;pointer-events:none;text-anchor:middle;text-shadow:0 1px 2px #000;letter-spacing:1px}
 .legendMapa{display:flex;flex-wrap:wrap;gap:9px;padding:8px 10px;font-size:11px;color:var(--dim);border-top:1px solid var(--brass2)}
 .legendMapa i{display:inline-block;width:13px;height:13px;margin-right:4px;vertical-align:-2px;border:1px solid #000}
 #mapTip{position:fixed;z-index:90;background:#26231b;border:1px solid var(--gold2);padding:6px 9px;font-size:12px;pointer-events:none;display:none;max-width:230px;box-shadow:0 4px 12px rgba(0,0,0,.7)}
@@ -129,10 +129,12 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .cronItem .fm{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;color:var(--gold2)}
 .ftag{font-size:9px;border:1px solid;padding:1px 5px;margin-left:6px;letter-spacing:1px}
 .alinBtn{display:block;width:100%;text-align:left;background:linear-gradient(#3a362b,#2c2920);border:1px solid var(--brass2);color:var(--ink);padding:9px 12px;margin-bottom:8px;font-size:11px;letter-spacing:1px;transition:all .15s}
-.alinBtn:hover{border-color:var(--gold)}
+.alinBtn:hover:not(:disabled){border-color:var(--gold)}
 .alinBtn.sel{border-color:var(--gold);box-shadow:0 0 8px rgba(216,196,138,.3);background:linear-gradient(#4a4536,#33302a)}
+.alinBtn:disabled{opacity:.4;cursor:not-allowed}
 .alinBtn small{display:block;font-family:'EB Garamond',serif;font-size:11px;color:var(--dim);margin-top:3px;font-style:italic;letter-spacing:0}
-/* overlays */
+.orgHead{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--gold2);margin:9px 0 5px;text-transform:uppercase;border-bottom:1px dashed #3a352a;padding-bottom:3px;display:flex;justify-content:space-between}
+.orgHead .st{color:var(--dim);font-size:9px}
 .overlay{position:fixed;inset:0;background:rgba(5,4,2,.82);z-index:50;display:flex;align-items:center;justify-content:center;padding:20px}
 .hidden{display:none!important}
 .modal{width:min(620px,94vw);max-height:92vh;overflow-y:auto;background:linear-gradient(#2e2b22,#232119);border:2px solid var(--brass);box-shadow:0 0 0 4px #14130e,0 0 40px rgba(0,0,0,.9),inset 0 0 60px rgba(0,0,0,.5);position:relative}
@@ -190,7 +192,6 @@ button{font-family:'Cinzel',serif;cursor:pointer}
   <button class="btn" id="helpBtn" type="button">Manual</button>
 </div>
 
-<!-- ============ SECCIÓN 1: CONGRESO ============ -->
 <div id="sec1">
   <div class="col">
     <div class="panel">
@@ -204,7 +205,6 @@ button{font-family:'Cinzel',serif;cursor:pointer}
       <div id="effectsList" class="scroll"></div>
     </div>
   </div>
-
   <div class="col panel" style="min-height:0">
     <div id="centerHead">
       <span class="sess" id="sessLabel">SESIÓN ORDINARIA</span>
@@ -216,7 +216,6 @@ button{font-family:'Cinzel',serif;cursor:pointer}
       <span class="hint" id="footHint"></span>
     </div>
   </div>
-
   <div class="col">
     <div class="panel">
       <div class="panel-title">Indicadores Nacionales</div>
@@ -230,7 +229,6 @@ button{font-family:'Cinzel',serif;cursor:pointer}
   </div>
 </div>
 
-<!-- ============ SECCIÓN 2: GUERRA FRÍA ============ -->
 <div id="sec2" class="hidden">
   <div class="panel" style="min-height:0;display:flex;flex-direction:column">
     <div class="panel-title">Situación Mundial · <span id="mapMes"></span><span style="font-size:9px;color:var(--dim)">Clic en una región</span></div>
@@ -252,6 +250,10 @@ button{font-family:'Cinzel',serif;cursor:pointer}
       <div class="panel-title">Alineación de Valdivia</div>
       <div style="padding:10px" id="alinPanel"></div>
     </div>
+    <div class="panel" style="display:flex;flex-direction:column;max-height:36%">
+      <div class="panel-title">Organismos Internacionales <span style="font-size:9px;color:var(--dim)">OCCIDENTE ↔ ORIENTE</span></div>
+      <div id="orgPanel" class="scroll" style="padding:10px"></div>
+    </div>
     <div class="panel">
       <div class="panel-title">Tensión Global</div>
       <div style="padding:10px">
@@ -268,7 +270,6 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 
 <div id="mapTip"></div>
 
-<!-- EVENTO -->
 <div class="overlay hidden" id="eventOverlay">
   <div class="modal">
     <div class="banner"><span>DESPACHO URGENTE</span><b id="evTitle"></b><span id="evDate"></span></div>
@@ -276,7 +277,6 @@ button{font-family:'Cinzel',serif;cursor:pointer}
   </div>
 </div>
 
-<!-- INTRO -->
 <div class="overlay" id="introOverlay">
   <div class="modal" id="introModal">
     <div id="introTitle">
@@ -287,9 +287,9 @@ button{font-family:'Cinzel',serif;cursor:pointer}
       <div id="introGrid">
         <div class="lore">
           <p>La República de Valdivia arde en silencio: tras la Gran Depresión y la guerra mundial, la inflación devora los salarios, la deuda externa asfixia al fisco y las calles hierven. El viejo presidente ha caído y usted asume el <b style="color:var(--gold)">Gobierno de Emergencia</b> con un mandato de <b style="color:var(--gold)">36 meses</b> (enero 1945 – diciembre 1947).</p>
-          <p>Mientras tanto, el mundo se parte en dos: Washington y Moscú disputan cada palmo de la posguerra. Cada mes de su mandato coincide con un mes real de la Guerra Fría; sus decisiones diplomáticas —alinearse con EE.UU., acercarse a la URSS o mantener la neutralidad— traerán ayudas o sanciones, créditos o boicots.</p>
+          <p>Mientras tanto, el mundo se parte en dos: Washington y Moscú disputan cada palmo de la posguerra. Cada mes de su mandato coincide con un mes real de la Guerra Fría; sus decisiones diplomáticas traerán ayudas o sanciones, créditos o boicots.</p>
           <div id="introFactions"></div>
-          <div class="rules"><b>CÓMO SE JUEGA:</b> en la <b>Sección I</b> apruebe 3 paquetes mensuales de un mazo de <b>66 medidas</b> y enfrente <b>43 problemáticas</b>. En la <b>Sección II</b>, el mapa mundial muestra el avance de los dos bloques (1945–47) y allí define la <b>alineación</b> de Valdivia, con efectos directos —positivos y negativos— sobre los indicadores del Congreso. Si la <b>Estabilidad</b> llega a 0, habrá un quiebre institucional.</div>
+          <div class="rules"><b>CÓMO SE JUEGA:</b> en la <b>Sección I</b> apruebe 3 paquetes mensuales de un mazo de <b>66 medidas</b> y enfrente <b>más de 50 problemáticas</b>. En la <b>Sección II</b>, el mapa mundial (1945–47) muestra el avance de los dos bloques con fronteras reconocibles; defina la <b>alineación</b> de Valdivia y su ingreso a los organismos: <b>FMI ↔ Plan Mólotov</b>, voto en la <b>ONU ↔ Kominform</b>, y <b>GATT/OMC ↔ COMECON</b>. Si la <b>Estabilidad</b> llega a 0, habrá un quiebre institucional.</div>
         </div>
         <div style="text-align:center;display:flex;flex-direction:column;justify-content:center;gap:12px">
           <img class="introImg" src="https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/150a92947-2df8-40f7-a882-d7c0d3d66021.png" alt="El Congreso de Valdivia, 1945">
@@ -303,21 +303,20 @@ button{font-family:'Cinzel',serif;cursor:pointer}
   </div>
 </div>
 
-<!-- AYUDA -->
 <div class="overlay hidden" id="helpOverlay">
   <div class="modal">
     <div class="banner"><span>MANUAL DE GOBIERNO</span><b>REGLAS DE LA PARTIDA</b></div>
     <div class="body">
       <p><b style="color:var(--gold)">Sección I — Congreso:</b> cada mes, 3 paquetes de políticas (66 en el mazo). Aprobar cuesta Capital Político; postergar da +12 CP pero −2 Estabilidad. Los bloques hostiles sabotean; se necesitan 101 escaños leales.</p>
-      <p><b style="color:var(--gold)">Sección II — Guerra Fría:</b> el mapa sigue los hechos reales de 1945–47 (Yalta, Telón de Acero, Doctrina Truman, Plan Marshall, Tratado de Río, Kominform…). Cada mes del juego equivale a un mes real del período.</p>
-      <p><b style="color:var(--gold)">Alineación:</b> con EE.UU. recibe +Reservas y +Prestigio cada mes (pero irrita al Frente Obrero y provoca huelgas de solidaridad); con la URSS gana comercio (+Economía) pero sufre aislamiento occidental (−Prestigio) y riesgo de boicot; neutral otorga prestigio diplomático modesto y lo deja fuera de las ayudas.</p>
+      <p><b style="color:var(--gold)">Sección II — Guerra Fría:</b> el mapa sigue los hechos reales de 1945–47 con fronteras reconocibles; cada mes del juego equivale a un mes real del período.</p>
+      <p><b style="color:var(--gold)">Alineación:</b> con EE.UU. recibe +Reservas y +Prestigio cada mes; con la URSS gana comercio (+Economía) pero sufre aislamiento occidental (−Prestigio); neutral otorga prestigio diplomático modesto.</p>
+      <p><b style="color:var(--gold)">Organismos internacionales:</b> FMI frente al Plan Mólotov; voto en la ONU; GATT/OMC frente al COMECON; y el Kominform para alineados con Moscú. Las membresías occidental y oriental del mismo eje se excluyen.</p>
       <p><b style="color:var(--gold)">Fin:</b> al cabo de 36 meses (o antes si la Estabilidad colapsa), el Congreso juzga su mandato y el legado doctrinario dominante.</p>
       <button class="btn" id="closeHelp" type="button" style="width:100%">Volver al Hemiciclo</button>
     </div>
   </div>
 </div>
 
-<!-- FIN -->
 <div class="overlay hidden" id="endOverlay">
   <div class="modal">
     <div class="banner"><span>ACTA FINAL DEL CONGRESO</span><b>BALANCE DEL MANDATO</b></div>
@@ -372,7 +371,7 @@ var STATS = {
   res:{nombre:'Reservas', color:'#d08a4e'}
 };
 var MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-var TOTAL_MESES = 36; /* enero 1945 – diciembre 1947 */
+var TOTAL_MESES = 36;
 
 /* ================= GUERRA FRÍA: CRÓNICA REAL 1945–1947 ================= */
 var GUERRA=[
@@ -409,45 +408,46 @@ var GUERRA=[
  {m:30,titulo:'Nace la CIA',texto:'La Ley de Seguridad Nacional crea la Agencia Central de Inteligencia; la contención tendrá brazos invisibles.',tipo:'usa',foco:'mundo'},
  {m:31,titulo:'Conferencia de Petrópolis',texto:'Las repúblicas americanas negocian el Tratado Interamericano de Asistencia Recíproca.',tipo:'usa',foco:'latam',dx:{usa:{int:2,res:2},urss:{int:-3},neu:{int:-1}}},
  {m:32,titulo:'Tratado de Río y Kominform',texto:'Se firma el TIAR, alianza militar hemisférica; la URSS responde con el Kominform: el mundo queda en dos campos.',tipo:'mundo',foco:'latam',dx:{usa:{res:4,int:2},urss:{est:-3,res:-3,int:-2},neu:{est:-1}}},
- {m:33,titulo:'Brasil rompe con la URSS',texto:'Río de Janeiro retira a su embajador; Washington estrecha lazos con los Andes.',tipo:'usa',foco:'latam',dx:{usa:{int:1},urss:{int:-2,est:-2}}},
+ {m:33,titulo:'GATT y ruptura de Brasil con la URSS',texto:'Se firma en Ginebra el Acuerdo General de Aranceles (GATT), semilla de la OMC; Brasil rompe relaciones con Moscú.',tipo:'mundo',foco:'mundo',dx:{usa:{int:1},urss:{int:-2,est:-2}}},
  {m:34,titulo:'Partición de Palestina',texto:'La ONU vota dividir Palestina; Londres abandona el Mandato; Oriente Medio hierve.',tipo:'mundo',foco:'mundo'},
  {m:35,titulo:'Balance de la posguerra',texto:'Europa partida, Alemania partida, Asia en llamas: la Guerra Fría será larga. El veredicto del mandato, en el Congreso.',tipo:'mundo',foco:'mundo'}
 ];
 
-/* ================= MAPA: REGIONES ================= */
+/* ================= MAPA: REGIONES (mapamundi 1000x520) ================= */
+/* Proyección equirectangular aproximada: x=(lon+180)*2.778, y=(90-lat)*2.889 */
 var REGIONES=[
- {id:'can',nombre:'Canadá',b:'usa',nota:'Fiel a Washington; base del espionaje aliado.',d:'M70 55 L330 48 L345 70 L335 118 L95 125 L60 100 Z',lx:190,ly:90,lb:'CANADÁ'},
- {id:'usa',nombre:'Estados Unidos',b:'usa',nota:'Potencia atómica e industrial; arquitecto de la contención.',d:'M85 128 L330 122 L338 150 L310 185 L235 195 L120 192 L95 160 Z',lx:200,ly:160,lb:'EE.UU.'},
- {id:'mex',nombre:'México y Centroamérica',b:'usa',nota:'Esfera estadounidense; sede de Chapultepec (1945).',d:'M130 195 L235 198 L255 215 L235 240 L205 255 L185 245 L160 235 L135 215 Z'},
- {id:'car',nombre:'El Caribe',b:'usa',nota:'Lago estadounidense; azúcar, bases y marines.',d:'M258 218 l14 -4 l10 7 l-10 8 l-14 -3 Z M288 230 l14 -3 l8 6 l-12 5 Z'},
- {id:'gro',nombre:'Groenlandia',b:'usa',nota:'Bases árticas estadounidenses desde 1941.',d:'M350 35 L425 28 L438 70 L400 95 L358 88 Z'},
- {id:'uk',nombre:'Reino Unido',b:'usa',nota:'Aliado atlántico; agotado pero firme frente a Moscú.',d:'M452 108 L468 100 L474 128 L458 134 Z'},
- {id:'esc',nombre:'Escandinavia',b:'neutral',nota:'Entre los dos bloques; Finlandia bajo la sombra soviética.',d:'M505 48 L545 40 L560 75 L548 108 L518 112 L508 80 Z'},
- {id:'eur',nombre:'Europa Occidental',b:'usa',nota:'Reconstrucción bajo el paraguas de Washington.',d:'M455 140 L500 132 L512 155 L505 178 L468 182 L450 160 Z'},
- {id:'esp',nombre:'Península Ibérica',b:'neutral',nota:'Dictaduras neutrales; ni la ONU ni Moscú las quieren.',d:'M428 178 L462 172 L472 196 L448 205 L428 196 Z'},
- {id:'ale',nombre:'Alemania',b:'ocupada',nota:'Dividida en zonas de ocupación; el futuro de Europa se decide aquí.',d:'M512 122 L548 118 L552 152 L515 158 Z',lx:516,ly:143,lb:'ALEMANIA'},
- {id:'ita',nombre:'Italia',b:'contested',nota:'Democracia frágil con el partido comunista más fuerte de Occidente.',d:'M518 165 L532 160 L548 192 L538 202 L522 185 Z'},
- {id:'euror',nombre:'Europa Oriental',b:'urss',nota:'Polonia, Hungría, Rumanía, Bulgaria y Checoslovaquia: la órbita soviética.',d:'M552 112 L622 105 L630 158 L556 165 L548 155 Z'},
- {id:'bal',nombre:'Balcanes',b:'urss',nota:'Yugoslavia partisana y Albania roja; Grecia resiste.',d:'M540 168 L578 165 L585 200 L558 208 L540 190 Z'},
- {id:'fin',nombre:'Finlandia',b:'neutral',nota:'Independiente bajo la sombra de Moscú: "finlandización".',d:'M560 45 L590 40 L598 78 L568 85 Z'},
- {id:'urss',nombre:'Unión Soviética',b:'urss',nota:'La potencia roja: 27 millones de muertos y un imperio nuevo.',d:'M628 45 L905 38 L920 100 L900 160 L780 168 L635 162 Z',lx:740,ly:105,lb:'U.R.S.S.'},
- {id:'tur',nombre:'Turquía',b:'neutral',tn:19,tc:'contested',nota:'Ankara resiste el ultimátum soviético por los Estrechos.',d:'M578 178 L632 172 L638 190 L582 195 Z'},
- {id:'ira',nombre:'Irán',b:'contested',tn:16,tc:'neutral',nota:'Tropas soviéticas ocupan el norte; crisis en la ONU (1946).',d:'M640 175 L688 170 L692 205 L645 210 Z'},
- {id:'orm',nombre:'Oriente Medio',b:'neutral',nota:'Petróleo, mandatos británicos y la cuestión de Palestina.',d:'M585 198 L638 195 L668 235 L610 245 L588 225 Z'},
- {id:'egip',nombre:'Egipto',b:'neutral',nota:'Bajo influencia británica; el nacionalismo hierve en el Nilo.',d:'M560 215 L600 212 L602 245 L562 248 Z'},
- {id:'nafr',nombre:'Norte de África',b:'usa',nota:'Colonias francesas y británicas de la guerra recién terminada.',d:'M438 212 L555 208 L560 245 L448 252 Z'},
- {id:'lib',nombre:'Libia',b:'neutral',tn:10,tc:'contested',nota:'Moscú exige tutela sobre Tripolitania; Roma la reclama.',d:'M500 210 L545 209 L548 240 L503 242 Z'},
- {id:'aoc',nombre:'África Occidental',b:'usa',nota:'Colonias británicas y francesas; cacao y cacahuate para la reconstrucción.',d:'M448 258 L515 252 L522 320 L458 328 Z'},
- {id:'aor',nombre:'África Central y Oriental',b:'usa',nota:'Imperios coloniales intactos; Etiopía vigila el Cuerno.',d:'M525 255 L608 250 L618 335 L535 342 Z'},
- {id:'suda',nombre:'África Austral',b:'neutral',nota:'Dominio de la Unión Sudafricana; la mina de oro del imperio.',d:'M540 348 L612 342 L600 408 L552 412 Z'},
- {id:'ind',nombre:'India',b:'neutral',nota:'Camino a la independencia; Gandhi y Nehru miran a ambos bandos.',d:'M695 215 L745 208 L752 270 L705 278 Z'},
- {id:'chi',nombre:'China',b:'contested',nota:'Nacionalistas y comunistas: la guerra civil decidirá Asia.',d:'M745 155 L865 148 L872 225 L755 232 Z',lx:790,ly:195,lb:'CHINA'},
- {id:'sea',nombre:'Sudeste Asiático',b:'usa',tn:23,tc:'contested',nota:'Indochina francesa; Ho Chi Minh desafía a París.',d:'M758 238 L815 232 L822 295 L768 302 Z'},
- {id:'cor',nombre:'Corea',b:'contested',tn:8,nota:'Dividida en el paralelo 38 desde agosto de 1945.',d:'M862 150 L880 146 L884 182 L866 186 Z'},
- {id:'jap',nombre:'Japón',b:'contested',tn:8,tc:'usa',nota:'Bajo ocupación del general MacArthur desde septiembre de 1945.',d:'M892 145 L912 140 L918 195 L896 200 Z'},
- {id:'aus',nombre:'Australia',b:'usa',nota:'Aliado del Pacífico; vigila el avance rojo en Asia.',d:'M815 350 L905 344 L912 405 L825 412 Z'},
- {id:'sud',nombre:'América del Sur',b:'usa',nota:'La esfera interamericana; Washington vigila cualquier guiño a Moscú.',d:'M215 258 L285 250 L330 285 L335 330 L300 385 L268 430 L252 428 L238 380 L215 330 L205 285 Z',lx:255,ly:320,lb:'AMÉRICA DEL SUR'},
- {id:'val',nombre:'REPÚBLICA DE VALDIVIA',b:'val',nota:'Su nación. Defina la alineación en el panel de la derecha.',d:'M252 428 L268 430 L262 462 L246 460 Z',lx:258,ly:478,lb:'VALDIVIA'}
+ {id:'gro',nombre:'Groenlandia',b:'usa',nota:'Bases árticas estadounidenses desde 1941.',d:'M320 86 L302 60 L312 34 L342 18 L392 13 L442 20 L466 42 L454 68 L418 82 L388 92 L352 94 Z'},
+ {id:'can',nombre:'Canadá',b:'usa',nota:'Fiel a Washington; base del espionaje aliado.',d:'M108 62 L150 50 L202 44 L254 42 L302 44 L338 50 L356 66 L336 82 L300 76 L264 76 L248 94 L254 110 L272 116 L292 108 L306 116 L332 122 L352 132 L358 148 L330 150 L317 130 L292 124 L236 118 L150 118 L136 100 L120 80 Z',lx:238,ly:92,lb:'CANADÁ'},
+ {id:'usa',nombre:'Estados Unidos',b:'usa',nota:'Potencia atómica e industrial; arquitecto de la contención.',d:'M150 118 L236 118 L292 124 L317 130 L308 140 L298 152 L290 164 L284 176 L278 186 L286 190 L284 202 L272 198 L256 194 L240 192 L226 190 L210 196 L200 204 L186 196 L172 168 L162 152 L156 134 Z M30 92 L48 78 L64 70 L88 66 L106 60 L112 74 L100 84 L84 90 L60 94 L40 99 Z',lx:236,ly:160,lb:'EE.UU.'},
+ {id:'mex',nombre:'México y Centroamérica',b:'usa',nota:'Esfera estadounidense; sede de Chapultepec (1945).',d:'M170 166 L178 180 L184 196 L190 188 L196 174 L210 172 L228 180 L242 190 L250 202 L252 214 L258 210 L268 206 L272 216 L262 222 L252 228 L244 234 L250 240 L258 242 L264 246 L270 250 L278 254 L284 258 L278 262 L270 258 L262 252 L254 246 L246 244 L238 236 L232 224 L220 210 L206 198 L192 188 L180 180 L170 172 Z'},
+ {id:'car',nombre:'El Caribe',b:'usa',nota:'Lago estadounidense; azúcar, bases y marines.',d:'M266 196 L288 191 L296 195 L287 201 L268 201 Z M298 203 L312 202 L314 207 L300 208 Z M318 208 L326 207 L327 210 L319 211 Z'},
+ {id:'sud',nombre:'América del Sur',b:'usa',nota:'La esfera interamericana; Washington vigila cualquier guiño a Moscú.',d:'M284 250 L292 238 L300 230 L312 224 L326 221 L342 226 L358 234 L374 244 L390 252 L402 262 L408 278 L400 294 L390 310 L382 326 L372 338 L360 350 L350 356 L340 360 L332 372 L324 388 L317 402 L312 414 L305 408 L301 392 L299 372 L298 352 L299 330 L301 310 L303 292 L296 282 L286 272 L278 264 Z',lx:352,ly:300,lb:'AMÉRICA DEL SUR'},
+ {id:'val',nombre:'REPÚBLICA DE VALDIVIA',b:'val',nota:'Su nación. Defina la alineación y membresías en el panel derecho.',d:'M297 366 L313 364 L316 378 L310 392 L300 390 L296 378 Z',lx:306,ly:404,lb:'VALDIVIA'},
+ {id:'uk',nombre:'Reino Unido',b:'usa',nota:'Aliado atlántico; agotado pero firme frente a Moscú.',d:'M488 92 L498 88 L504 96 L502 110 L496 118 L490 112 L486 100 Z M476 102 L484 100 L485 108 L478 110 Z'},
+ {id:'esc',nombre:'Escandinavia',b:'neutral',nota:'Entre los dos bloques; Finlandia bajo la sombra soviética.',d:'M520 56 L540 48 L560 50 L576 58 L580 70 L570 84 L560 96 L548 102 L536 96 L528 84 L522 70 Z M522 108 L530 106 L531 112 L523 113 Z'},
+ {id:'esp',nombre:'Península Ibérica',b:'neutral',nota:'Dictaduras neutrales; ni la ONU ni Moscú las quieren.',d:'M474 134 L492 128 L506 132 L510 142 L504 152 L490 156 L476 152 L470 142 Z'},
+ {id:'eur',nombre:'Europa Occidental',b:'usa',nota:'Francia, Benelux y los Alpes: reconstrucción bajo el paraguas de Washington.',d:'M486 114 L502 110 L514 114 L518 124 L512 132 L500 134 L488 130 L482 122 Z M516 104 L532 100 L540 106 L542 116 L536 122 L524 124 L516 118 L514 110 Z'},
+ {id:'ale',nombre:'Alemania',b:'ocupada',nota:'Dividida en zonas de ocupación; el futuro de Europa se decide aquí.',d:'M520 106 L532 104 L534 116 L524 120 L518 114 Z',lx:522,ly:100,lb:'ALEMANIA'},
+ {id:'ita',nombre:'Italia',b:'contested',nota:'Democracia frágil con el partido comunista más fuerte de Occidente.',d:'M520 126 L530 122 L536 130 L540 142 L546 152 L542 156 L534 148 L528 138 L522 130 Z M536 158 L544 157 L545 161 L537 162 Z M524 146 L529 145 L530 152 L525 153 Z'},
+ {id:'bal',nombre:'Balcanes',b:'urss',nota:'Yugoslavia partisana y Albania roja; Grecia resiste.',d:'M542 124 L556 122 L566 128 L570 138 L566 148 L558 152 L550 146 L544 136 Z M556 158 L566 157 L567 160 L557 161 Z'},
+ {id:'euror',nombre:'Europa Oriental',b:'urss',nota:'Polonia, Hungría, Rumanía, Checoslovaquia y los Balcanes del norte: la órbita soviética.',d:'M544 94 L562 90 L580 94 L586 104 L584 118 L576 126 L562 128 L550 122 L544 110 Z'},
+ {id:'fin',nombre:'Finlandia',b:'neutral',nota:'Independiente bajo la sombra de Moscú: "finlandización".',d:'M560 45 L574 42 L580 54 L572 62 L562 58 Z'},
+ {id:'urss',nombre:'Unión Soviética',b:'urss',nota:'La potencia roja: 27 millones de muertos y un imperio nuevo.',d:'M576 48 L640 38 L720 34 L820 33 L920 36 L996 42 L1000 70 L985 95 L950 112 L900 120 L850 122 L800 120 L740 116 L680 112 L630 108 L595 100 L580 82 L574 62 Z M960 70 L975 62 L985 70 L978 82 L966 80 Z',lx:780,ly:76,lb:'U.R.S.S.'},
+ {id:'tur',nombre:'Turquía',b:'neutral',tn:19,tc:'contested',nota:'Ankara resiste el ultimátum soviético por los Estrechos.',d:'M576 140 L600 136 L622 139 L624 148 L614 155 L594 156 L578 150 Z'},
+ {id:'ira',nombre:'Irán',b:'contested',tn:16,tc:'neutral',nota:'Tropas soviéticas ocupan el norte; crisis en la ONU (1946).',d:'M624 150 L650 146 L672 152 L676 168 L668 182 L648 186 L630 178 L624 164 Z'},
+ {id:'orm',nombre:'Oriente Medio',b:'neutral',nota:'Petróleo, mandatos británicos y la cuestión de Palestina.',d:'M600 162 L630 158 L660 164 L668 180 L660 200 L640 218 L618 224 L602 210 L596 188 L594 172 Z'},
+ {id:'egip',nombre:'Egipto',b:'neutral',nota:'Bajo influencia británica; el nacionalismo hierve en el Nilo.',d:'M572 170 L592 168 L596 180 L592 194 L576 196 L570 184 Z'},
+ {id:'lib',nombre:'Libia',b:'neutral',tn:10,tc:'contested',nota:'Moscú exige tutela sobre Tripolitania; Roma la reclama.',d:'M528 168 L552 164 L568 168 L566 184 L556 200 L536 202 L526 188 Z'},
+ {id:'nafr',nombre:'Norte de África',b:'usa',nota:'Colonias francesas y británicas de la guerra recién terminada.',d:'M476 158 L500 154 L524 158 L528 168 L518 178 L496 180 L478 174 L470 166 Z'},
+ {id:'aoc',nombre:'África Occidental',b:'usa',nota:'Colonias británicas y francesas; cacao y cacahuate para la reconstrucción.',d:'M456 184 L490 180 L524 184 L536 196 L532 216 L520 236 L500 246 L478 242 L462 224 L454 202 Z'},
+ {id:'aor',nombre:'África Central y Oriental',b:'usa',nota:'Imperios coloniales intactos; Etiopía vigila el Cuerno.',d:'M544 218 L580 214 L620 218 L640 230 L636 254 L620 276 L596 290 L570 288 L552 272 L544 248 Z M618 320 L626 316 L630 330 L624 340 L618 332 Z'},
+ {id:'suda',nombre:'África Austral',b:'neutral',nota:'Dominio de la Unión Sudafricana; la mina de oro del imperio.',d:'M540 296 L576 292 L604 298 L610 318 L602 340 L584 354 L562 356 L546 344 L538 320 Z'},
+ {id:'ind',nombre:'India',b:'neutral',nota:'Camino a la independencia; Gandhi y Nehru miran a ambos bandos.',d:'M672 160 L700 154 L730 158 L748 168 L750 186 L738 208 L724 228 L712 242 L702 232 L696 210 L688 190 L678 174 Z M724 246 L730 244 L731 250 L725 251 Z',lx:712,ly:200,lb:'INDIA'},
+ {id:'chi',nombre:'China',b:'contested',nota:'Nacionalistas y comunistas: la guerra civil decidirá Asia.',d:'M710 130 L760 118 L820 114 L860 120 L872 132 L866 152 L848 170 L820 182 L790 190 L760 194 L736 186 L720 170 L710 150 Z',lx:790,ly:152,lb:'CHINA'},
+ {id:'cor',nombre:'Corea',b:'contested',tn:8,nota:'Dividida en el paralelo 38 desde agosto de 1945.',d:'M846 138 L856 134 L860 144 L856 156 L850 160 L845 150 Z'},
+ {id:'jap',nombre:'Japón',b:'contested',tn:8,tc:'usa',nota:'Bajo ocupación del general MacArthur desde septiembre de 1945.',d:'M866 134 L880 128 L892 136 L900 150 L896 162 L884 168 L872 160 L866 146 Z M892 126 L902 124 L904 132 L894 134 Z'},
+ {id:'sea',nombre:'Sudeste Asiático',b:'usa',tn:23,tc:'contested',nota:'Indochina francesa; Ho Chi Minh desafía a París.',d:'M756 200 L780 196 L800 204 L806 220 L800 238 L792 252 L784 268 L778 278 L772 268 L768 250 L762 232 L756 216 Z M764 262 L780 256 L792 266 L786 278 L772 274 Z M790 282 L816 280 L820 285 L794 287 Z M806 246 L824 242 L830 256 L820 266 L808 260 Z'},
+ {id:'aus',nombre:'Australia y Oceanía',b:'usa',nota:'Aliado del Pacífico; vigila el avance rojo en Asia.',d:'M820 300 L860 292 L900 296 L922 310 L926 332 L916 354 L892 366 L862 370 L836 362 L820 344 L814 322 Z M944 356 L952 350 L956 362 L950 374 L944 368 Z',lx:870,ly:332,lb:'AUSTRALIA'}
 ];
 function bloqueDe(r,mes){
   if(r.id==='val'){ return state.alineacion==='usa'?'usa':(state.alineacion==='urss'?'urss':'val'); }
@@ -527,45 +527,45 @@ var DECISIONES = [
  {id:'n10',i:'neu',n:'Modernización del Registro Civil',d:'Trámites con registro ordenado y sin coimas: un Estado que funciona.',c:35,dx:{eco:2,est:2,res:-3},fa:{smi:3,key:3,hay:2,mar:1}}
 ];
 
-/* ================= EVENTOS (48: 43 + 5 de alineación) ================= */
+/* ================= EVENTOS (53) ================= */
 var EVENTOS = [
  {id:'ev_invest',titulo:'LA INVESTIDURA',texto:'El hemiciclo está repleto: la investidura se transmite por cadena radial y noticiarios, y su primera declaración copa los titulares. Cuatro bloques doctrinarios lo observan desde sus bancas.',opciones:[
    {t:'Llamar a la unidad nacional',dx:{est:3},fa:{key:2,mar:2,hay:2,smi:2}},
    {t:'Anunciar mano firme contra el desorden',dx:{est:2,soc:-2},fa:{hay:3,smi:2,mar:-4}},
    {t:'Prometer pan, trabajo y techo',dx:{soc:3,res:-2},fa:{key:3,mar:3,hay:-3}}]},
- {id:'ev_puerto',cond:function(s){return s.stats.soc<42},titulo:'PARO PORTUARIO EN CORRAL',texto:'Estibadores y camioneros bloquean los accesos del puerto; los gremios y las radios del país siguen el conflicto. El sindicato exige reajuste; los exportadores exigen despeje.',opciones:[
+ {id:'ev_puerto',cond:function(s){return s.stats.soc<42},titulo:'PARO PORTUARIO EN CORRAL',texto:'Estibadores y camioneros bloquean los accesos del puerto; los gremios y las radios del país siguen el conflicto.',opciones:[
    {t:'Negociar con el sindicato',dx:{soc:5,eco:-3},fa:{mar:6,key:3,hay:-4}},
    {t:'Enviar a la policía montada',dx:{est:2,soc:-7,int:-4},fa:{mar:-9,hay:3}},
-   {t:'Arbitraje obligatorio y reajuste intermedio',dx:{est:2,soc:1,res:-2},fa:{key:4,mar:-2}}]},
- {id:'ev_cobre',pre:{eco:-4,res:-4},titulo:'EL COBRE SE DESPLOMA EN LAS BOLSAS',texto:'Los futuros del cobre caen 20% por la desaceleración de la posguerra. El fisco depende del metal rojo y las regiones mineras anuncian despidos en cadena.',opciones:[
+   {t:'Arbitraje obligatorio',dx:{est:2,soc:1,res:-2},fa:{key:4,mar:-2}}]},
+ {id:'ev_cobre',pre:{eco:-4,res:-4},titulo:'EL COBRE SE DESPLOMA EN LAS BOLSAS',texto:'Los futuros del cobre caen 20% por la desaceleración de la posguerra. El fisco depende del metal rojo.',opciones:[
    {t:'Austeridad inmediata',dx:{res:3,soc:-4},fa:{hay:4,smi:2,mar:-5}},
    {t:'Estímulo contracíclico',dx:{res:-6,eco:4},fa:{key:8,mar:3,hay:-6}},
    {t:'Emergencia exportadora',dx:{eco:2,int:-2},fa:{smi:3}}]},
- {id:'ev_fmi',titulo:'MISIÓN TÉCNICA DEL FMI',texto:'Los técnicos del Fondo, nacido en Bretton Woods, llegan con un memorando: ajuste fiscal y metas de reservas a cambio del desembolso.',opciones:[
+ {id:'ev_fmi',titulo:'MISIÓN TÉCNICA DEL FMI',texto:'Los técnicos del Fondo llegan con un memorando: ajuste fiscal y metas de reservas a cambio del desembolso.',opciones:[
    {t:'Aceptar la condicionalidad',dx:{res:10,soc:-5,int:2},fa:{hay:5,smi:4,mar:-9}},
    {t:'Rechazar con dignidad',dx:{int:-4,est:2},fa:{mar:7,key:2,hay:-4}},
    {t:'Renegociar cláusula por cláusula',dx:{res:5,int:-1,est:-1},fa:{}}]},
- {id:'ev_chats',pre:{est:-4},titulo:'CORRESPONDENCIA FILTRADA DESTAPA SOBORNOS',texto:'Una carta interceptada revela coimas de los concesionarios del puerto. El caso domina la prensa, la radio y la sobremesa del Congreso.',opciones:[
+ {id:'ev_chats',pre:{est:-4},titulo:'CORRESPONDENCIA FILTRADA DESTAPA SOBORNOS',texto:'Una carta interceptada revela coimas de los concesionarios del puerto. El caso domina la prensa y la radio.',opciones:[
    {t:'Comisión investigadora pública',dx:{est:4,int:1},fa:{smi:3,mar:3,key:-3}},
    {t:'Proteger al ministro implicado',dx:{est:-2,soc:-2},fa:{}},
    {t:'Pedir su renuncia mediática',dx:{est:2,int:-2},fa:{}}]},
- {id:'ev_sequia',pre:{soc:-4,eco:-3},titulo:'MEGASEQUÍA EN EL VALLE DEL CALLE-CALLE',texto:'La sequía más dura en décadas seca el río; camiones cisterna reparten agua en la zona rural. Los agricultores marchan con las manos agrietadas.',opciones:[
+ {id:'ev_sequia',pre:{soc:-4,eco:-3},titulo:'MEGASEQUÍA EN EL VALLE DEL CALLE-CALLE',texto:'La sequía más dura en décadas seca el río; camiones cisterna reparten agua en la zona rural.',opciones:[
    {t:'Importar grano de urgencia',dx:{res:-5,soc:4},fa:{}},
    {t:'Racionamiento por decreto',dx:{soc:1,est:-2},fa:{}},
    {t:'Obras de canalización',dx:{res:-4,eco:2,soc:2},fa:{key:4}}]},
- {id:'ev_crimen',pre:{res:-3},titulo:'ECONOMÍA CRIMINAL EN LA BAHÍA',texto:'Bandas cobran peaje a los comerciantes del puerto y descargan mercancía en lanchas nocturnas. La cámara de comercio exige protección.',opciones:[
+ {id:'ev_crimen',pre:{res:-3},titulo:'ECONOMÍA CRIMINAL EN LA BAHÍA',texto:'Bandas cobran peaje a los comerciantes del puerto y descargan mercancía en lanchas nocturnas.',opciones:[
    {t:'Operativos y fiscal de alto nivel',dx:{est:2,res:3},fa:{}},
    {t:'Mirar hacia otro lado',dx:{res:2,est:-3},fa:{}},
    {t:'Negociar una tregua informal',dx:{res:2,int:-2,est:1},fa:{}}]},
- {id:'ev_marcha',cond:function(s){return s.stats.eco<38},titulo:'MARCHA DE LOS CESANTES',texto:'Cesantes, feriantes y temporeros bajan de los cerros con ollas vacías. Acampan frente al Palacio con pancartas y esperanza.',opciones:[
+ {id:'ev_marcha',cond:function(s){return s.stats.eco<38},titulo:'MARCHA DE LOS CESANTES',texto:'Cesantes, feriantes y temporeros bajan de los cerros con ollas vacías. Acampan frente al Palacio.',opciones:[
    {t:'Recibir a la delegación',dx:{soc:4,est:1},fa:{mar:5,key:4}},
    {t:'Despejar con la policía',dx:{est:2,soc:-6,int:-4},fa:{mar:-8}},
    {t:'Plan de empleo y obras',dx:{res:-6,soc:6,eco:2},fa:{key:8,mar:4,hay:-6}}]},
- {id:'ev_sables',cond:function(s){return s.stats.est<30},titulo:'RUIDO DE SABLES Y CARTAS PÚBLICAS',texto:'Militares retirados publican cartas en la prensa denunciando abandono; analistas hablan de desestabilización. Los activos guardan silencio.',opciones:[
+ {id:'ev_sables',cond:function(s){return s.stats.est<30},titulo:'RUIDO DE SABLES Y CARTAS PÚBLICAS',texto:'Militares retirados publican cartas en la prensa denunciando abandono; analistas hablan de desestabilización.',opciones:[
    {t:'Pasar a retiro a la cúpula díscola',dx:{est:4,int:-3},fa:{}},
    {t:'Pacto presupuestario con los mandos',dx:{est:3,res:-4},fa:{}},
    {t:'Mensaje al país por radio',dx:{est:2},fa:{},pp:10}]},
- {id:'ev_inversion',titulo:'CONSORCIO EXTRANJERO OFRECE MEGAINVERSIÓN',texto:'Una multinacional ofrece puerto, ferrocarril y electricidad a cambio de terrenos y exención tributaria. Washington observa con lupa.',opciones:[
+ {id:'ev_inversion',titulo:'CONSORCIO EXTRANJERO OFRECE MEGAINVERSIÓN',texto:'Una multinacional ofrece puerto, ferrocarril y electricidad a cambio de terrenos y exención tributaria.',opciones:[
    {t:'Aceptar sin condiciones',dx:{eco:5,res:3,soc:-2},fa:{smi:5,hay:4,mar:-6}},
    {t:'Regular y exigir transferencia técnica',dx:{eco:3,est:2},fa:{key:4,mar:2}},
    {t:'Rechazar la oferta',dx:{int:-3},fa:{mar:5}}]},
@@ -573,15 +573,15 @@ var EVENTOS = [
    {t:'Rescate con fondos públicos',dx:{res:-8,eco:4,est:1},fa:{key:6,hay:-4}},
    {t:'Dejarlo caer: que el mercado juzgue',dx:{eco:-7,soc:-4,est:-3},fa:{hay:4,mar:-3}},
    {t:'Absorberlo en la banca pública',dx:{res:-4,eco:2},fa:{mar:8,hay:-7}}]},
- {id:'ev_estudiantes',cond:function(s){return s.stats.soc<38},titulo:'TOMA UNIVERSITARIA',texto:'Los estudiantes ocupan los campus pidiendo becas y comedores universitarios; la prensa habla de una generación en rebeldía.',opciones:[
+ {id:'ev_estudiantes',cond:function(s){return s.stats.soc<38},titulo:'TOMA UNIVERSITARIA',texto:'Los estudiantes ocupan los campus pidiendo becas y comedores universitarios.',opciones:[
    {t:'Becas y reforma universitaria',dx:{res:-4,soc:5},fa:{mar:4,key:3}},
    {t:'Mesa de diálogo',dx:{soc:2,est:1},fa:{}},
    {t:'Desalojo nocturno',dx:{soc:-4,est:1,int:-2},fa:{mar:-7,hay:3}}]},
- {id:'ev_gira',titulo:'LA ONU CONVOCA A LA ASAMBLEA',texto:'Las cancillerías aguardan a Valdivia en la nueva sede de Naciones Unidas. Viajar cuesta oro; quedarse, prestigio.',opciones:[
+ {id:'ev_gira',titulo:'LA ONU CONVOCA A LA ASAMBLEA',texto:'Las cancillerías aguardan a Valdivia en la nueva sede de Naciones Unidas.',opciones:[
    {t:'Gira completa por las capitales',dx:{int:6,res:-3,est:-2},fa:{}},
    {t:'Escala breve y regreso',dx:{int:3},fa:{}},
    {t:'Permanecer en el país',dx:{est:2,int:-2},fa:{}}]},
- {id:'ev_litio',titulo:'HALLAZGO DE ESTAÑO EN LA CORDILLERA',texto:'Geólogos confirman vetas de estaño: el metal de la soldadura atrae a las potencias industriales. El mundo afila lapiceros.',opciones:[
+ {id:'ev_litio',titulo:'HALLAZGO DE ESTAÑO EN LA CORDILLERA',texto:'Geólogos confirman vetas de estaño: el metal de la soldadura atrae a las potencias industriales.',opciones:[
    {t:'Empresa estatal con socios técnicos',dx:{res:6,eco:3,int:-2},fa:{mar:6,key:4,hay:-5,smi:-4}},
    {t:'Concesión a privados',dx:{eco:5,res:3},fa:{smi:6,hay:5,mar:-7}},
    {t:'Reserva estratégica nacional',dx:{est:2,int:1},fa:{}}]},
@@ -589,7 +589,7 @@ var EVENTOS = [
    {t:'Aumentar el gasto militar',dx:{res:-5,est:4,soc:-2},fa:{}},
    {t:'Mantener el presupuesto',dx:{est:-2},fa:{}},
    {t:'Recortar a los cuarteles',dx:{res:3,est:-4},fa:{mar:2}}]},
- {id:'ev_sindical',titulo:'CONGRESO SINDICAL INTERNACIONAL',texto:'Los sindicatos internacionales piden celebrar su congreso en Valdivia. Los bloques del orden ya protestan.',opciones:[
+ {id:'ev_sindical',titulo:'CONGRESO SINDICAL INTERNACIONAL',texto:'Los sindicatos internacionales piden celebrar su congreso en Valdivia.',opciones:[
    {t:'Ser anfitriones',dx:{soc:3,int:2,res:-2},fa:{mar:7,hay:-4}},
    {t:'Declinar la sede',dx:{int:-2},fa:{}},
    {t:'Enviar observadores',dx:{soc:1,int:1},fa:{}}]},
@@ -597,19 +597,19 @@ var EVENTOS = [
    {t:'Refinanciar a cualquier precio',dx:{res:6,int:-3,est:-2},fa:{}},
    {t:'Default parcial soberano',dx:{res:4,int:-8,eco:-4},fa:{mar:5}},
    {t:'Ajuste fiscal para pagar',dx:{res:5,soc:-6},fa:{hay:4,mar:-6}}]},
- {id:'ev_fiesta',titulo:'FIESTAS PATRIAS',texto:'La ciudadanía pide desfiles, fondas y orquestas para olvidar la crisis. El concejo consulta al Gobierno.',opciones:[
+ {id:'ev_fiesta',titulo:'FIESTAS PATRIAS',texto:'La ciudadanía pide desfiles, fondas y orquestas para olvidar la crisis.',opciones:[
    {t:'Gran celebración financiada',dx:{res:-2,soc:5,est:1},fa:{}},
    {t:'Celebración austera',dx:{soc:2},fa:{}},
    {t:'Suspender los festejos',dx:{soc:-3,res:1},fa:{}}]},
- {id:'ev_fake',cond:function(s){return s.stats.est<45},titulo:'CAMPAÑA DE RUMORES',texto:'Panfletos y radios clandestinas instalan que habrá devaluación y corralito. Se forman filas en los bancos.',opciones:[
+ {id:'ev_fake',cond:function(s){return s.stats.est<45},titulo:'CAMPAÑA DE RUMORES',texto:'Panfletos y radios clandestinas instalan que habrá devaluación y corralito.',opciones:[
    {t:'Desmentir con datos en cadena',dx:{est:1,int:-1},fa:{}},
    {t:'Ignorar los ataques',dx:{est:-2},fa:{}},
    {t:'Ley de prensa responsable',dx:{est:2,soc:-3,int:-4},fa:{mar:2,hay:-3,smi:-3}}]},
- {id:'ev_migracion',cond:function(s){return s.stats.eco<42},titulo:'REFUGIADOS DE LA GUERRA',texto:'Desplazados de la guerra europea llegan por el puerto; los albergues están colapsados y el debate enciende al país.',opciones:[
+ {id:'ev_migracion',cond:function(s){return s.stats.eco<42},titulo:'REFUGIADOS DE LA GUERRA',texto:'Desplazados de la guerra europea llegan por el puerto; los albergues están colapsados.',opciones:[
    {t:'Albergues y regularización ordenada',dx:{res:-4,soc:4},fa:{key:5,mar:3}},
    {t:'Puertas abiertas humanitarias',dx:{soc:1,est:-2,int:2},fa:{mar:4,hay:-3}},
    {t:'Cuotas y restricción',dx:{est:2,soc:-3,int:-3},fa:{hay:4,smi:2,mar:-6}}]},
- {id:'ev_dengue',pre:{soc:-3},titulo:'BROTE DE MALARIA',texto:'El mosquito avanza con las lluvias; los centros de salud están colapsados. La sanidad recomienda emergencia.',opciones:[
+ {id:'ev_dengue',pre:{soc:-3},titulo:'BROTE DE MALARIA',texto:'El mosquito avanza con las lluvias; los centros de salud están colapsados.',opciones:[
    {t:'Fumigación y campaña nacional',dx:{res:-5,soc:5,est:1},fa:{}},
    {t:'Cuarentenas locales focalizadas',dx:{eco:-3,soc:2},fa:{}},
    {t:'Minimizar el brote',dx:{soc:-4,est:-2},fa:{}}]},
@@ -617,59 +617,59 @@ var EVENTOS = [
    {t:'Acumular reservas',dx:{res:4},fa:{hay:3}},
    {t:'Fondo de estabilización',dx:{res:2,est:2},fa:{key:3}},
    {t:'Gasto social inmediato',dx:{soc:5},fa:{key:4,mar:3}}]},
- {id:'ev_ruptura',cond:function(s){var v=Object.values(s.support);return Math.max.apply(null,v)>=78||Math.min.apply(null,v)<=20},titulo:'CISMA EN UN BLOQUE',texto:'Un bloque se parte en dos: moderados contra radicales anuncian renuncias en la prensa y vuelan pupitres en el hemiciclo.',opciones:[
+ {id:'ev_ruptura',cond:function(s){var v=Object.values(s.support);return Math.max.apply(null,v)>=78||Math.min.apply(null,v)<=20},titulo:'CISMA EN UN BLOQUE',texto:'Un bloque se parte en dos: moderados contra radicales anuncian renuncias en la prensa.',opciones:[
    {t:'Mediar personalmente',dx:{est:2},fa:{}},
    {t:'Aprovechar la división',dx:{est:-2},fa:{},pp:8},
    {t:'Ignorar la pelea',dx:{est:-1},fa:{}}]},
- {id:'ev_apagon',cond:function(s){return s.stats.eco<45},titulo:'APAGÓN NACIONAL POR CRISIS ENERGÉTICA',texto:'El sistema eléctrico colapsa: medio país a oscuras. Hospitales con generadores y velas en cada ventana.',opciones:[
+ {id:'ev_apagon',cond:function(s){return s.stats.eco<45},titulo:'APAGÓN NACIONAL POR CRISIS ENERGÉTICA',texto:'El sistema eléctrico colapsa: medio país a oscuras. Hospitales con generadores.',opciones:[
    {t:'Arrendar barcazas generadoras',dx:{res:-6,eco:3,est:1},fa:{key:3,hay:-2}},
    {t:'Racionamiento programado',dx:{eco:-4,soc:-3,est:1},fa:{}},
    {t:'Plan hidroeléctrico nacional',dx:{res:-4,eco:2,soc:2,int:1},fa:{key:5,smi:2,mar:2}}]},
- {id:'ev_narco',pre:{est:-3},titulo:'CONTRABANDO EN LA FRONTERA',texto:'La policía incauta un cargamento de contrabando; aparecen fotos de funcionarios con la red. Las cancillerías vecinas toman nota.',opciones:[
+ {id:'ev_narco',pre:{est:-3},titulo:'CONTRABANDO EN LA FRONTERA',texto:'La policía incauta un cargamento de contrabando; aparecen fotos de funcionarios con la red.',opciones:[
    {t:'Depuración y fiscal especial',dx:{est:4,int:2},fa:{mar:3,smi:2}},
    {t:'Silenciar el caso',dx:{est:-3,soc:-2},fa:{}},
    {t:'Militarizar la frontera',dx:{est:3,soc:-3,int:-1},fa:{hay:3,smi:2,mar:-4}}]},
- {id:'ev_regionales',titulo:'ELECCIONES REGIONALES CLAVE',texto:'Se eligen gobernadores en ocho regiones; el resultado se leerá como plebiscito de su Gobierno. Los bloques exigen apoyo o neutralidad.',opciones:[
+ {id:'ev_regionales',titulo:'ELECCIONES REGIONALES CLAVE',texto:'Se eligen gobernadores en ocho regiones; el resultado se leerá como plebiscito de su Gobierno.',opciones:[
    {t:'Campaña total por los oficialistas',dx:{est:2,soc:-1},fa:{key:3,mar:2,hay:-4,smi:-3}},
    {t:'Neutralidad institucional',dx:{est:2,int:1},fa:{}},
    {t:'Pacto de gobernabilidad regional',dx:{est:3,res:-2},fa:{key:1,mar:1,hay:1,smi:1}}]},
- {id:'ev_salud',cond:function(s){return s.stats.soc<45},titulo:'HOSPITALES AL BORDE DEL COLAPSO',texto:'Pasillos con camillas, listas de espera de un año y renuncias de especialistas. Los médicos marchan con linternas.',opciones:[
+ {id:'ev_salud',cond:function(s){return s.stats.soc<45},titulo:'HOSPITALES AL BORDE DEL COLAPSO',texto:'Pasillos con camillas, listas de espera de un año y renuncias de especialistas.',opciones:[
    {t:'Fondo de emergencia sanitaria',dx:{res:-6,soc:5},fa:{key:5,mar:4}},
    {t:'Alianzas con clínicas privadas',dx:{soc:3,res:-2},fa:{smi:4,hay:3,mar:-4}},
    {t:'Derivar pacientes con bonos',dx:{soc:-4,est:-2},fa:{mar:-5,hay:3}}]},
- {id:'ev_influencer',cond:function(s){return s.stats.est<50},titulo:'LA PRENSA SENSACIONALISTA ATACA',texto:'Un magnate mediático dedica sus portadas a "La República del Caos". La opinión pública ríe; el gabinete suda.',opciones:[
+ {id:'ev_influencer',cond:function(s){return s.stats.est<50},titulo:'LA PRENSA SENSACIONALISTA ATACA',texto:'Un magnate mediático dedica sus portadas a "La República del Caos".',opciones:[
    {t:'Respuesta institucional sobria',dx:{est:1,int:1},fa:{}},
    {t:'Querella por injurias',dx:{est:2,soc:-2,int:-2},fa:{mar:-3}},
    {t:'Invitar al magnate a Palacio',dx:{est:2,soc:1},fa:{smi:2,mar:2}}]},
- {id:'ev_femicidio',titulo:'INCENDIO EN LA FÁBRICA TEXTIL',texto:'Un incendio deja decenas de obreras muertas; los sindicatos marchan exigiendo seguridad y justicia. El país llora.',opciones:[
+ {id:'ev_femicidio',titulo:'INCENDIO EN LA FÁBRICA TEXTIL',texto:'Un incendio deja decenas de obreras muertas; los sindicatos marchan exigiendo seguridad y justicia.',opciones:[
    {t:'Ley de seguridad laboral',dx:{soc:4,res:-2,est:1},fa:{key:4,mar:5}},
    {t:'Indemnizaciones y clausuras',dx:{soc:3,res:-3},fa:{}},
    {t:'Culpar a las propias obreras',dx:{soc:-5,est:-2,int:-3},fa:{mar:-8}}]},
- {id:'ev_ciber',titulo:'ESPÍAS EN EL TELÉGRAFO',texto:'Descifran mensajes interceptados: una red extranjera sabotea los telégrafos y correos del Estado.',opciones:[
+ {id:'ev_ciber',titulo:'ESPÍAS EN EL TELÉGRAFO',texto:'Descifran mensajes interceptados: una red extranjera sabotea los telégrafos del Estado.',opciones:[
    {t:'Purga en correos y telégrafos',dx:{est:3,res:-3},fa:{}},
    {t:'Misión militar aliada de seguridad',dx:{est:2,int:1},fa:{smi:2,hay:2}},
    {t:'Silenciar el caso',dx:{est:-2},fa:{}}]},
- {id:'ev_incendios',titulo:'MEGAINCENDIOS EN LA CORDILLERA',texto:'El fuego devora bosques y pueblos enteros; los voluntarios piden aviones y el humo tapa el sol de la capital.',opciones:[
+ {id:'ev_incendios',titulo:'MEGAINCENDIOS EN LA CORDILLERA',texto:'El fuego devora bosques y pueblos enteros; los voluntarios piden aviones.',opciones:[
    {t:'Pedir ayuda internacional',dx:{int:2,res:-4,soc:3},fa:{}},
    {t:'Solo Defensa Civil',dx:{soc:-3,est:-1},fa:{}},
    {t:'Plan nacional de prevención',dx:{res:-5,eco:-1,soc:4},fa:{key:4,mar:2}}]},
- {id:'ev_terremoto',pre:{eco:-3,soc:-3},titulo:'TERREMOTO 7.2 SACUDE EL SUR',texto:'El sismo sorprende al amanecer: infraestructura dañada, miles de damnificados y réplicas que no cesan.',opciones:[
+ {id:'ev_terremoto',pre:{eco:-3,soc:-3},titulo:'TERREMOTO 7.2 SACUDE EL SUR',texto:'El sismo sorprende al amanecer: infraestructura dañada, miles de damnificados.',opciones:[
    {t:'Fondo de reconstrucción',dx:{res:-7,est:3,soc:3},fa:{key:4}},
    {t:'Bonos catástrofe y seguros',dx:{res:-3,est:1,eco:-2},fa:{smi:4,hay:3}},
    {t:'Cadena y presencia en zona cero',dx:{est:2,soc:2},fa:{},pp:8}]},
- {id:'ev_cripto',titulo:'FRAUDE BANCARIO PIRAMIDAL',texto:'Un banco de "ahorros populares" deja sin fondos a 80.000 familias. Filas y furia en las sucursales.',opciones:[
+ {id:'ev_cripto',titulo:'FRAUDE BANCARIO PIRAMIDAL',texto:'Un banco de "ahorros populares" deja sin fondos a 80.000 familias.',opciones:[
    {t:'Fondo de reparación',dx:{res:-6,soc:4},fa:{mar:4,key:3}},
    {t:'Solo querellas judiciales',dx:{est:1,soc:-3},fa:{}},
    {t:'Regulación bancaria inmediata',dx:{eco:1,est:2},fa:{smi:3,hay:2,mar:-3}}]},
- {id:'ev_camioneros',cond:function(s){return s.stats.eco<45},titulo:'PARO DE CAMIONEROS POR EL DIÉSEL',texto:'Los camiones cortan las rutas: el combustible subió 30% y la carga no espera. Los almacenes advierten desabastecimiento.',opciones:[
+ {id:'ev_camioneros',cond:function(s){return s.stats.eco<45},titulo:'PARO DE CAMIONEROS POR EL DIÉSEL',texto:'Los camiones cortan las rutas: el combustible subió 30% y la carga no espera.',opciones:[
    {t:'Subsidio al combustible',dx:{res:-6,soc:3,eco:2},fa:{mar:2,key:4,hay:-6}},
    {t:'Despejar con la fuerza pública',dx:{est:2,soc:-5,int:-3},fa:{mar:-7}},
    {t:'Banda de precios gradual',dx:{soc:2,res:-2,est:1},fa:{smi:3}}]},
- {id:'ev_pensiones',titulo:'LA REFORMA DE PENSIONES ESTALLA',texto:'Los jubilados marchan cada viernes: pensiones de miseria y cajas vacías. El Congreso exige definición.',opciones:[
+ {id:'ev_pensiones',titulo:'LA REFORMA DE PENSIONES ESTALLA',texto:'Los jubilados marchan cada viernes: pensiones de miseria y cajas vacías.',opciones:[
    {t:'Caja única estatal',dx:{soc:5,res:-4},fa:{key:6,mar:4,hay:-5,smi:-3}},
    {t:'Más competencia entre cajas privadas',dx:{res:2,soc:1},fa:{hay:5,smi:3,mar:-5}},
    {t:'Pilar solidario universal',dx:{soc:4,res:-3},fa:{mar:6,key:3,hay:-6}}]},
- {id:'ev_espionaje',pre:{est:-3},titulo:'ESCÁNDALO DE ESPIONAJE',texto:'La prensa revela que el Estado compró equipos de interceptación: se espió a periodistas, jueces y opositores.',opciones:[
+ {id:'ev_espionaje',pre:{est:-3},titulo:'ESCÁNDALO DE ESPIONAJE',texto:'La prensa revela que el Estado compró equipos de interceptación: se espió a periodistas y jueces.',opciones:[
    {t:'Investigación parlamentaria',dx:{est:4,int:1},fa:{smi:2,mar:3}},
    {t:'Negarlo todo',dx:{est:-3,int:-3},fa:{}},
    {t:'Anular contratos y protocolos',dx:{est:2,res:1,int:2},fa:{}}]},
@@ -677,51 +677,69 @@ var EVENTOS = [
    {t:'Banco del Migrante',dx:{res:2,soc:2},fa:{smi:3}},
    {t:'Bonos de la diáspora',dx:{res:3},fa:{hay:3,smi:2}},
    {t:'Plan cultural de retorno',dx:{soc:3,res:-1},fa:{mar:2,key:2}}]},
- {id:'ev_carceles',pre:{est:-2},titulo:'MASACRE CARCELARIA',texto:'Un motín deja decenas de muertos en el penal de máxima seguridad; la Cruz Roja exige respuestas.',opciones:[
+ {id:'ev_carceles',pre:{est:-2},titulo:'MASACRE CARCELARIA',texto:'Un motín deja decenas de muertos en el penal de máxima seguridad.',opciones:[
    {t:'Emergencia penitenciaria',dx:{res:-5,est:3,soc:2},fa:{}},
    {t:'Militarizar las cárceles',dx:{est:4,soc:-4,int:-3},fa:{hay:3,smi:2,mar:-6}},
    {t:'Plan de reinserción y trabajo',dx:{soc:3,res:-3,est:1},fa:{key:4,mar:4}}]},
- {id:'ev_mundial',titulo:'LA SELECCIÓN GANA EL SUDAMERICANO',texto:'El fútbol da una alegría al pueblo: la plaza celebra hasta el amanecer. Oportunidad de oro… o de gasto.',opciones:[
+ {id:'ev_mundial',titulo:'LA SELECCIÓN GANA EL SUDAMERICANO',texto:'El fútbol da una alegría al pueblo: la plaza celebra hasta el amanecer.',opciones:[
    {t:'Celebración oficial financiada',dx:{res:-2,soc:5,est:1},fa:{}},
    {t:'Apoyo institucional austero',dx:{soc:3},fa:{}},
    {t:'Austeridad: hay cosas más serias',dx:{soc:-2,res:1},fa:{hay:2}}]},
- {id:'ev_alquileres',cond:function(s){return s.stats.soc<40},titulo:'CRISIS DE LOS ALQUILERES',texto:'La especulación duplica las rentas; los barrios históricos expulsan a sus vecinos de toda la vida.',opciones:[
+ {id:'ev_alquileres',cond:function(s){return s.stats.soc<40},titulo:'CRISIS DE LOS ALQUILERES',texto:'La especulación duplica las rentas; los barrios históricos expulsan a sus vecinos.',opciones:[
    {t:'Regulación de rentas',dx:{soc:4,eco:-3,est:-1},fa:{mar:7,hay:-8,smi:-6}},
    {t:'Oferta: permisos rápidos de construcción',dx:{eco:3,soc:2,res:-2},fa:{smi:6,hay:4}},
    {t:'Impuesto a vivienda especulativa',dx:{res:3,soc:2},fa:{mar:4,key:4,hay:-5}}]},
- {id:'ev_ia',titulo:'INFORME SOBRE MECANIZACIÓN',texto:'Un estudio advierte: la mecanización amenaza un tercio del empleo industrial. Sindicatos piden frenar; industriales piden acelerar.',opciones:[
+ {id:'ev_ia',titulo:'INFORME SOBRE MECANIZACIÓN',texto:'Un estudio advierte: la mecanización amenaza un tercio del empleo industrial.',opciones:[
    {t:'Plan de reconversión laboral',dx:{res:-4,soc:3,eco:2},fa:{key:5,smi:3}},
    {t:'Flexibilizar para adaptarse',dx:{eco:3,soc:-3},fa:{hay:5,smi:3,mar:-6}},
    {t:'Impuesto a la máquina',dx:{res:3,eco:-1},fa:{mar:6,hay:-6}}]},
- {id:'ev_glaciares',titulo:'LEY DE BOSQUES DIVIDE AL CONGRESO',texto:'Conservacionistas exigen proteger los bosques nativos; las madereras, concesiones. El sur contiene el aliento.',opciones:[
+ {id:'ev_glaciares',titulo:'LEY DE BOSQUES DIVIDE AL CONGRESO',texto:'Conservacionistas exigen proteger los bosques nativos; las madereras, concesiones.',opciones:[
    {t:'Protección total',dx:{int:3,eco:-2,soc:1},fa:{mar:4,key:3,hay:-4,smi:-3}},
    {t:'Explotación con cupos',dx:{eco:3,int:-1},fa:{smi:4,hay:4,mar:-5}},
    {t:'Plebiscito vinculante',dx:{est:1,soc:1},fa:{},pp:6}]},
- {id:'ev_aerolinea',titulo:'QUIEBRA DE LA AEROLÍNEA REGIONAL',texto:'La línea de bandera quiebra: vuelos suspendidos, 3.000 empleados en el aire y el sur aislado del norte.',opciones:[
+ {id:'ev_aerolinea',titulo:'QUIEBRA DE LA AEROLÍNEA REGIONAL',texto:'La línea de bandera quiebra: vuelos suspendidos y el sur aislado del norte.',opciones:[
    {t:'Rescate estatal',dx:{res:-6,eco:2,int:1},fa:{key:5,mar:3,hay:-5}},
    {t:'Privatizar rutas y licencias',dx:{eco:2,soc:-2},fa:{hay:4,smi:4,mar:-5}},
    {t:'Reconversión laboral de tripulaciones',dx:{soc:2,res:-2},fa:{}}]},
- /* --- EVENTOS DE ALINEACIÓN (Guerra Fría) --- */
  {id:'ev_embUSA',cond:function(s){return s.alineacion==='urss' && s.mes>=26},titulo:'EL EMBAJADOR ESTADOUNIDENSE ADVIERTE',texto:'Washington amenaza con retirar créditos y cupos de exportación si Valdivia mantiene su acercamiento a Moscú.',opciones:[
    {t:'Moderar el acercamiento',dx:{int:2,est:1},fa:{mar:-5}},
    {t:'Desafiar a Washington',dx:{int:-4,est:2},fa:{mar:5,hay:-3}},
    {t:'Negociar en secreto',dx:{res:3,int:-1},fa:{mar:-3}}]},
- {id:'ev_agitURSS',cond:function(s){return s.alineacion==='usa' && s.mes>=20},titulo:'HUELGA DE SOLIDARIDAD CON EL ESTE',texto:'Agitadores prosoviéticos convocan huelga general en solidaridad con el bloque oriental; el puerto amanece paralizado.',opciones:[
+ {id:'ev_agitURSS',cond:function(s){return s.alineacion==='usa' && s.mes>=20},titulo:'HUELGA DE SOLIDARIDAD CON EL ESTE',texto:'Agitadores prosoviéticos convocan huelga general; el puerto amanece paralizado.',opciones:[
    {t:'Reprimir a los agitadores',dx:{est:1,soc:-2},fa:{mar:-8}},
    {t:'Negociar con el sindicato',dx:{soc:2},fa:{mar:4}},
    {t:'Ignorar la huelga',dx:{est:-2,eco:-2},fa:{}}]},
- {id:'ev_ayudaUSA',cond:function(s){return s.alineacion==='usa' && s.mes>=29},titulo:'PRIMEROS EMBARQUES DE AYUDA ESTADOUNIDENSE',texto:'Buques con maquinaria y trigo atracan en Corral con la bandera de las barras y estrellas; la prensa celebra.',opciones:[
+ {id:'ev_ayudaUSA',cond:function(s){return s.alineacion==='usa' && s.mes>=29},titulo:'PRIMEROS EMBARQUES DE AYUDA ESTADOUNIDENSE',texto:'Buques con maquinaria y trigo atracan en Corral; la prensa celebra.',opciones:[
    {t:'Destinarlo a infraestructura',dx:{eco:4,res:2},fa:{}},
    {t:'Destinarlo al ejército',dx:{est:4},fa:{mar:-3}},
    {t:'Destinarlo al consumo',dx:{soc:4},fa:{hay:-2}}]},
- {id:'ev_boicotOCC',cond:function(s){return s.alineacion==='urss' && s.mes>=32},titulo:'BOICOT COMERCIAL OCCIDENTAL',texto:'Las navieras occidentales evitan el puerto de Corral; los exportadores valdivianos pierden compradores.',opciones:[
+ {id:'ev_boicotOCC',cond:function(s){return s.alineacion==='urss' && s.mes>=32},titulo:'BOICOT COMERCIAL OCCIDENTAL',texto:'Las navieras occidentales evitan el puerto de Corral; los exportadores pierden compradores.',opciones:[
    {t:'Reorientar el comercio al Este',dx:{eco:2,int:-3},fa:{}},
    {t:'Pedir distensión',dx:{int:2},fa:{mar:-4}},
    {t:'Desafiar el boicot',dx:{eco:-3,est:1},fa:{mar:3}}]},
- {id:'ev_presionRIO',cond:function(s){return s.alineacion==='neutral' && s.mes>=31},titulo:'PRESIÓN POR EL TRATADO DE RÍO',texto:'Las cancillerías americanas exigen que Valdivia firme el Tratado Interamericano; Moscú advierte contra el pacto.',opciones:[
+ {id:'ev_presionRIO',cond:function(s){return s.alineacion==='neutral' && s.mes>=31},titulo:'PRESIÓN POR EL TRATADO DE RÍO',texto:'Las cancillerías americanas exigen que Valdivia firme el Tratado Interamericano.',opciones:[
    {t:'Resistir la presión',dx:{est:-2,int:1},fa:{mar:2}},
    {t:'Prometer evaluarlo',dx:{est:1},fa:{}},
-   {t:'Coquetear con ambos bandos',dx:{res:2,int:-1},fa:{}}]}
+   {t:'Coquetear con ambos bandos',dx:{res:2,int:-1},fa:{}}]},
+ {id:'ev_fmiRev',cond:function(s){return s.bretton==='fmi' && s.mes>=12},titulo:'MISIÓN DE REVISIÓN DEL FMI',texto:'Los auditores del Fondo exigen reducir el déficit y congelar salarios.',opciones:[
+   {t:'Cumplir las metas de ajuste',dx:{res:4,soc:-4},fa:{hay:4,mar:-5}},
+   {t:'Negociar plazos más largos',dx:{res:2,soc:-1},fa:{}},
+   {t:'Rechazar y abandonar el Fondo',dx:{int:-4},fa:{mar:4,hay:-4},esp:{bretton:'none'}}]},
+ {id:'ev_maqSov',cond:function(s){return s.bretton==='molotov'},titulo:'MAQUINARIA SOVIÉTICA EN CORRAL',texto:'Tractores, turbinas y tornos llegan desde Odesa como parte del Plan Mólotov.',opciones:[
+   {t:'Destinarla a la industria',dx:{eco:3},fa:{}},
+   {t:'Vender parte a privados',dx:{res:3},fa:{smi:3,mar:-3}},
+   {t:'Repartirla en el agro',dx:{soc:3},fa:{mar:3}}]},
+ {id:'ev_asamblea',cond:function(s){return s.mes>=10},titulo:'ASAMBLEA EXTRAORDINARIA DE LA ONU',texto:'La Asamblea vota una resolución sobre la libre determinación de los pueblos coloniales.',opciones:[
+   {t:'Votar con Occidente',dx:{int:2},fa:{smi:2,hay:2},esp:{onuVoto:'occ'}},
+   {t:'Votar con Moscú',dx:{int:-1},fa:{mar:4},esp:{onuVoto:'sov'}},
+   {t:'Abstenerse',dx:{int:1},fa:{},esp:{onuVoto:'abs'}}]},
+ {id:'ev_gatt',cond:function(s){return s.comercio==='gatt' && s.mes>=34},titulo:'RONDA COMERCIAL DE GINEBRA',texto:'El GATT negocia nuevas rebajas arancelarias; la delegación valdiviana pide la palabra.',opciones:[
+   {t:'Impulso exportador',dx:{eco:3,int:1},fa:{smi:3}},
+   {t:'Proteger la industria naciente',dx:{eco:1,soc:1},fa:{key:3,smi:-2}}]},
+ {id:'ev_feriaEste',cond:function(s){return s.comercio==='comecon'},titulo:'FERIA COMERCIAL DEL ESTE',texto:'Valdivia exhibe cobre, lana y vino en la feria de los países socialistas.',opciones:[
+   {t:'Firmar contratos largos',dx:{res:3,eco:2},fa:{}},
+   {t:'Pedir maquinaria a cambio',dx:{eco:3},fa:{mar:2}},
+   {t:'Cobrar en oro',dx:{res:4,int:-1},fa:{hay:3}}]}
 ];
 
 var EPILOGOS = {
@@ -737,7 +755,8 @@ var state = null;
 function nuevoEstado(){
   return {
     mes:0, pp:80, over:false, bloqueado:false, mano:[],
-    alineacion:'neutral', /* neutral | usa | urss */
+    alineacion:'neutral',
+    bretton:'none', onuVoto:'abs', comercio:'none', kominform:false,
     stats:{eco:32,soc:28,est:40,int:35,res:20},
     support:{key:52,mar:48,hay:46,smi:50},
     efectos:[], recientes:[], eventosUsados:{}, hist:{eco:[32],soc:[28],est:[40],int:[35],res:[20]},
@@ -836,15 +855,34 @@ function drawSpark(){
   $('legend').innerHTML=lg;
 }
 
-/* ================= RENDER SECCIÓN 2 ================= */
+/* ================= RENDER SECCIÓN 2: MAPA ================= */
 function buildMapa(){
-  var svg='<defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#8a6a2f"/><line x1="0" y1="0" x2="0" y2="6" stroke="#3a2f1a" stroke-width="3"/></pattern></defs>';
-  svg+='<rect x="0" y="0" width="1000" height="520" fill="#0e141c"/>';
-  REGIONES.forEach(function(r){
-    svg+='<path class="region" data-id="'+r.id+'" d="'+r.d+'"/>';
+  var svg='<defs>';
+  svg+='<radialGradient id="ocean" cx="50%" cy="45%" r="75%">';
+  svg+='<stop offset="0%" stop-color="#152232"/><stop offset="70%" stop-color="#0e1826"/><stop offset="100%" stop-color="#0a1119"/>';
+  svg+='</radialGradient>';
+  svg+='<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">';
+  svg+='<rect width="6" height="6" fill="#8a6a2f"/><line x1="0" y1="0" x2="0" y2="6" stroke="#3a2f1a" stroke-width="3"/>';
+  svg+='</pattern></defs>';
+  svg+='<rect x="0" y="0" width="1000" height="520" fill="url(#ocean)"/>';
+  // graticule
+  var g='';
+  for(var gx=100;gx<1000;gx+=100){ g+='M'+gx+' 0 L'+gx+' 520 '; }
+  for(var gy=65;gy<520;gy+=65){ g+='M0 '+gy+' L1000 '+gy+' '; }
+  svg+='<path class="grat" d="'+g+'"/>';
+  svg+='<line class="equator" x1="0" y1="260" x2="1000" y2="260"/>';
+  // ocean labels
+  svg+='<text class="oceanLabel" x="150" y="300">OCÉANO PACÍFICO</text>';
+  svg+='<text class="oceanLabel" x="440" y="330">OCÉANO ATLÁNTICO</text>';
+  svg+='<text class="oceanLabel" x="700" y="330">OCÉANO ÍNDICO</text>';
+  // regions (Valdivia drawn after Sudamérica so it sits on top)
+  var order = REGIONES.slice().sort(function(a,b){ return (a.id==='val'?1:0)-(b.id==='val'?1:0); });
+  order.forEach(function(r){
+    var cls='region'+(r.id==='val'?' val':'');
+    svg+='<path class="'+cls+'" data-id="'+r.id+'" d="'+r.d+'"/>';
   });
-  REGIONES.forEach(function(r){
-    if(r.lb){ svg+='<text class="mapLabel" x="'+r.lx+'" y="'+r.ly+'" text-anchor="middle">'+r.lb+'</text>'; }
+  order.forEach(function(r){
+    if(r.lb){ svg+='<text class="mapLabel" x="'+r.lx+'" y="'+r.ly+'">'+r.lb+'</text>'; }
   });
   $('worldMap').innerHTML=svg;
   var tip=$('mapTip');
@@ -862,9 +900,8 @@ function buildMapa(){
       var r=null; REGIONES.forEach(function(x){if(x.id===p.getAttribute('data-id'))r=x;});
       if(!r) return;
       var b=bloqueDe(r,state.mes);
-      var extra = r.id==='val' ? '<br><span style="color:var(--gold)">Defina la alineación en el panel derecho.</span>' : '';
+      var extra = r.id==='val' ? '<br><span style="color:var(--gold)">Defina la alineación y membresías en el panel derecho.</span>' : '';
       $('regInfo').innerHTML='<b style="font-family:Cinzel;color:var(--gold);letter-spacing:1px">'+r.nombre+'</b> — '+BLOQUE_TXT[b]+'<br>'+r.nota+extra;
-      if(r.id==='val'){ verSeccion(2); }
     });
   });
 }
@@ -881,13 +918,91 @@ function renderAlineacion(){
   var cur=state.alineacion;
   var costo = cur==='neutral'?20:30;
   var h='';
-  h+='<button class="alinBtn '+(cur==='neutral'?'sel':'')+'" type="button" onclick="alinear(\'neutral\')">Neutralidad activa'+(cur!=='neutral'?' · '+costo+' CP':'')+'<small>Efecto mensual: +0.15 Prestigio. Sin ayudas ni sanciones; Moscú y Washington lo cortejan por igual.</small></button>';
-  h+='<button class="alinBtn '+(cur==='usa'?'sel':'')+'" type="button" onclick="alinear(\'usa\')">Bloque estadounidense'+(cur!=='usa'?' · '+costo+' CP':'')+'<small>Efecto mensual: +0.3 Reservas, +0.2 Prestigio. Riesgo de huelgas de solidaridad prosoviética.</small></button>';
-  h+='<button class="alinBtn '+(cur==='urss'?'sel':'')+'" type="button" onclick="alinear(\'urss\')">Bloque soviético'+(cur!=='urss'?' · '+costo+' CP':'')+'<small>Efecto mensual: +0.3 Economía, −0.3 Prestigio (aislamiento occidental). Riesgo de boicot comercial.</small></button>';
+  h+='<button class="alinBtn '+(cur==='neutral'?'sel':'')+'" type="button" onclick="alinear(\'neutral\')">Neutralidad activa'+(cur!=='neutral'?' · '+costo+' CP':'')+'<small>Efecto mensual: +0.15 Prestigio. Sin ayudas ni sanciones.</small></button>';
+  h+='<button class="alinBtn '+(cur==='usa'?'sel':'')+'" type="button" onclick="alinear(\'usa\')">Bloque estadounidense'+(cur!=='usa'?' · '+costo+' CP':'')+'<small>Efecto mensual: +0.3 Reservas, +0.2 Prestigio. Riesgo de huelgas prosoviéticas.</small></button>';
+  h+='<button class="alinBtn '+(cur==='urss'?'sel':'')+'" type="button" onclick="alinear(\'urss\')">Bloque soviético'+(cur!=='urss'?' · '+costo+' CP':'')+'<small>Efecto mensual: +0.3 Economía, −0.3 Prestigio. Riesgo de boicot comercial.</small></button>';
   $('alinPanel').innerHTML=h;
   var t=Math.min(100,Math.round(10+state.mes*2.2+(cur!=='neutral'?8:0)));
   $('tensionBar').style.width=t+'%';
   $('tensionTxt').textContent='Tensión '+t+'/100 · '+fecha(state.mes)+'. El mundo marcha hacia dos campos armados.';
+}
+function renderOrgs(){
+  var h='';
+  var fmiTxt = state.bretton==='fmi'?'Miembro · +0.4 Res, −0.15 Bien /mes':'—';
+  h+='<div class="orgHead">Arquitectura financiera <span class="st">'+fmiTxt+'</span></div>';
+  h+='<button class="alinBtn '+(state.bretton==='fmi'?'sel':'')+'" type="button" onclick="unirseOrg(\'fmi\')">'+(state.bretton==='fmi'?'FMI — Bretton Woods (actual)':'Ingresar al FMI · 25 CP')+'<small>Ingreso: +8 Reservas, +2 Prestigio. Mensual: +0.4 Reservas, −0.15 Bienestar. Excluye el Plan Mólotov.</small></button>';
+  var molBloq = state.alineacion==='usa';
+  h+='<button class="alinBtn '+(state.bretton==='molotov'?'sel':'')+'" type="button" '+(molBloq?'disabled':'')+' onclick="unirseOrg(\'molotov\')">'+(state.bretton==='molotov'?'Plan Mólotov (actual)':'Adherirse al Plan Mólotov · 20 CP')+'<small>'+ (molBloq?'Bloqueado: Valdivia está alineada con EE.UU.':'Créditos y maquinaria del Este. Ingreso: +5 Reservas, +2 Economía. Mensual: +0.4 Economía, +0.2 Reservas. Excluye el FMI.')+'</small></button>';
+  var vTxt = state.onuVoto==='occ'?'Voto: occidental':(state.onuVoto==='sov'?'Voto: soviético':'Voto: abstención');
+  h+='<div class="orgHead">Voto en la ONU (1945) <span class="st">'+vTxt+'</span></div>';
+  h+='<button class="alinBtn '+(state.onuVoto==='occ'?'sel':'')+'" type="button" onclick="unirseOrg(\'onuOcc\')">Votar con Occidente · 8 CP<small>Mensual: +0.2 Prestigio. Inmediato: +2 Prestigio.</small></button>';
+  h+='<button class="alinBtn '+(state.onuVoto==='abs'?'sel':'')+'" type="button" onclick="unirseOrg(\'onuAbs\')">Abstención activa · 8 CP<small>Mensual: +0.1 Prestigio. Equilibrio diplomático.</small></button>';
+  h+='<button class="alinBtn '+(state.onuVoto==='sov'?'sel':'')+'" type="button" onclick="unirseOrg(\'onuSov\')">Votar con Moscú · 8 CP<small>Mensual: −0.1 Prestigio, +apoyo del Frente Obrero.</small></button>';
+  var cTxt = state.comercio==='gatt'?'Signatario del GATT':(state.comercio==='comecon'?'Miembro del COMECON':'—');
+  h+='<div class="orgHead">Comercio mundial <span class="st">'+cTxt+'</span></div>';
+  h+='<button class="alinBtn '+(state.comercio==='gatt'?'sel':'')+'" type="button" onclick="unirseOrg(\'gatt\')">'+(state.comercio==='gatt'?'GATT / OMC (actual)':'Firmar el GATT · 25 CP')+'<small>Ginebra, 1947: semilla de la OMC. Ingreso: +5 Economía, +3 Prestigio, −2 Reservas. Mensual: +0.3 Economía, +0.1 Reservas. Excluye el COMECON.</small></button>';
+  var comBloq = state.alineacion==='usa'||state.mes<30;
+  h+='<button class="alinBtn '+(state.comercio==='comecon'?'sel':'')+'" type="button" '+(comBloq?'disabled':'')+' onclick="unirseOrg(\'comecon\')">'+(state.comercio==='comecon'?'COMECON (actual)':'Adherirse al COMECON · 20 CP')+'<small>'+ (state.alineacion==='usa'?'Bloqueado: Valdivia está alineada con EE.UU.':(state.mes<30?'Disponible desde julio de 1947, cuando Moscú articula el comercio del Este':'Comercio planificado con el bloque oriental. Ingreso: +3 Economía, +3 Reservas. Mensual: +0.3 Economía, +0.3 Reservas, −0.2 Prestigio. Excluye el GATT.'))+'</small></button>';
+  var kTxt = state.kominform?'Miembro · +0.2 Estab, −0.3 Prest /mes':'—';
+  h+='<div class="orgHead">Coordinación política <span class="st">'+kTxt+'</span></div>';
+  var kBloq = !(state.alineacion==='urss') || state.mes<32;
+  if(state.kominform){
+    h+='<button class="alinBtn sel" type="button" onclick="unirseOrg(\'salirKomin\')">Abandonar el Kominform · 10 CP<small>Moscú lo llamará traidor: −8 Frente Obrero, +2 Prestigio.</small></button>';
+  }else{
+    h+='<button class="alinBtn" type="button" '+(kBloq?'disabled':'')+' onclick="unirseOrg(\'kominform\')">Ingresar al Kominform · 20 CP<small>'+ (state.alineacion!=='urss'?'Requiere alineación con la URSS.':(state.mes<32?'La Internacional se funda en septiembre de 1947: espere a esa fecha':'Sept. 1947. Ingreso: +2 Estabilidad, −5 Prestigio, +8 Frente Obrero. Mensual: +0.2 Estabilidad, −0.3 Prestigio.'))+'</small></button>';
+  }
+  $('orgPanel').innerHTML=h;
+}
+function unirseOrg(org){
+  if(state.over) return;
+  function cobrar(n){ if(state.pp<n){ toast('<b>Capital Político insuficiente</b> · se requieren '+n+' CP.'); return false; } state.pp-=n; return true; }
+  if(org==='fmi'){
+    if(state.bretton==='fmi') return;
+    if(!cobrar(25)) return;
+    if(state.bretton==='molotov'){ aplicarDx({int:-3}); addLog('Valdivia abandona el <b>Plan Mólotov</b>; Moscú retira sus créditos.','#a54a45'); }
+    state.bretton='fmi';
+    aplicarDx({res:8,int:2}); aplicarFa({key:5,hay:2,mar:-6});
+    addLog('Valdivia ingresa al <b style="color:#4a7fa5">FMI</b> (Bretton Woods): llega el primer tramo de crédito.','#4a7fa5');
+  }else if(org==='molotov'){
+    if(state.bretton==='molotov'||state.alineacion==='usa') return;
+    if(!cobrar(20)) return;
+    if(state.bretton==='fmi'){ aplicarDx({int:-3}); addLog('Valdivia abandona el <b>FMI</b>; Washington congela las negociaciones.','#4a7fa5'); }
+    state.bretton='molotov';
+    aplicarDx({res:5,eco:2}); aplicarFa({mar:6,hay:-4,smi:-3});
+    addLog('Valdivia se adhiere al <b style="color:#a54a45">Plan Mólotov</b>: créditos y maquinaria del Este.','#a54a45');
+  }else if(org==='onuOcc'||org==='onuSov'||org==='onuAbs'){
+    if(!cobrar(8)) return;
+    if(org==='onuOcc'){ state.onuVoto='occ'; aplicarDx({int:2}); aplicarFa({hay:2,smi:2,mar:-3}); addLog('En la <b>ONU</b>, Valdivia vota con el bloque occidental.','#4a7fa5'); }
+    if(org==='onuSov'){ state.onuVoto='sov'; aplicarDx({int:-2}); aplicarFa({mar:5,hay:-3,smi:-3}); addLog('En la <b>ONU</b>, Valdivia vota con el bloque soviético.','#a54a45'); }
+    if(org==='onuAbs'){ state.onuVoto='abs'; aplicarDx({int:1}); addLog('En la <b>ONU</b>, Valdivia retoma la abstención activa.','#8a7a4f'); }
+  }else if(org==='gatt'){
+    if(state.comercio==='gatt') return;
+    if(!cobrar(25)) return;
+    if(state.comercio==='comecon'){ aplicarDx({int:-3}); addLog('Valdivia abandona el <b>COMECON</b>; el Este cierra sus mercados.','#a54a45'); }
+    state.comercio='gatt';
+    aplicarDx({eco:5,int:3,res:-2}); aplicarFa({smi:6,hay:5,mar:-4,key:-2});
+    addLog('Valdivia firma el <b style="color:#6da06d">GATT</b> (antecesor de la OMC).','#6da06d');
+  }else if(org==='comecon'){
+    if(state.comercio==='comecon'||state.alineacion==='usa'||state.mes<30) return;
+    if(!cobrar(20)) return;
+    if(state.comercio==='gatt'){ aplicarDx({int:-3}); addLog('Valdivia abandona el <b>GATT</b>; Ginebra lamenta la salida.','#6da06d'); }
+    state.comercio='comecon';
+    aplicarDx({eco:3,res:3}); aplicarFa({mar:5,smi:-4,hay:-4});
+    addLog('Valdivia ingresa al <b style="color:#a54a45">COMECON</b>: comercio planificado con el Este.','#a54a45');
+  }else if(org==='kominform'){
+    if(state.kominform||state.alineacion!=='urss'||state.mes<32) return;
+    if(!cobrar(20)) return;
+    state.kominform=true;
+    aplicarDx({est:2,int:-5}); aplicarFa({mar:8,hay:-5,smi:-4});
+    addLog('Valdivia ingresa al <b style="color:#a54a45">Kominform</b>: disciplina del campo socialista.','#a54a45');
+  }else if(org==='salirKomin'){
+    if(!state.kominform) return;
+    if(!cobrar(10)) return;
+    state.kominform=false;
+    aplicarDx({int:2}); aplicarFa({mar:-8});
+    addLog('Valdivia abandona el <b>Kominform</b>; la prensa de Moscú la llama traidora.','#8a7a4f');
+  }
+  renderAll(); renderSeccion2();
 }
 function renderCronica(){
   var h='';
@@ -902,7 +1017,7 @@ function renderCronica(){
   });
   $('cronGuerra').innerHTML=h;
 }
-function renderSeccion2(){ renderMapa(); renderAlineacion(); renderCronica(); }
+function renderSeccion2(){ renderMapa(); renderAlineacion(); renderOrgs(); renderCronica(); }
 function renderAll(){ renderTop(); renderCongreso(); renderEfectos(); renderCards(); renderLog(); drawSpark(); if(!$('sec2').classList.contains('hidden')) renderSeccion2(); }
 
 /* ================= ALINEACIÓN ================= */
@@ -914,13 +1029,13 @@ function alinear(bloque){
   state.pp-=coste;
   if(bloque==='usa'){
     aplicarDx({int:8,res:10,est:2}); aplicarFa({mar:-10,hay:6,smi:6,key:2});
-    addLog('Valdivia firma el pacto con Washington y se alinea al <b style="color:#4a7fa5">bloque estadounidense</b>. Mar adentro llegan los primeros créditos.','#4a7fa5');
+    addLog('Valdivia firma el pacto con Washington y se alinea al <b style="color:#4a7fa5">bloque estadounidense</b>.','#4a7fa5');
   }else if(bloque==='urss'){
     aplicarDx({int:-6,res:5,soc:2}); aplicarFa({mar:12,key:3,hay:-8,smi:-8});
-    addLog('Valdivia firma acuerdos comerciales con Moscú y se acerca al <b style="color:#a54a45">bloque soviético</b>. Las cancillerías occidentales toman nota.','#a54a45');
+    addLog('Valdivia firma acuerdos con Moscú y se acerca al <b style="color:#a54a45">bloque soviético</b>.','#a54a45');
   }else{
     aplicarDx({int:2}); aplicarFa({key:3});
-    addLog('Valdivia retorna a la <b style="color:#8a7a4f">neutralidad activa</b>: ni Washington ni Moscú.','#8a7a4f');
+    addLog('Valdivia retorna a la <b style="color:#8a7a4f">neutralidad activa</b>.','#8a7a4f');
   }
   state.alineacion=bloque;
   renderAll(); renderSeccion2();
@@ -934,7 +1049,6 @@ function toast(html){
 function addLog(txt,color){ state.log.push({f:fecha(state.mes).toUpperCase(),t:txt,c:color||'#8a7a4f'}); }
 function aplicarDx(dx){ for(var k in dx){ state.stats[k]=clamp(state.stats[k]+dx[k],0,100);} }
 function aplicarFa(fa){ for(var f in fa){ state.support[f]=clamp(state.support[f]+fa[f],5,95);} }
-
 function aplicarGuerra(mesNuevo){
   GUERRA.forEach(function(g){
     if(g.m!==mesNuevo) return;
@@ -944,7 +1058,6 @@ function aplicarGuerra(mesNuevo){
     addLog('🌍 Guerra Fría: <b>'+g.titulo+'</b>.','#d8c48a');
   });
 }
-
 function repartirMano(){
   var disp=DECISIONES.filter(function(d){return state.recientes.indexOf(d.id)<0;});
   for(var i=disp.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=disp[i];disp[i]=disp[j];disp[j]=tmp;}
@@ -976,10 +1089,17 @@ function finDeMes(){
   if(state.stats.res<15) d.est-=0.5;
   var sup=0,cnt=0; for(var f in state.support){sup+=state.support[f];cnt++;} sup/=cnt;
   d.est += sup>55?0.4:(sup<40?-0.4:0);
-  /* efectos pasivos de alineación */
   if(state.alineacion==='usa'){ d.res+=0.3; d.int+=0.2; }
   else if(state.alineacion==='urss'){ d.eco+=0.3; d.int-=0.3; }
   else { d.int+=0.15; }
+  if(state.bretton==='fmi'){ d.res+=0.4; d.soc-=0.15; }
+  else if(state.bretton==='molotov'){ d.eco+=0.4; d.res+=0.2; }
+  if(state.onuVoto==='occ') d.int+=0.2;
+  else if(state.onuVoto==='sov') d.int-=0.1;
+  else d.int+=0.1;
+  if(state.comercio==='gatt'){ d.eco+=0.3; d.res+=0.1; }
+  else if(state.comercio==='comecon'){ d.eco+=0.3; d.res+=0.3; d.int-=0.2; }
+  if(state.kominform){ d.est+=0.2; d.int-=0.3; }
   state.efectos=state.efectos.filter(function(e){
     for(var k in e.d){ d[k]=(d[k]||0)+e.d[k]; }
     e.m--; return e.m>0;
@@ -1036,6 +1156,7 @@ function resolverEvento(idx){
   if(op.dx) aplicarDx(op.dx);
   if(op.fa) aplicarFa(op.fa);
   if(op.pp) state.pp=clamp(state.pp+op.pp,0,150);
+  if(op.esp){ for(var kk in op.esp){ state[kk]=op.esp[kk]; } addLog('El Gobierno ajusta su posición institucional ante los organismos internacionales.','#8a7a4f'); }
   addLog('Ante <b>'+ev.titulo+'</b>, el Gobierno decide: «'+op.t+'».','#d8c48a');
   $('eventOverlay').classList.add('hidden');
   state.bloqueado=false;
@@ -1047,7 +1168,7 @@ function terminar(motivo){
   var s=state.stats;
   var score=Math.round(s.eco*0.25+s.soc*0.25+s.est*0.2+s.int*0.15+s.res*0.15);
   var titulo,texto;
-  if(motivo==='golpe'){ titulo='QUIEBRE INSTITUCIONAL EN VALDIVIA'; texto='La estabilidad colapsó. Tanques en la Plaza de la República y un bando leído al alba en cadena radial: el Congreso queda disuelto, su Gobierno, depuesto. Las cuatro doctrinas deberán esperar tiempos mejores.'; }
+  if(motivo==='golpe'){ titulo='QUIEBRE INSTITUCIONAL EN VALDIVIA'; texto='La estabilidad colapsó. Tanques en la Plaza de la República y un bando leído al alba en cadena radial: el Congreso queda disuelto, su Gobierno, depuesto.'; }
   else if(score>=75){ titulo='EL MILAGRO VALDIVIANO'; texto='Los libros de historia hablarán de usted: la República salió de la posguerra con pulso firme y la bandera vuelve a ondear con orgullo sobre el Calle-Calle.'; }
   else if(score>=58){ titulo='RECUPERACIÓN NOTABLE'; texto='El mandato deja una nación más firme que la que encontró. Quedan deudas y cicatrices, pero los cimientos resisten.'; }
   else if(score>=42){ titulo='UN MANDATO GRIS'; texto='Ni catástrofe ni milagro: Valdivia sobrevivió a su mandato como sobrevive a todo, con paciencia de río.'; }
@@ -1055,8 +1176,9 @@ function terminar(motivo){
   else { titulo='EL HUNDIMIENTO'; texto='Deja una nación en ruinas: las chimeneas frías, las calles en llamas y el nombre de Valdivia borrado de los mercados del mundo.'; }
   var dom=null,max=-1; for(var k in state.support){ if(state.support[k]>max){max=state.support[k];dom=k;} }
   var leg = max>=55? EPILOGOS[dom] : EPILOGOS.neu;
+  var inst = (state.bretton==='fmi'?'FMI':state.bretton==='molotov'?'Plan Mólotov':'—')+' · ONU: '+(state.onuVoto==='occ'?'Occidente':state.onuVoto==='sov'?'Moscú':'Abstención')+' · '+(state.comercio==='gatt'?'GATT/OMC':state.comercio==='comecon'?'COMECON':'—')+(state.kominform?' · Kominform':'');
   $('endTitle').textContent=titulo;
-  $('endScore').textContent='CALIFICACIÓN DEL MANDATO: '+score+' / 100 · MESES GOBERNADOS: '+(motivo==='golpe'?state.mes:TOTAL_MESES)+' · ALINEACIÓN FINAL: '+(state.alineacion==='usa'?'EE.UU.':(state.alineacion==='urss'?'URSS':'NEUTRAL'));
+  $('endScore').textContent='CALIFICACIÓN DEL MANDATO: '+score+' / 100 · MESES GOBERNADOS: '+(motivo==='golpe'?state.mes:TOTAL_MESES)+' · ALINEACIÓN FINAL: '+(state.alineacion==='usa'?'EE.UU.':(state.alineacion==='urss'?'URSS':'NEUTRAL'))+' · INSTITUCIONES: '+inst;
   var es='';
   for(var k2 in STATS){ es+='<div class="endRow"><span class="lb">'+STATS[k2].nombre+'</span><div class="bar"><i style="width:'+s[k2]+'%;background:'+STATS[k2].color+'"></i></div><b>'+Math.round(s[k2])+'</b></div>'; }
   $('endStats').innerHTML=es;
@@ -1081,6 +1203,7 @@ function iniciar(){
   state=nuevoEstado();
   addLog('Jura el Gobierno de Emergencia. Comienza el mandato de 36 meses sobre la República de Valdivia (1945–1947).','#d8c48a');
   addLog('Cuatro doctrinas disputan el hemiciclo mientras el mundo se parte en dos bloques: EE.UU. y la URSS.','#8a7a4f');
+  addLog('Los organismos de la posguerra esperan: FMI, ONU y GATT en Occidente; Plan Mólotov, Kominform y COMECON en Oriente.','#8a7a4f');
   aplicarGuerra(0);
   repartirMano();
   buildMapa();
