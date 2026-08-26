@@ -108,16 +108,14 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .logEntry{margin-bottom:8px;padding-bottom:7px;border-bottom:1px dashed #3a352a}
 .logEntry .ld{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;color:var(--gold2)}
 .logEntry .dot{display:inline-block;width:7px;height:7px;margin-right:5px}
-/* ===== MAPA ===== */
+/* ===== MAPA SOBRE ATLAS 1945 ===== */
 #worldMap{width:100%;height:auto;display:block;border:1px solid #000;border-radius:2px}
-.region{stroke:#0a0906;stroke-width:1.1;cursor:pointer;transition:filter .2s,stroke .2s;filter:drop-shadow(0 1px 1px rgba(0,0,0,.65))}
-.region:hover{filter:brightness(1.35) drop-shadow(0 0 6px rgba(216,196,138,.55));stroke:#d8c48a;stroke-width:1.5}
-.region.val{animation:valPulse 2.4s ease-in-out infinite}
+.region{stroke:#0a0906;stroke-width:1;cursor:pointer;fill-opacity:.55;transition:fill-opacity .2s,stroke .2s;filter:drop-shadow(0 1px 1px rgba(0,0,0,.6))}
+.region:hover{fill-opacity:.88;stroke:#d8c48a;stroke-width:1.5;filter:brightness(1.2) drop-shadow(0 0 6px rgba(216,196,138,.55))}
+.region.val{fill-opacity:.85;animation:valPulse 2.4s ease-in-out infinite}
 @keyframes valPulse{0%,100%{filter:drop-shadow(0 0 2px rgba(200,162,74,.6))}50%{filter:drop-shadow(0 0 8px rgba(200,162,74,.95))}}
-.grat{stroke:#1d2b3d;stroke-width:.5;fill:none;opacity:.55}
-.equator{stroke:#34486a;stroke-width:.7;stroke-dasharray:5 4;opacity:.7}
-.oceanLabel{font-family:'Cinzel',serif;font-size:12px;fill:#27384f;letter-spacing:5px;pointer-events:none;text-anchor:middle}
-.mapLabel{font-family:'Cinzel',serif;font-size:10px;fill:#d8c48a;pointer-events:none;text-anchor:middle;text-shadow:0 1px 2px #000;letter-spacing:1px}
+.oceanLabel{font-family:'Cinzel',serif;font-size:11px;fill:#3d5573;letter-spacing:5px;pointer-events:none;text-anchor:middle;opacity:.8}
+.mapLabel{font-family:'Cinzel',serif;font-size:10px;fill:#e8dcb8;pointer-events:none;text-anchor:middle;text-shadow:0 1px 2px #000,0 0 4px #000;letter-spacing:1px}
 .legendMapa{display:flex;flex-wrap:wrap;gap:9px;padding:8px 10px;font-size:11px;color:var(--dim);border-top:1px solid var(--brass2)}
 .legendMapa i{display:inline-block;width:13px;height:13px;margin-right:4px;vertical-align:-2px;border:1px solid #000}
 #mapTip{position:fixed;z-index:90;background:#26231b;border:1px solid var(--gold2);padding:6px 9px;font-size:12px;pointer-events:none;display:none;max-width:230px;box-shadow:0 4px 12px rgba(0,0,0,.7)}
@@ -242,6 +240,7 @@ button{font-family:'Cinzel',serif;cursor:pointer}
         <span><i style="background:#77778a"></i>Occupada</span>
         <span><i style="background:#c8a24a"></i>Valdivia</span>
       </div>
+      <div style="padding:0 10px 8px;font-size:10px;color:var(--dim);font-style:italic">Base cartográfica: atlas de 1945 · los tintes semitransparentes indican el bloque hegemónico de cada territorio.</div>
     </div>
     <div id="regInfo" style="padding:8px 12px;border-top:1px solid var(--brass2);font-size:12.5px;min-height:46px">Pase el cursor sobre el mapa y haga clic en una región para ver su situación en la Guerra Fría.</div>
   </div>
@@ -289,13 +288,11 @@ button{font-family:'Cinzel',serif;cursor:pointer}
           <p>La República de Valdivia arde en silencio: tras la Gran Depresión y la guerra mundial, la inflación devora los salarios, la deuda externa asfixia al fisco y las calles hierven. El viejo presidente ha caído y usted asume el <b style="color:var(--gold)">Gobierno de Emergencia</b> con un mandato de <b style="color:var(--gold)">36 meses</b> (enero 1945 – diciembre 1947).</p>
           <p>Mientras tanto, el mundo se parte en dos: Washington y Moscú disputan cada palmo de la posguerra. Cada mes de su mandato coincide con un mes real de la Guerra Fría; sus decisiones diplomáticas traerán ayudas o sanciones, créditos o boicots.</p>
           <div id="introFactions"></div>
-          <div class="rules"><b>CÓMO SE JUEGA:</b> en la <b>Sección I</b> apruebe 3 paquetes mensuales de un mazo de <b>66 medidas</b> y enfrente <b>más de 50 problemáticas</b>. En la <b>Sección II</b>, el mapa mundial (1945–47) muestra el avance de los dos bloques con fronteras reconocibles; defina la <b>alineación</b> de Valdivia y su ingreso a los organismos: <b>FMI ↔ Plan Mólotov</b>, voto en la <b>ONU ↔ Kominform</b>, y <b>GATT/OMC ↔ COMECON</b>. Si la <b>Estabilidad</b> llega a 0, habrá un quiebre institucional.</div>
+          <div class="rules"><b>CÓMO SE JUEGA:</b> en la <b>Sección I</b> apruebe 3 paquetes mensuales de un mazo de <b>66 medidas</b> y enfrente <b>más de 50 problemáticas</b>. En la <b>Sección II</b>, el mapamundi de 1945 muestra el avance de los dos bloques sobre la geografía real; defina la <b>alineación</b> de Valdivia y su ingreso a los organismos: <b>FMI ↔ Plan Mólotov</b>, voto en la <b>ONU ↔ Kominform</b>, y <b>GATT/OMC ↔ COMECON</b>. Si la <b>Estabilidad</b> llega a 0, habrá un quiebre institucional.</div>
         </div>
         <div style="text-align:center;display:flex;flex-direction:column;justify-content:center;gap:12px">
-          <img class="introImg" src="https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/150a92947-2df8-40f7-a882-d7c0d3d66021.png" alt="El Congreso de Valdivia, 1945">
-          <div class="introImgCap">El Palacio Legislativo bajo las velas de la protesta, enero de 1945.</div>
-          <img class="introImg" src="https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1a22c8d33-b5f2-4798-b2d1-6d6fab54cbf3.png" alt="Alegoría de la República en crisis" style="max-height:190px;object-fit:cover">
-          <div class="introImgCap">Alegoría de la República en crisis: justicia, educación, agua y tierra.</div>
+          <img class="introImg" src="https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1a9a098f1-73be-4cdf-a2bb-d4de89b26f24.png" alt="Mapamundi de 1945">
+          <div class="introImgCap">El mundo al inicio del mandato: enero de 1945.</div>
           <button class="btn" id="startBtn" type="button" style="font-size:14px;padding:12px">Asumir el Mandato</button>
         </div>
       </div>
@@ -308,7 +305,7 @@ button{font-family:'Cinzel',serif;cursor:pointer}
     <div class="banner"><span>MANUAL DE GOBIERNO</span><b>REGLAS DE LA PARTIDA</b></div>
     <div class="body">
       <p><b style="color:var(--gold)">Sección I — Congreso:</b> cada mes, 3 paquetes de políticas (66 en el mazo). Aprobar cuesta Capital Político; postergar da +12 CP pero −2 Estabilidad. Los bloques hostiles sabotean; se necesitan 101 escaños leales.</p>
-      <p><b style="color:var(--gold)">Sección II — Guerra Fría:</b> el mapa sigue los hechos reales de 1945–47 con fronteras reconocibles; cada mes del juego equivale a un mes real del período.</p>
+      <p><b style="color:var(--gold)">Sección II — Guerra Fría:</b> el mapa usa un atlas de 1945 como base; los polígonos tintados sobre él muestran los cambios hegemónicos mes a mes. Cada mes del juego equivale a un mes real del período.</p>
       <p><b style="color:var(--gold)">Alineación:</b> con EE.UU. recibe +Reservas y +Prestigio cada mes; con la URSS gana comercio (+Economía) pero sufre aislamiento occidental (−Prestigio); neutral otorga prestigio diplomático modesto.</p>
       <p><b style="color:var(--gold)">Organismos internacionales:</b> FMI frente al Plan Mólotov; voto en la ONU; GATT/OMC frente al COMECON; y el Kominform para alineados con Moscú. Las membresías occidental y oriental del mismo eje se excluyen.</p>
       <p><b style="color:var(--gold)">Fin:</b> al cabo de 36 meses (o antes si la Estabilidad colapsa), el Congreso juzga su mandato y el legado doctrinario dominante.</p>
@@ -334,6 +331,7 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 
 <script>
 /* ================= DATOS BASE ================= */
+var MAPA_BASE='https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1a9a098f1-73be-4cdf-a2bb-d4de89b26f24.png';
 var IMG = {
   key:'https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/12d26f302-8b92-4b84-a609-573ad14f9df5.png',
   mar:'https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/160c2b307-e7bd-4156-8a82-5eb660cad115.png',
@@ -413,41 +411,39 @@ var GUERRA=[
  {m:35,titulo:'Balance de la posguerra',texto:'Europa partida, Alemania partida, Asia en llamas: la Guerra Fría será larga. El veredicto del mandato, en el Congreso.',tipo:'mundo',foco:'mundo'}
 ];
 
-/* ================= MAPA: REGIONES (mapamundi 1000x520) ================= */
-/* Proyección equirectangular aproximada: x=(lon+180)*2.778, y=(90-lat)*2.889 */
+/* ================= MAPA: POLÍGONOS CALIBRADOS SOBRE EL ATLAS DE 1945 ================= */
 var REGIONES=[
- {id:'gro',nombre:'Groenlandia',b:'usa',nota:'Bases árticas estadounidenses desde 1941.',d:'M320 86 L302 60 L312 34 L342 18 L392 13 L442 20 L466 42 L454 68 L418 82 L388 92 L352 94 Z'},
- {id:'can',nombre:'Canadá',b:'usa',nota:'Fiel a Washington; base del espionaje aliado.',d:'M108 62 L150 50 L202 44 L254 42 L302 44 L338 50 L356 66 L336 82 L300 76 L264 76 L248 94 L254 110 L272 116 L292 108 L306 116 L332 122 L352 132 L358 148 L330 150 L317 130 L292 124 L236 118 L150 118 L136 100 L120 80 Z',lx:238,ly:92,lb:'CANADÁ'},
- {id:'usa',nombre:'Estados Unidos',b:'usa',nota:'Potencia atómica e industrial; arquitecto de la contención.',d:'M150 118 L236 118 L292 124 L317 130 L308 140 L298 152 L290 164 L284 176 L278 186 L286 190 L284 202 L272 198 L256 194 L240 192 L226 190 L210 196 L200 204 L186 196 L172 168 L162 152 L156 134 Z M30 92 L48 78 L64 70 L88 66 L106 60 L112 74 L100 84 L84 90 L60 94 L40 99 Z',lx:236,ly:160,lb:'EE.UU.'},
- {id:'mex',nombre:'México y Centroamérica',b:'usa',nota:'Esfera estadounidense; sede de Chapultepec (1945).',d:'M170 166 L178 180 L184 196 L190 188 L196 174 L210 172 L228 180 L242 190 L250 202 L252 214 L258 210 L268 206 L272 216 L262 222 L252 228 L244 234 L250 240 L258 242 L264 246 L270 250 L278 254 L284 258 L278 262 L270 258 L262 252 L254 246 L246 244 L238 236 L232 224 L220 210 L206 198 L192 188 L180 180 L170 172 Z'},
- {id:'car',nombre:'El Caribe',b:'usa',nota:'Lago estadounidense; azúcar, bases y marines.',d:'M266 196 L288 191 L296 195 L287 201 L268 201 Z M298 203 L312 202 L314 207 L300 208 Z M318 208 L326 207 L327 210 L319 211 Z'},
- {id:'sud',nombre:'América del Sur',b:'usa',nota:'La esfera interamericana; Washington vigila cualquier guiño a Moscú.',d:'M284 250 L292 238 L300 230 L312 224 L326 221 L342 226 L358 234 L374 244 L390 252 L402 262 L408 278 L400 294 L390 310 L382 326 L372 338 L360 350 L350 356 L340 360 L332 372 L324 388 L317 402 L312 414 L305 408 L301 392 L299 372 L298 352 L299 330 L301 310 L303 292 L296 282 L286 272 L278 264 Z',lx:352,ly:300,lb:'AMÉRICA DEL SUR'},
- {id:'val',nombre:'REPÚBLICA DE VALDIVIA',b:'val',nota:'Su nación. Defina la alineación y membresías en el panel derecho.',d:'M297 366 L313 364 L316 378 L310 392 L300 390 L296 378 Z',lx:306,ly:404,lb:'VALDIVIA'},
- {id:'uk',nombre:'Reino Unido',b:'usa',nota:'Aliado atlántico; agotado pero firme frente a Moscú.',d:'M488 92 L498 88 L504 96 L502 110 L496 118 L490 112 L486 100 Z M476 102 L484 100 L485 108 L478 110 Z'},
- {id:'esc',nombre:'Escandinavia',b:'neutral',nota:'Entre los dos bloques; Finlandia bajo la sombra soviética.',d:'M520 56 L540 48 L560 50 L576 58 L580 70 L570 84 L560 96 L548 102 L536 96 L528 84 L522 70 Z M522 108 L530 106 L531 112 L523 113 Z'},
- {id:'esp',nombre:'Península Ibérica',b:'neutral',nota:'Dictaduras neutrales; ni la ONU ni Moscú las quieren.',d:'M474 134 L492 128 L506 132 L510 142 L504 152 L490 156 L476 152 L470 142 Z'},
- {id:'eur',nombre:'Europa Occidental',b:'usa',nota:'Francia, Benelux y los Alpes: reconstrucción bajo el paraguas de Washington.',d:'M486 114 L502 110 L514 114 L518 124 L512 132 L500 134 L488 130 L482 122 Z M516 104 L532 100 L540 106 L542 116 L536 122 L524 124 L516 118 L514 110 Z'},
- {id:'ale',nombre:'Alemania',b:'ocupada',nota:'Dividida en zonas de ocupación; el futuro de Europa se decide aquí.',d:'M520 106 L532 104 L534 116 L524 120 L518 114 Z',lx:522,ly:100,lb:'ALEMANIA'},
- {id:'ita',nombre:'Italia',b:'contested',nota:'Democracia frágil con el partido comunista más fuerte de Occidente.',d:'M520 126 L530 122 L536 130 L540 142 L546 152 L542 156 L534 148 L528 138 L522 130 Z M536 158 L544 157 L545 161 L537 162 Z M524 146 L529 145 L530 152 L525 153 Z'},
- {id:'bal',nombre:'Balcanes',b:'urss',nota:'Yugoslavia partisana y Albania roja; Grecia resiste.',d:'M542 124 L556 122 L566 128 L570 138 L566 148 L558 152 L550 146 L544 136 Z M556 158 L566 157 L567 160 L557 161 Z'},
- {id:'euror',nombre:'Europa Oriental',b:'urss',nota:'Polonia, Hungría, Rumanía, Checoslovaquia y los Balcanes del norte: la órbita soviética.',d:'M544 94 L562 90 L580 94 L586 104 L584 118 L576 126 L562 128 L550 122 L544 110 Z'},
- {id:'fin',nombre:'Finlandia',b:'neutral',nota:'Independiente bajo la sombra de Moscú: "finlandización".',d:'M560 45 L574 42 L580 54 L572 62 L562 58 Z'},
- {id:'urss',nombre:'Unión Soviética',b:'urss',nota:'La potencia roja: 27 millones de muertos y un imperio nuevo.',d:'M576 48 L640 38 L720 34 L820 33 L920 36 L996 42 L1000 70 L985 95 L950 112 L900 120 L850 122 L800 120 L740 116 L680 112 L630 108 L595 100 L580 82 L574 62 Z M960 70 L975 62 L985 70 L978 82 L966 80 Z',lx:780,ly:76,lb:'U.R.S.S.'},
- {id:'tur',nombre:'Turquía',b:'neutral',tn:19,tc:'contested',nota:'Ankara resiste el ultimátum soviético por los Estrechos.',d:'M576 140 L600 136 L622 139 L624 148 L614 155 L594 156 L578 150 Z'},
- {id:'ira',nombre:'Irán',b:'contested',tn:16,tc:'neutral',nota:'Tropas soviéticas ocupan el norte; crisis en la ONU (1946).',d:'M624 150 L650 146 L672 152 L676 168 L668 182 L648 186 L630 178 L624 164 Z'},
- {id:'orm',nombre:'Oriente Medio',b:'neutral',nota:'Petróleo, mandatos británicos y la cuestión de Palestina.',d:'M600 162 L630 158 L660 164 L668 180 L660 200 L640 218 L618 224 L602 210 L596 188 L594 172 Z'},
- {id:'egip',nombre:'Egipto',b:'neutral',nota:'Bajo influencia británica; el nacionalismo hierve en el Nilo.',d:'M572 170 L592 168 L596 180 L592 194 L576 196 L570 184 Z'},
- {id:'lib',nombre:'Libia',b:'neutral',tn:10,tc:'contested',nota:'Moscú exige tutela sobre Tripolitania; Roma la reclama.',d:'M528 168 L552 164 L568 168 L566 184 L556 200 L536 202 L526 188 Z'},
- {id:'nafr',nombre:'Norte de África',b:'usa',nota:'Colonias francesas y británicas de la guerra recién terminada.',d:'M476 158 L500 154 L524 158 L528 168 L518 178 L496 180 L478 174 L470 166 Z'},
- {id:'aoc',nombre:'África Occidental',b:'usa',nota:'Colonias británicas y francesas; cacao y cacahuate para la reconstrucción.',d:'M456 184 L490 180 L524 184 L536 196 L532 216 L520 236 L500 246 L478 242 L462 224 L454 202 Z'},
- {id:'aor',nombre:'África Central y Oriental',b:'usa',nota:'Imperios coloniales intactos; Etiopía vigila el Cuerno.',d:'M544 218 L580 214 L620 218 L640 230 L636 254 L620 276 L596 290 L570 288 L552 272 L544 248 Z M618 320 L626 316 L630 330 L624 340 L618 332 Z'},
- {id:'suda',nombre:'África Austral',b:'neutral',nota:'Dominio de la Unión Sudafricana; la mina de oro del imperio.',d:'M540 296 L576 292 L604 298 L610 318 L602 340 L584 354 L562 356 L546 344 L538 320 Z'},
- {id:'ind',nombre:'India',b:'neutral',nota:'Camino a la independencia; Gandhi y Nehru miran a ambos bandos.',d:'M672 160 L700 154 L730 158 L748 168 L750 186 L738 208 L724 228 L712 242 L702 232 L696 210 L688 190 L678 174 Z M724 246 L730 244 L731 250 L725 251 Z',lx:712,ly:200,lb:'INDIA'},
- {id:'chi',nombre:'China',b:'contested',nota:'Nacionalistas y comunistas: la guerra civil decidirá Asia.',d:'M710 130 L760 118 L820 114 L860 120 L872 132 L866 152 L848 170 L820 182 L790 190 L760 194 L736 186 L720 170 L710 150 Z',lx:790,ly:152,lb:'CHINA'},
- {id:'cor',nombre:'Corea',b:'contested',tn:8,nota:'Dividida en el paralelo 38 desde agosto de 1945.',d:'M846 138 L856 134 L860 144 L856 156 L850 160 L845 150 Z'},
- {id:'jap',nombre:'Japón',b:'contested',tn:8,tc:'usa',nota:'Bajo ocupación del general MacArthur desde septiembre de 1945.',d:'M866 134 L880 128 L892 136 L900 150 L896 162 L884 168 L872 160 L866 146 Z M892 126 L902 124 L904 132 L894 134 Z'},
- {id:'sea',nombre:'Sudeste Asiático',b:'usa',tn:23,tc:'contested',nota:'Indochina francesa; Ho Chi Minh desafía a París.',d:'M756 200 L780 196 L800 204 L806 220 L800 238 L792 252 L784 268 L778 278 L772 268 L768 250 L762 232 L756 216 Z M764 262 L780 256 L792 266 L786 278 L772 274 Z M790 282 L816 280 L820 285 L794 287 Z M806 246 L824 242 L830 256 L820 266 L808 260 Z'},
- {id:'aus',nombre:'Australia y Oceanía',b:'usa',nota:'Aliado del Pacífico; vigila el avance rojo en Asia.',d:'M820 300 L860 292 L900 296 L922 310 L926 332 L916 354 L892 366 L862 370 L836 362 L820 344 L814 322 Z M944 356 L952 350 L956 362 L950 374 L944 368 Z',lx:870,ly:332,lb:'AUSTRALIA'}
+ {id:'gro',nombre:'Groenlandia',b:'usa',nota:'Bases árticas estadounidenses desde 1941.',d:'M360 148 L352 128 L362 112 L385 105 L415 108 L430 120 L424 138 L400 148 L378 152 Z'},
+ {id:'can',nombre:'Canadá',b:'usa',nota:'Fiel a Washington; base del espionaje aliado.',d:'M103 150 L150 138 L200 128 L250 120 L293 117 L330 128 L342 150 L320 158 L300 152 L293 165 L300 175 L320 172 L342 168 L345 178 L320 180 L300 176 L270 175 L244 175 L180 175 L160 165 L130 158 Z',lx:240,ly:150,lb:'CANADÁ'},
+ {id:'usa',nombre:'Estados Unidos',b:'usa',nota:'Potencia atómica e industrial; arquitecto de la contención.',d:'M180 175 L244 175 L270 176 L300 178 L320 180 L310 190 L300 200 L293 211 L285 214 L275 210 L264 213 L240 205 L220 200 L195 193 L185 185 Z M59 152 L80 140 L100 138 L103 150 L95 158 L75 160 Z',lx:245,ly:192,lb:'EE.UU.'},
+ {id:'mex',nombre:'México y Centroamérica',b:'usa',nota:'Esfera estadounidense; sede de Chapultepec (1945).',d:'M195 193 L220 200 L240 205 L264 213 L270 222 L268 232 L278 228 L285 235 L278 242 L270 246 L280 250 L290 254 L293 258 L298 262 L292 266 L284 260 L275 252 L265 244 L250 232 L230 220 L210 208 Z'},
+ {id:'car',nombre:'El Caribe',b:'usa',nota:'Lago estadounidense; azúcar, bases y marines.',d:'M272 218 L292 214 L300 218 L290 223 L275 223 Z M302 222 L315 221 L317 226 L304 227 Z'},
+ {id:'sud',nombre:'América del Sur',b:'usa',nota:'La esfera interamericana; Washington vigila cualquier guiño a Moscú.',d:'M288 257 L296 250 L305 248 L320 250 L335 254 L350 262 L365 270 L381 277 L375 292 L365 302 L357 310 L345 322 L332 330 L322 332 L318 344 L315 355 L313 361 L307 355 L303 342 L300 330 L297 318 L295 305 L293 292 L288 284 L283 276 L281 266 Z',lx:340,ly:300,lb:'AMÉRICA DEL SUR'},
+ {id:'val',nombre:'REPÚBLICA DE VALDIVIA',b:'val',nota:'Su nación. Defina la alineación y membresías en el panel derecho.',d:'M295 318 L308 316 L311 328 L305 340 L297 338 L293 328 Z',lx:302,ly:354,lb:'VALDIVIA'},
+ {id:'uk',nombre:'Reino Unido',b:'usa',nota:'Aliado atlántico; agotado pero firme frente a Moscú.',d:'M474 143 L482 138 L487 146 L485 156 L479 160 L474 152 Z M466 150 L472 148 L473 155 L467 156 Z'},
+ {id:'esc',nombre:'Escandinavia',b:'neutral',nota:'Entre los dos bloques; Finlandia bajo la sombra soviética.',d:'M505 128 L520 120 L535 122 L545 130 L540 142 L528 150 L516 148 L508 138 Z M545 122 L556 118 L560 128 L552 134 Z'},
+ {id:'esp',nombre:'Península Ibérica',b:'neutral',nota:'Dictaduras neutrales; ni la ONU ni Moscú las quieren.',d:'M455 172 L470 168 L480 172 L478 180 L466 184 L456 180 Z'},
+ {id:'eur',nombre:'Europa Occidental',b:'usa',nota:'Francia, Benelux y los Alpes: reconstrucción bajo el paraguas de Washington.',d:'M482 160 L495 156 L505 158 L508 166 L500 172 L488 172 L482 166 Z M505 150 L518 148 L522 156 L516 162 L506 160 Z'},
+ {id:'ale',nombre:'Alemania',b:'ocupada',nota:'Dividida en zonas de ocupación; el futuro de Europa se decide aquí.',d:'M508 150 L518 148 L521 156 L514 161 L507 158 Z',lx:513,ly:145,lb:'ALEMANIA'},
+ {id:'ita',nombre:'Italia',b:'contested',nota:'Democracia frágil con el partido comunista más fuerte de Occidente.',d:'M512 168 L520 164 L526 174 L530 182 L526 186 L518 178 L512 172 Z M524 188 L532 187 L533 191 L525 192 Z'},
+ {id:'bal',nombre:'Balcanes',b:'urss',nota:'Yugoslavia partisana y Albania roja; Grecia resiste.',d:'M528 166 L540 164 L548 170 L546 178 L538 182 L530 176 Z M540 186 L550 185 L551 188 L541 189 Z'},
+ {id:'euror',nombre:'Europa Oriental',b:'urss',nota:'Polonia, Hungría, Rumanía y Checoslovaquia: la órbita soviética.',d:'M522 146 L540 142 L555 146 L558 154 L550 162 L536 162 L526 156 Z'},
+ {id:'urss',nombre:'Unión Soviética',b:'urss',nota:'La potencia roja: 27 millones de muertos y un imperio nuevo.',d:'M558 140 L600 130 L660 124 L740 120 L830 122 L900 128 L940 138 L930 152 L880 158 L820 160 L760 158 L700 156 L650 154 L610 152 L580 150 L562 148 Z',lx:750,ly:140,lb:'U.R.S.S.'},
+ {id:'tur',nombre:'Turquía',b:'neutral',tn:19,tc:'contested',nota:'Ankara resiste el ultimátum soviético por los Estrechos.',d:'M550 176 L570 172 L585 175 L586 182 L575 186 L558 186 L550 182 Z'},
+ {id:'ira',nombre:'Irán',b:'contested',tn:16,tc:'neutral',nota:'Tropas soviéticas ocupan el norte; crisis en la ONU (1946).',d:'M588 178 L610 174 L628 178 L630 190 L620 198 L602 196 L590 188 Z'},
+ {id:'orm',nombre:'Oriente Medio',b:'neutral',nota:'Petróleo, mandatos británicos y la cuestión de Palestina.',d:'M560 190 L585 188 L605 194 L610 205 L598 218 L580 224 L566 214 L558 200 Z'},
+ {id:'egip',nombre:'Egipto',b:'neutral',nota:'Bajo influencia británica; el nacionalismo hierve en el Nilo.',d:'M538 200 L556 198 L560 208 L556 218 L542 218 L536 208 Z'},
+ {id:'lib',nombre:'Libia',b:'neutral',tn:10,tc:'contested',nota:'Moscú exige tutela sobre Tripolitania; Roma la reclama.',d:'M508 198 L530 196 L536 204 L532 216 L516 220 L506 210 Z'},
+ {id:'nafr',nombre:'Norte de África',b:'usa',nota:'Colonias francesas y británicas de la guerra recién terminada.',d:'M452 196 L475 192 L498 196 L504 204 L494 212 L472 214 L456 208 L448 202 Z'},
+ {id:'aoc',nombre:'África Occidental',b:'usa',nota:'Colonias británicas y francesas; cacao y cacahuate para la reconstrucción.',d:'M448 218 L475 214 L500 218 L508 228 L504 244 L492 258 L475 262 L458 250 L448 234 Z'},
+ {id:'aor',nombre:'África Central y Oriental',b:'usa',nota:'Imperios coloniales intactos; Etiopía vigila el Cuerno.',d:'M510 222 L540 218 L570 224 L586 236 L580 254 L565 270 L545 278 L525 270 L512 250 Z M592 292 L600 288 L604 300 L598 308 L592 302 Z'},
+ {id:'suda',nombre:'África Austral',b:'neutral',nota:'Dominio de la Unión Sudafricana; la mina de oro del imperio.',d:'M520 282 L548 278 L570 284 L575 300 L566 316 L548 324 L530 318 L520 300 Z'},
+ {id:'ind',nombre:'India',b:'neutral',nota:'Camino a la independencia; Gandhi y Nehru miran a ambos bandos.',d:'M668 200 L690 196 L708 202 L712 214 L702 228 L690 240 L682 232 L676 216 Z M690 244 L695 242 L696 248 L691 249 Z',lx:690,ly:220,lb:'INDIA'},
+ {id:'chi',nombre:'China',b:'contested',nota:'Nacionalistas y comunistas: la guerra civil decidirá Asia.',d:'M700 168 L740 160 L780 162 L800 170 L798 182 L782 192 L760 198 L735 198 L715 190 L703 180 Z',lx:750,ly:180,lb:'CHINA'},
+ {id:'cor',nombre:'Corea',b:'contested',tn:8,nota:'Dividida en el paralelo 38 desde agosto de 1945.',d:'M800 172 L808 168 L812 176 L808 184 L802 182 Z'},
+ {id:'jap',nombre:'Japón',b:'contested',tn:8,tc:'usa',nota:'Bajo ocupación del general MacArthur desde septiembre de 1945.',d:'M820 168 L832 162 L840 170 L844 180 L838 188 L828 184 L822 176 Z'},
+ {id:'sea',nombre:'Sudeste Asiático',b:'usa',tn:23,tc:'contested',nota:'Indochina francesa; Ho Chi Minh desafía a París.',d:'M740 200 L760 196 L775 204 L780 216 L774 228 L766 240 L758 248 L752 240 L748 226 L742 212 Z M756 252 L775 248 L788 256 L782 266 L766 262 Z M782 236 L798 232 L804 244 L794 252 L784 246 Z'},
+ {id:'aus',nombre:'Australia y Oceanía',b:'usa',nota:'Aliado del Pacífico; vigila el avance rojo en Asia.',d:'M782 292 L820 286 L855 290 L872 302 L874 318 L862 332 L838 338 L812 334 L792 322 L780 306 Z M905 330 L912 326 L916 336 L910 344 Z',lx:828,ly:312,lb:'AUSTRALIA'}
 ];
 function bloqueDe(r,mes){
   if(r.id==='val'){ return state.alineacion==='usa'?'usa':(state.alineacion==='urss'?'urss':'val'); }
@@ -855,27 +851,20 @@ function drawSpark(){
   $('legend').innerHTML=lg;
 }
 
-/* ================= RENDER SECCIÓN 2: MAPA ================= */
+/* ================= RENDER SECCIÓN 2: MAPA SOBRE ATLAS ================= */
 function buildMapa(){
   var svg='<defs>';
-  svg+='<radialGradient id="ocean" cx="50%" cy="45%" r="75%">';
-  svg+='<stop offset="0%" stop-color="#152232"/><stop offset="70%" stop-color="#0e1826"/><stop offset="100%" stop-color="#0a1119"/>';
-  svg+='</radialGradient>';
   svg+='<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">';
   svg+='<rect width="6" height="6" fill="#8a6a2f"/><line x1="0" y1="0" x2="0" y2="6" stroke="#3a2f1a" stroke-width="3"/>';
   svg+='</pattern></defs>';
-  svg+='<rect x="0" y="0" width="1000" height="520" fill="url(#ocean)"/>';
-  // graticule
-  var g='';
-  for(var gx=100;gx<1000;gx+=100){ g+='M'+gx+' 0 L'+gx+' 520 '; }
-  for(var gy=65;gy<520;gy+=65){ g+='M0 '+gy+' L1000 '+gy+' '; }
-  svg+='<path class="grat" d="'+g+'"/>';
-  svg+='<line class="equator" x1="0" y1="260" x2="1000" y2="260"/>';
-  // ocean labels
-  svg+='<text class="oceanLabel" x="150" y="300">OCÉANO PACÍFICO</text>';
-  svg+='<text class="oceanLabel" x="440" y="330">OCÉANO ATLÁNTICO</text>';
-  svg+='<text class="oceanLabel" x="700" y="330">OCÉANO ÍNDICO</text>';
-  // regions (Valdivia drawn after Sudamérica so it sits on top)
+  /* Capa base: mapamundi de 1945 */
+  svg+='<image href="'+MAPA_BASE+'" x="0" y="0" width="1000" height="520" preserveAspectRatio="none" style="filter:brightness(.68) saturate(.85) sepia(.12)"/>';
+  svg+='<rect x="0" y="0" width="1000" height="520" fill="#0a1018" opacity="0.22"/>';
+  /* Rótulos oceánicos */
+  svg+='<text class="oceanLabel" x="120" y="255">OCÉANO PACÍFICO</text>';
+  svg+='<text class="oceanLabel" x="420" y="245">OCÉANO ATLÁNTICO</text>';
+  svg+='<text class="oceanLabel" x="660" y="295">OCÉANO ÍNDICO</text>';
+  /* Polígonos tintados sobre el atlas (Valdivia al final, encima) */
   var order = REGIONES.slice().sort(function(a,b){ return (a.id==='val'?1:0)-(b.id==='val'?1:0); });
   order.forEach(function(r){
     var cls='region'+(r.id==='val'?' val':'');
