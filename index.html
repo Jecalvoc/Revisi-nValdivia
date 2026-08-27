@@ -67,7 +67,7 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .stat .sbar{height:4px;background:#12100c;margin-top:3px;border:1px solid #000}
 .stat .sbar i{display:block;height:100%;transition:width .5s}
 .stat .trend{position:absolute;top:3px;right:6px;font-size:9px;font-style:normal}
-#sec1{position:relative;z-index:4;display:grid;grid-template-columns:305px 1fr 305px;gap:10px;padding:10px;height:calc(100vh - 64px)}
+#sec1,#sec3{position:relative;z-index:4;display:grid;grid-template-columns:305px 1fr 305px;gap:10px;padding:10px;height:calc(100vh - 64px)}
 .col{display:flex;flex-direction:column;gap:10px;min-height:0}
 .scroll{overflow-y:auto;min-height:0}
 #seatsBar{display:flex;height:20px;border:1px solid #000;box-shadow:0 0 0 1px var(--brass2);margin:10px}
@@ -111,7 +111,34 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .logEntry{margin-bottom:8px;padding-bottom:7px;border-bottom:1px dashed #3a352a}
 .logEntry .ld{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;color:var(--gold2)}
 .logEntry .dot{display:inline-block;width:7px;height:7px;margin-right:5px}
-/* ============ SECCIÓN 2 — ESTILO HOI4 ============ */
+/* ===== SECCIÓN ECONOMÍA ===== */
+.secHead{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--gold);margin:12px 0 6px;text-transform:uppercase;border-bottom:1px dashed #3a352a;padding-bottom:3px}
+.resRow{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #2c2a24;font-size:12px}
+.resRow .rn{display:flex;align-items:center;gap:7px}
+.resRow .rdot{width:9px;height:9px;border-radius:50%;border:1px solid rgba(0,0,0,.5)}
+.resRow .rv{display:flex;gap:12px;font-family:'Oswald',sans-serif;font-size:11px;color:var(--dim)}
+.resRow .rv b{color:var(--ink);font-weight:500}
+.indRow{margin-bottom:9px}
+.indRow .lbl{display:flex;justify-content:space-between;font-size:11px;color:var(--dim);margin-bottom:3px}
+.indRow .lbl b{color:var(--ink)}
+.indRow .bar{height:8px;background:#12100c;border:1px solid #000}
+.indRow .bar i{display:block;height:100%;transition:width .4s}
+.projCard{background:#1f1d18;border:1px solid var(--brass2);padding:9px;margin-bottom:8px}
+.projCard.built{border-color:var(--gold);background:#2a271c}
+.projCard h4{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:.5px}
+.projCard p{font-size:11px;color:var(--dim);margin:4px 0;line-height:1.4;font-style:italic}
+.projCard .prow{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.projCard .cost{font-size:10px;color:var(--dim)}
+.projCard .ok{font-size:11px;color:var(--pos);font-family:'Oswald',sans-serif;letter-spacing:1px}
+.tradeBtn{flex:1;min-width:84px;background:linear-gradient(#3a362b,#2c2920);border:1px solid var(--brass2);color:var(--ink);padding:8px 6px;font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .15s}
+.tradeBtn:hover{border-color:var(--gold2)}
+.tradeBtn.sel{border-color:var(--gold);color:var(--gold);box-shadow:0 0 6px rgba(216,196,138,.3)}
+.balRow{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #2c2a24;font-size:12px}
+.balRow b{font-family:'Oswald',sans-serif;font-weight:500}
+.flowChip{display:inline-block;font-size:10px;border:1px solid var(--brass2);background:#1c1a14;padding:3px 7px;margin:2px;color:var(--dim)}
+.flowChip b{color:var(--ink)}
+input[type=range]{accent-color:var(--gold2);width:100%}
+/* ===== SECCIÓN 2 — ESTILO HOI4 ===== */
 .hoiPanel{background:linear-gradient(var(--steel),var(--steel2));border:1px solid var(--steelEdge);box-shadow:inset 0 0 0 1px #141414,0 3px 10px rgba(0,0,0,.6)}
 .hoiTitleBar{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:2px;color:#d8c48a;background:linear-gradient(#4a463c,#2f2c26);border-bottom:1px solid #141414;padding:6px 10px;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;text-shadow:0 1px 2px #000}
 #sec2{position:relative;z-index:4;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:8px;padding:8px;height:calc(100vh - 64px)}
@@ -208,8 +235,8 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .endRow b{width:30px;text-align:right;font-family:'Cinzel',serif}
 #endTitle{font-size:22px;letter-spacing:4px;color:var(--gold);text-align:center;text-shadow:0 2px 6px #000}
 #endScore{font-family:'Cinzel',serif;text-align:center;font-size:13px;color:var(--dim);letter-spacing:2px;margin-top:4px}
-@media(max-width:1200px){#statsRow{gap:4px}.stat{width:96px}#sec2{grid-template-rows:auto auto auto;height:auto;overflow-y:auto}#hoiMid{grid-template-columns:48px minmax(0,1fr)}}
-@media(max-width:900px){body{overflow:auto}#sec1{grid-template-columns:1fr;height:auto}#statsRow{flex-wrap:wrap}#introGrid{grid-template-columns:1fr}#cards{grid-template-columns:1fr}#hoiMid{grid-template-columns:1fr}}
+@media(max-width:1200px){#statsRow{gap:4px}.stat{width:96px}#sec2{grid-template-rows:auto auto auto;height:auto;overflow-y:auto}#sec1,#sec3{height:auto;overflow-y:auto;grid-template-columns:280px 1fr}#hoiMid{grid-template-columns:48px minmax(0,1fr)}}
+@media(max-width:900px){body{overflow:auto}#sec1,#sec3{grid-template-columns:1fr}#statsRow{flex-wrap:wrap}#introGrid{grid-template-columns:1fr}#cards{grid-template-columns:1fr}#hoiMid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -220,7 +247,8 @@ button{font-family:'Cinzel',serif;cursor:pointer}
   <div id="natTitle"><b>REPÚBLICA DE VALDIVIA</b><span>Gobierno de Emergencia Nacional · Congreso Único</span></div>
   <div id="tabs">
     <button class="tab active" id="tab1" type="button">I · Congreso</button>
-    <button class="tab" id="tab2" type="button">II · Guerra Fría 1945–47</button>
+    <button class="tab" id="tab2" type="button">II · Guerra Fría</button>
+    <button class="tab" id="tab3" type="button">III · Economía</button>
   </div>
   <div id="dateBox"><b id="dateLabel">Enero 1945</b><span id="monthLabel">MES 1 / 36 DEL MANDATO</span></div>
   <div id="alinChip">Alineación: Neutral</div>
@@ -229,6 +257,7 @@ button{font-family:'Cinzel',serif;cursor:pointer}
   <button class="btn" id="helpBtn" type="button">Manual</button>
 </div>
 
+<!-- ============ SECCIÓN 1 ============ -->
 <div id="sec1">
   <div class="col">
     <div class="panel">
@@ -266,6 +295,7 @@ button{font-family:'Cinzel',serif;cursor:pointer}
   </div>
 </div>
 
+<!-- ============ SECCIÓN 2 ============ -->
 <div id="sec2" class="hidden">
   <div id="hoiTop">
     <img class="hoiFlag" src="https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1c692f453-9aa4-4552-bd2a-73e3175bcfec.png" alt="">
@@ -283,24 +313,22 @@ button{font-family:'Cinzel',serif;cursor:pointer}
     <div class="hoiDateBox">
       <div class="hoiDate" id="hoiDate">01.ENE.1945</div>
       <div class="speedIcons" title="La partida avanza por turnos al aprobar decretos">
-        <span title="En pausa (entre sesiones)">❚❚</span><span class="on" title="Velocidad normal">►</span><span title="Rápido">►►</span><span title="Máximo">►►►</span>
+        <span title="En pausa">❚❚</span><span class="on" title="Velocidad normal">►</span><span title="Rápido">►►</span><span title="Máximo">►►►</span>
       </div>
     </div>
   </div>
-
   <div id="hoiMid">
     <div id="mapModes">
-      <button class="mapModeBtn active" id="mmHeg" type="button" title="Vista de Hegemonía: colorear por bloque">
+      <button class="mapModeBtn active" id="mmHeg" type="button" title="Vista de Hegemonía">
         <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6" opacity=".55"/></svg><em>HEGEMONÍA</em>
       </button>
-      <button class="mapModeBtn" id="mmDip" type="button" title="Vista Diplomática: relaciones respecto de Valdivia">
+      <button class="mapModeBtn" id="mmDip" type="button" title="Vista Diplomática">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" opacity=".5"/><path d="M12 4a8 8 0 0 1 0 16z"/></svg><em>DIPLOMACIA</em>
       </button>
-      <button class="mapModeBtn" id="mmAtlas" type="button" title="Vista Atlas: geografía sin tintes políticos">
+      <button class="mapModeBtn" id="mmAtlas" type="button" title="Vista Atlas">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 12h16M12 4c3.2 3.2 3.2 12.8 0 16-3.2-3.2-3.2-12.8 0-16z" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><em>ATLAS</em>
       </button>
     </div>
-
     <div class="hoiPanel" style="min-height:0;display:flex;flex-direction:column">
       <div class="hoiTitleBar">Teatro Mundial · Guerra Fría <span style="font-size:9px;color:var(--dim)" id="mapMes2">ENERO 1945</span></div>
       <div class="scroll" style="flex:1;padding:8px;background:#12151c">
@@ -308,8 +336,7 @@ button{font-family:'Cinzel',serif;cursor:pointer}
       </div>
       <div class="legendMapa" id="legendMapa"></div>
     </div>
-
-    <div class="col colRight" style="gap:8px">
+    <div class="col" style="gap:8px">
       <div class="hoiPanel">
         <div class="hoiTitleBar">Ficha de Nación <span style="font-size:9px;color:var(--dim)">CLIC EN EL MAPA</span></div>
         <div id="nationPanel" style="padding:8px 10px"></div>
@@ -324,10 +351,48 @@ button{font-family:'Cinzel',serif;cursor:pointer}
       </div>
     </div>
   </div>
-
   <div id="hoiBottom">
     <div class="bbLabel">CRÓNICA 1945–47</div>
     <div id="ticker"></div>
+  </div>
+</div>
+
+<!-- ============ SECCIÓN 3: ECONOMÍA NACIONAL ============ -->
+<div id="sec3" class="hidden">
+  <div class="col">
+    <div class="panel" style="flex:1;display:flex;flex-direction:column;min-height:0">
+      <div class="panel-title">Recursos e Inventario</div>
+      <div id="resTable" class="scroll" style="padding:8px 10px;flex:1"></div>
+      <div style="padding:6px 10px;border-top:1px solid #2c2a24;font-size:10.5px;color:var(--dim);font-style:italic">Demanda interna mensual: 20 de trigo (alimento) y 6 de carbón (energía industrial).</div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Indicadores Económicos</div>
+      <div id="econInd" style="padding:8px 10px"></div>
+    </div>
+  </div>
+  <div class="col panel">
+    <div class="panel-title">Industria y Política Comercial</div>
+    <div class="scroll" style="padding:10px;flex:1">
+      <div class="secHead">Proyectos Industriales</div>
+      <div id="projList"></div>
+      <div class="secHead">Modelo Comercial</div>
+      <div id="modeloBtns" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+      <div class="secHead">Arancel a las Importaciones · <span id="arancelVal">10%</span></div>
+      <input type="range" id="arancelSlider" min="0" max="40" step="5" value="10">
+      <label style="display:flex;align-items:center;gap:8px;margin-top:12px;font-size:12px;color:var(--dim);cursor:pointer">
+        <input type="checkbox" id="restriccionChk" style="accent-color:var(--gold2)"> Restringir la exportación de materias primas (impulsa la industria nacional)
+      </label>
+    </div>
+  </div>
+  <div class="col">
+    <div class="panel">
+      <div class="panel-title">Balanza Comercial · Último Mes</div>
+      <div id="balanza" style="padding:8px 10px"></div>
+    </div>
+    <div class="panel" style="flex:1;display:flex;flex-direction:column;min-height:0">
+      <div class="panel-title">Detalle de Flujos</div>
+      <div id="flujos" class="scroll" style="padding:8px 10px;flex:1"></div>
+    </div>
   </div>
 </div>
 
@@ -350,9 +415,9 @@ button{font-family:'Cinzel',serif;cursor:pointer}
       <div id="introGrid">
         <div class="lore">
           <p>La República de Valdivia arde en silencio: tras la Gran Depresión y la guerra mundial, la inflación devora los salarios, la deuda externa asfixia al fisco y las calles hierven. El viejo presidente ha caído y usted asume el <b style="color:var(--gold)">Gobierno de Emergencia</b> con un mandato de <b style="color:var(--gold)">36 meses</b> (enero 1945 – diciembre 1947).</p>
-          <p>Mientras tanto, el mundo se parte en dos: Washington y Moscú disputan cada palmo de la posguerra. Cada mes de su mandato coincide con un mes real de la Guerra Fría; sus decisiones diplomáticas traerán ayudas o sanciones, créditos o boicots.</p>
+          <p>Mientras tanto, el mundo se parte en dos: Washington y Moscú disputan cada palmo de la posguerra. Cada mes de su mandato coincide con un mes real de la Guerra Fría.</p>
           <div id="introFactions"></div>
-          <div class="rules"><b>CÓMO SE JUEGA:</b> en la <b>Sección I</b> apruebe 3 paquetes mensuales de un mazo de <b>66 medidas</b> y enfrente <b>más de 50 problemáticas</b>. En la <b>Sección II</b>, la vista global muestra el avance de los bloques sobre la geografía del mundo, con modos de mapa (Hegemonía, Diplomacia, Atlas), ficha de nación y tensión mundial. Si la <b>Estabilidad</b> llega a 0, habrá un quiebre institucional.</div>
+          <div class="rules"><b>CÓMO SE JUEGA:</b> <b>Sección I</b>: apruebe 3 paquetes mensuales de un mazo de 66 medidas y enfrente más de 50 problemáticas. <b>Sección II</b>: mapa mundial de la Guerra Fría, alineación y organismos internacionales. <b>Sección III</b>: gestione los recursos nacionales, construya industria para transformarlos y defina su política comercial (exportaciones, importaciones, aranceles y restricciones). Si la <b>Estabilidad</b> llega a 0, habrá un quiebre institucional.</div>
         </div>
         <div style="text-align:center;display:flex;flex-direction:column;justify-content:center;gap:12px">
           <img class="introImg" src="https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1a9a098f1-73be-4cdf-a2bb-d4de89b26f24.png" alt="Mapamundi de 1945">
@@ -368,10 +433,10 @@ button{font-family:'Cinzel',serif;cursor:pointer}
   <div class="modal">
     <div class="banner"><span>MANUAL DE GOBIERNO</span><b>REGLAS DE LA PARTIDA</b></div>
     <div class="body">
-      <p><b style="color:var(--gold)">Sección I — Congreso:</b> cada mes, 3 paquetes de políticas (66 en el mazo). Aprobar cuesta Capital Político; postergar da +12 CP pero −2 Estabilidad. Los bloques hostiles sabotean; se necesitan 101 escaños leales.</p>
-      <p><b style="color:var(--gold)">Sección II — Vista Global:</b> mapa de la Guerra Fría con tres modos de visión (Hegemonía, Diplomacia y Atlas), ficha de cada nación, tensión mundial y la crónica del período en la barra inferior. Cada mes del juego equivale a un mes real.</p>
-      <p><b style="color:var(--gold)">Alineación:</b> con EE.UU. recibe +Reservas y +Prestigio cada mes; con la URSS gana comercio (+Economía) pero sufre aislamiento occidental (−Prestigio); neutral otorga prestigio diplomático modesto.</p>
-      <p><b style="color:var(--gold)">Organismos internacionales:</b> FMI frente al Plan Mólotov; voto en la ONU; GATT/OMC frente al COMECON; y el Kominform para alineados con Moscú. Las membresías occidental y oriental del mismo eje se excluyen.</p>
+      <p><b style="color:var(--gold)">Sección I — Congreso:</b> cada mes, 3 paquetes de políticas. Aprobar cuesta Capital Político; postergar da +12 CP pero −2 Estabilidad. Se necesitan 101 escaños leales.</p>
+      <p><b style="color:var(--gold)">Sección II — Guerra Fría:</b> mapa con tres modos de visión, ficha de nación, tensión mundial y crónica del período. Cada mes del juego equivale a un mes real.</p>
+      <p><b style="color:var(--gold)">Sección III — Economía Nacional:</b> cada mes se producen recursos (cobre, hierro, carbón, madera, trigo). La población consume trigo y la industria consume carbón. Los excedentes se exportan y los déficits se importan. Invierta Capital Político y Reservas en proyectos industriales para transformar materias primas en acero y manufacturas de mayor valor. El modelo comercial, el arancel y las restricciones a la exportación modifican la Economía, el Bienestar, la Estabilidad y las Reservas.</p>
+      <p><b style="color:var(--gold)">Organismos internacionales:</b> FMI frente al Plan Mólotov; voto en la ONU; GATT/OMC frente al COMECON; y el Kominform. Las membresías occidental y oriental del mismo eje se excluyen.</p>
       <p><b style="color:var(--gold)">Fin:</b> al cabo de 36 meses (o antes si la Estabilidad colapsa), el Congreso juzga su mandato y el legado doctrinario dominante.</p>
       <button class="btn" id="closeHelp" type="button" style="width:100%">Volver al Hemiciclo</button>
     </div>
@@ -438,7 +503,208 @@ var TOTAL_MESES = 36;
 var LIDERES={gro:'—',can:'W. L. Mackenzie King',usa:'Harry S. Truman',mex:'Manuel Ávila Camacho',car:'Administraciones aliadas',sud:'Repúblicas americanas',val:'Usted, Presidente de Emergencia',uk:'Clement Attlee',esc:'Monarquías nórdicas',esp:'Francisco Franco',eur:'Gobiernos de coalición',ale:'Autoridades de ocupación',ita:'Alcide De Gasperi',bal:'Josip Broz Tito',euror:'Gobiernos populares',urss:'Iósif Stalin',tur:'İsmet İnönü',ira:'Mohammad Reza Pahleví',orm:'Monarquías y mandatos',egip:'Faruk I',lib:'Administración aliada',nafr:'Administraciones coloniales',aoc:'Colonias de Europa Occidental',aor:'Haile Selassie (Etiopía)',suda:'Jan Smuts',ind:'Jawaharlal Nehru',chi:'Chiang Kai-shek',cor:'Kim Il-sung / Syngman Rhee',jap:'Douglas MacArthur (SCAP)',sea:'Ho Chi Minh / Bao Dai',aus:'Ben Chifley'};
 var SISTEMA={usa:'Democracia liberal · esfera de Washington',urss:'Democracia popular · esfera de Moscú',contested:'Teatro en disputa / guerra civil',neutral:'País no alineado',ocupada:'Territorio bajo ocupación',val:'República en emergencia'};
 
-/* ================= GUERRA FRÍA: CRÓNICA REAL 1945–1947 ================= */
+/* ================= ECONOMÍA NACIONAL ================= */
+var RECURSOS = {
+ cobre:{nombre:'Cobre', precio:8, color:'#d08a4e', bruto:true},
+ hierro:{nombre:'Hierro', precio:5, color:'#9aa0a6', bruto:true},
+ carbon:{nombre:'Carbón', precio:4, color:'#4a4a4a', bruto:true},
+ madera:{nombre:'Madera', precio:3, color:'#8a6a3f', bruto:true},
+ trigo:{nombre:'Trigo', precio:3, color:'#c8b45a', bruto:true, alimento:true},
+ acero:{nombre:'Acero', precio:12, color:'#7f96c9', procesado:true},
+ manufacturas:{nombre:'Manufacturas', precio:20, color:'#6fae6a', procesado:true}
+};
+var PROYECTOS = [
+ {id:'mina', nombre:'Expansión Minera', cp:25, res:12, desc:'+4 de cobre y +3 de hierro por mes.'},
+ {id:'fundicion', nombre:'Fundición de Cobre', cp:30, res:15, desc:'+50% al valor de exportación del cobre.'},
+ {id:'aserradero', nombre:'Aserradero Industrial', cp:20, res:10, desc:'+50% al valor de exportación de la madera.'},
+ {id:'silos', nombre:'Silos y Molinos', cp:18, res:8, desc:'+4 de trigo por mes.'},
+ {id:'siderurgica', nombre:'Siderúrgica Nacional', cp:40, res:25, desc:'Transforma 4 de hierro + 4 de carbón en 3 de acero por mes.'},
+ {id:'manufacturas', nombre:'Complejo Manufacturero', cp:45, res:30, req:'siderurgica', desc:'Transforma 2 de acero + 2 de madera en 3 manufacturas por mes.'}
+];
+var MODELOS = {
+ libre:{nombre:'Libre Comercio', desc:'Importaciones baratas; la industria local compite sin protección.'},
+ proteccionista:{nombre:'Proteccionista', desc:'Aranceles elevados: protegen la industria y recaudan, pero encarecen el consumo.'},
+ autarquico:{nombre:'Autárquico', desc:'Sin importaciones. Exige producir todo lo necesario en casa.'}
+};
+
+function produccionBase(){
+ var p={cobre:10,hierro:8,carbon:12,madera:14,trigo:16,acero:0,manufacturas:0};
+ if(state.proyectos.mina){p.cobre+=4;p.hierro+=3;}
+ if(state.proyectos.silos){p.trigo+=4;}
+ return p;
+}
+function clampD(v,mn,mx){return Math.max(mn,Math.min(mx,v));}
+function simEconomia(){
+ var s=state;
+ var prod=produccionBase();
+ for(var r in prod){ s.recursos[r]+=prod[r]; }
+ var producido={acero:0,manufacturas:0};
+ if(s.proyectos.siderurgica){
+   var v1=Math.min(Math.floor(s.recursos.hierro/4), Math.floor(s.recursos.carbon/4), 3);
+   if(v1>0){ s.recursos.hierro-=4*v1; s.recursos.carbon-=4*v1; s.recursos.acero+=3*v1; producido.acero=3*v1; }
+ }
+ if(s.proyectos.manufacturas){
+   var v2=Math.min(Math.floor(s.recursos.acero/2), Math.floor(s.recursos.madera/2), 3);
+   if(v2>0){ s.recursos.acero-=2*v2; s.recursos.madera-=2*v2; s.recursos.manufacturas+=3*v2; producido.manufacturas=3*v2; }
+ }
+ var demandaTrigo=20, foodOK=true, deficitTrigo=0;
+ if(s.recursos.trigo>=demandaTrigo){ s.recursos.trigo-=demandaTrigo; }
+ else { deficitTrigo=demandaTrigo-s.recursos.trigo; s.recursos.trigo=0; foodOK=false; }
+ var energyOK = s.recursos.carbon>=6;
+ if(energyOK){ s.recursos.carbon-=6; }
+ var ingresosExport=0, exportados={};
+ ['cobre','hierro','madera','acero','manufacturas'].forEach(function(r){
+   var surplus=Math.max(0, s.recursos[r]-2);
+   if(surplus<=0){exportados[r]=0;return;}
+   var ratio=(RECURSOS[r].bruto && s.restriccionMP)?0.2:0.8;
+   var qty=Math.floor(surplus*ratio);
+   if(qty<=0){exportados[r]=0;return;}
+   var mult=1;
+   if(r==='cobre'&&s.proyectos.fundicion)mult=1.5;
+   if(r==='madera'&&s.proyectos.aserradero)mult=1.5;
+   s.recursos[r]-=qty;
+   exportados[r]=qty;
+   ingresosExport+=qty*RECURSOS[r].precio*mult;
+ });
+ var gastoImport=0, arancelIngresos=0, importados={}, importPlan={};
+ if(!foodOK) importPlan.trigo=deficitTrigo;
+ if(!energyOK) importPlan.carbon=6;
+ if(s.modelo==='libre' && !s.proyectos.manufacturas) importPlan.manufacturas=3;
+ for(var ir in importPlan){
+   if(s.modelo==='autarquico'){ importados[ir]=0; continue; }
+   var qty=s.modelo==='proteccionista'?Math.ceil(importPlan[ir]*0.5):importPlan[ir];
+   importados[ir]=qty;
+   var cost=qty*RECURSOS[ir].precio;
+   gastoImport+=cost;
+   arancelIngresos+=cost*(s.arancel/100);
+   s.recursos[ir]+=qty;
+ }
+ if((importados.trigo||0)>=deficitTrigo && deficitTrigo>0){ foodOK=true; }
+ var neto=ingresosExport+arancelIngresos-gastoImport;
+ var ecoD=(ingresosExport-gastoImport)/25;
+ if(producido.acero>0||producibleIsSet(producido)) ecoD+=0.5;
+ ecoD+=energyOK?0.3:-0.8;
+ if(s.modelo==='libre')ecoD+=0.2; else if(s.modelo==='autarquico')ecoD-=0.3;
+ var socD=foodOK?0.5:-1.5;
+ if(producido.manufacturas>0||producido.acero>0)socD+=0.3;
+ if(s.arancel>20)socD-=0.3; else if(s.modelo==='libre')socD+=0.2;
+ if(s.modelo==='autarquico'&&!foodOK)socD-=0.5;
+ var estD=neto>0?0.2:-0.3;
+ if(!foodOK)estD-=0.8;
+ if(!energyOK)estD-=0.4;
+ if(producido.manufacturas>0)estD+=0.2;
+ var resD=neto*0.08;
+ var empleo=Math.min(100, 40+(producibleIsSet(producido)?25:0)+(s.proyectos.siderurgica?15:0)+(s.proyectos.manufacturas?20:0));
+ var segAlim=foodOK?(s.recursos.trigo>10?100:80):Math.max(0, 60-deficitTrigo*4);
+ s.econ={empleo:empleo,segAlim:segAlim,ingresosExport:Math.round(ingresosExport),gastoImport:Math.round(gastoImport),arancelIngresos:Math.round(arancelIngresos),neto:Math.round(neto),exportados:exportados,importados:importados,producido:producido,foodOK:foodOK,energyOK:energyOK};
+ return {eco:clampD(ecoD,-4,4), soc:clampD(socD,-3,3), est:clampD(estD,-3,3), res:clampD(resD,-6,6)};
+}
+function producibleIsSet(p){ return (p.acero||0)>0 || (p.manufacturas||0)>0; }
+function construirProyecto(id){
+ if(state.over) return;
+ var p=null; PROYECTOS.forEach(function(x){if(x.id===id)p=x;});
+ if(!p||state.proyectos[id]) return;
+ if(p.req && !state.proyectos[p.req]){ toast('<b>Requisito previo:</b> '+PROYECTOS.filter(function(x){return x.id===p.req;})[0].nombre); return; }
+ if(state.pp<p.cp){ toast('<b>Capital Político insuficiente</b> · se requieren '+p.cp+' CP.'); return; }
+ if(state.stats.res<p.res){ toast('<b>Reservas insuficientes</b> · se requieren '+p.res+'.'); return; }
+ state.pp-=p.cp;
+ state.stats.res=clamp(state.stats.res-p.res,0,100);
+ state.proyectos[id]=true;
+ addLog('Se inaugura el proyecto industrial <b style="color:#c8a24a">'+p.nombre+'</b>.','#c8a24a');
+ renderAll(); renderSeccion3();
+}
+function setModelo(m){
+ if(state.over) return;
+ state.modelo=m;
+ addLog('Política comercial: <b>'+MODELOS[m].nombre+'</b>.','#c8a24a');
+ renderSeccion3();
+}
+function renderResTable(){
+ var prod=produccionBase();
+ var h='';
+ for(var r in RECURSOS){
+   var rc=RECURSOS[r];
+   var mult='';
+   if(r==='cobre'&&state.proyectos.fundicion)mult=' <span style="color:var(--pos)">×1.5</span>';
+   if(r==='madera'&&state.proyectos.aserradero)mult=' <span style="color:var(--pos)">×1.5</span>';
+   h+='<div class="resRow"><span class="rn"><span class="rdot" style="background:'+rc.color+'"></span>'+rc.nombre+'</span>'+
+      '<span class="rv"><span>+<b>'+prod[r]+'</b>/mes</span><span>Stock <b>'+Math.round(state.recursos[r])+'</b></span><span>$<b>'+rc.precio+'</b>'+mult+'</span></span></div>';
+ }
+ $('resTable').innerHTML=h;
+}
+function renderEconInd(){
+ var e=state.econ;
+ var h='';
+ function bar(label,val,col){
+   var c=val>60?'var(--pos)':(val>30?'var(--gold2)':'var(--neg)');
+   return '<div class="indRow"><div class="lbl"><span>'+label+'</span><b>'+val+'%</b></div><div class="bar"><i style="width:'+val+'%;background:'+c+'"></i></div></div>';
+ }
+ if(e){
+   h+=bar('Empleo industrial', e.empleo);
+   h+=bar('Seguridad alimentaria', e.segAlim);
+   h+='<div class="indRow"><div class="lbl"><span>Energía industrial</span><b>'+(e.energyOK?'Cubierta':'Escasa')+'</b></div></div>';
+ }else{
+   h+='<div style="font-size:11px;color:var(--dim);font-style:italic">Los indicadores se calcularán al cierre del primer mes.</div>';
+ }
+ $('econInd').innerHTML=h;
+}
+function renderProjList(){
+ var h='';
+ PROYECTOS.forEach(function(p){
+   var built=state.proyectos[p.id];
+   var reqOK=!p.req||state.proyectos[p.req];
+   var can=built||(!reqOK)||(state.pp<p.cp)||(state.stats.res<p.res);
+   h+='<div class="projCard'+(built?' built':'')+'"><h4>'+p.nombre+'</h4><p>'+p.desc+'</p><div class="prow">'+
+      '<span class="cost">'+p.cp+' CP · '+p.res+' Reservas'+(p.req&&!reqOK?' · requiere '+PROYECTOS.filter(function(x){return x.id===p.req;})[0].nombre:'')+'</span>'+
+      (built?'<span class="ok">OPERATIVO</span>':'<button class="btn" style="padding:5px 10px;font-size:9px" '+(can?'disabled':'')+' onclick="construirProyecto(\''+p.id+'\')">Construir</button>')+
+      '</div></div>';
+   });
+ $('projList').innerHTML=h;
+}
+function renderModeloBtns(){
+ var h='';
+ for(var m in MODELOS){
+   h+='<button class="tradeBtn'+(state.modelo===m?' sel':'')+'" type="button" title="'+MODELOS[m].desc+'" onclick="setModelo(\''+m+'\')">'+MODELOS[m].nombre+'</button>';
+ }
+ $('modeloBtns').innerHTML=h;
+}
+function renderBalanza(){
+ var e=state.econ;
+ if(!e){ $('balanza').innerHTML='<div style="font-size:11px;color:var(--dim);font-style:italic">Sin datos aún.</div>'; return; }
+ var net=e.neto;
+ var h='';
+ h+='<div class="balRow"><span>Exportaciones</span><b style="color:var(--pos)">+$'+e.ingresosExport+'</b></div>';
+ h+='<div class="balRow"><span>Importaciones</span><b style="color:var(--neg)">−$'+e.gastoImport+'</b></div>';
+ h+='<div class="balRow"><span>Recaudo por aranceles</span><b style="color:var(--gold2)">+$'+e.arancelIngresos+'</b></div>';
+ h+='<div class="balRow" style="border-top:1px solid var(--brass2);margin-top:4px"><span><b>Saldo neto</b></span><b style="color:'+(net>=0?'var(--pos)':'var(--neg)')+'">'+(net>=0?'+':'−')+'$'+Math.abs(net)+'</b></div>';
+ $('balanza').innerHTML=h;
+}
+function renderFlujos(){
+ var e=state.econ;
+ if(!e){ $('flujos').innerHTML='<div style="font-size:11px;color:var(--dim);font-style:italic">Sin datos aún.</div>'; return; }
+ var h='<div class="secHead" style="margin-top:0">Exportado</div>';
+ var any=false;
+ for(var r in e.exportados){ if(e.exportados[r]>0){ h+='<span class="flowChip">'+RECURSOS[r].nombre+' <b>'+e.exportados[r]+'</b></span>'; any=true; } }
+ if(!any) h+='<span style="font-size:11px;color:var(--dim);font-style:italic">Nada este mes.</span>';
+ h+='<div class="secHead">Importado</div>';
+ any=false;
+ for(var r2 in e.importados){ if(e.importados[r2]>0){ h+='<span class="flowChip">'+RECURSOS[r2].nombre+' <b>'+e.importados[r2]+'</b></span>'; any=true; } }
+ if(!any) h+='<span style="font-size:11px;color:var(--dim);font-style:italic">Nada este mes.</span>';
+ h+='<div class="secHead">Producido por la industria</div>';
+ any=false;
+ if(e.producido.acero>0){ h+='<span class="flowChip">Acero <b>'+e.producido.acero+'</b></span>'; any=true; }
+ if(e.producido.manufacturas>0){ h+='<span class="flowChip">Manufacturas <b>'+e.producido.manufacturas+'</b></span>'; any=true; }
+ if(!any) h+='<span style="font-size:11px;color:var(--dim);font-style:italic">Sin producción industrial. Construya proyectos.</span>';
+ $('flujos').innerHTML=h;
+}
+function renderSeccion3(){
+ renderResTable(); renderEconInd(); renderProjList(); renderModeloBtns(); renderBalanza(); renderFlujos();
+ $('arancelVal').textContent=state.arancel+'%';
+ $('arancelSlider').value=state.arancel;
+ $('restriccionChk').checked=state.restriccionMP;
+}
+
+/* ================= GUERRA FRÍA: CRÓNICA REAL ================= */
 var GUERRA=[
  {m:0,titulo:'Ofensiva del Vístula-Óder',texto:'El Ejército Rojo avanza hacia Berlín; Varsovia cae en sus manos.',tipo:'urss',foco:'europa'},
  {m:1,titulo:'Conferencia de Yalta',texto:'Roosevelt, Churchill y Stalin reparten la posguerra; Europa Oriental queda en la órbita soviética.',tipo:'mundo',foco:'europa'},
@@ -478,7 +744,7 @@ var GUERRA=[
  {m:35,titulo:'Balance de la posguerra',texto:'Europa partida, Alemania partida, Asia en llamas: la Guerra Fría será larga. El veredicto del mandato, en el Congreso.',tipo:'mundo',foco:'mundo'}
 ];
 
-/* ================= MAPA: SILUETAS AJUSTADAS A LA GEOGRAFÍA ================= */
+/* ================= MAPA ================= */
 var REGIONES=[
  {id:'gro',nombre:'Groenlandia',b:'usa',nota:'Bases árticas estadounidenses desde 1941.',d:'M352 106 L344 92 L348 74 L360 58 L378 48 L400 44 L424 48 L440 60 L444 76 L432 92 L414 102 L394 108 L372 110 Z'},
  {id:'can',nombre:'Canadá',b:'usa',nota:'Fiel a Washington; base del espionaje aliado.',d:'M108 58 L126 52 L148 50 L170 46 L196 46 L222 48 L244 52 L262 50 L282 54 L304 58 L322 64 L318 74 L302 72 L286 70 L268 74 L254 76 L246 88 L250 98 L258 104 L266 100 L276 96 L288 100 L300 108 L316 112 L336 110 L348 106 L354 114 L348 122 L336 126 L322 122 L308 126 L296 122 L284 128 L272 126 L262 128 L252 122 L240 124 L228 118 L210 118 L190 118 L170 118 L152 118 L138 116 L128 106 L120 92 L112 76 Z',lx:235,ly:80,lb:'CANADÁ'},
@@ -829,6 +1095,8 @@ function nuevoEstado(){
     mes:0, pp:80, over:false, bloqueado:false, mano:[],
     alineacion:'neutral', mapMode:'heg', selectedRegion:'val',
     bretton:'none', onuVoto:'abs', comercio:'none', kominform:false,
+    recursos:{cobre:5,hierro:4,carbon:6,madera:6,trigo:25,acero:0,manufacturas:0},
+    proyectos:{}, modelo:'libre', arancel:10, restriccionMP:false, econ:null,
     stats:{eco:32,soc:28,est:40,int:35,res:20},
     support:{key:52,mar:48,hay:46,smi:50},
     efectos:[], recientes:[], eventosUsados:{}, hist:{eco:[32],soc:[28],est:[40],int:[35],res:[20]},
@@ -939,21 +1207,17 @@ function buildMapa(){
   svg+='<rect width="6" height="6" fill="#8a6a2f"/><line x1="0" y1="0" x2="0" y2="6" stroke="#3a2f1a" stroke-width="3"/>';
   svg+='</pattern></defs>';
   svg+='<rect x="0" y="0" width="1000" height="520" fill="url(#ocean)"/>';
-  // retícula
   var g='';
   for(var gx=69;gx<1000;gx+=69){ g+='M'+gx+' 0 L'+gx+' 520 '; }
   for(var gy=65;gy<520;gy+=65){ g+='M0 '+gy+' L1000 '+gy+' '; }
   svg+='<path class="grat" d="'+g+'"/>';
   svg+='<line class="grat" x1="0" y1="260" x2="1000" y2="260" stroke-dasharray="4 4"/>';
-  // rótulos oceánicos
   svg+='<text class="oceanLabel" x="110" y="250">OCÉANO PACÍFICO</text>';
   svg+='<text class="oceanLabel" x="430" y="300">OCÉANO ATLÁNTICO</text>';
   svg+='<text class="oceanLabel" x="660" y="340">OCÉANO ÍNDICO</text>';
-  // silueta base (la geografía misma)
   var base='';
   REGIONES.forEach(function(r){ base+='<path class="landBase" d="'+r.d+'"/>'; });
   svg+='<g>'+base+'</g>';
-  // tintes interactivos
   var order = REGIONES.slice().sort(function(a,b){ return (a.id==='val'?1:0)-(b.id==='val'?1:0); });
   var tint='';
   order.forEach(function(r){
@@ -961,7 +1225,6 @@ function buildMapa(){
     tint+='<path class="'+cls+'" data-id="'+r.id+'" d="'+r.d+'"/>';
   });
   svg+='<g id="gTint">'+tint+'</g>';
-  // etiquetas
   order.forEach(function(r){
     if(r.lb){ svg+='<text class="mapLabel" x="'+r.lx+'" y="'+r.ly+'">'+r.lb+'</text>'; }
   });
@@ -1137,7 +1400,7 @@ function unirseOrg(org){
   renderAll(); renderSeccion2();
 }
 function renderSeccion2(){ renderTopbar2(); renderMapa(); renderNacion(); renderAlineacion(); renderOrgs(); renderTicker(); }
-function renderAll(){ renderTop(); renderCongreso(); renderEfectos(); renderCards(); renderLog(); drawSpark(); if(!$('sec2').classList.contains('hidden')) renderSeccion2(); }
+function renderAll(){ renderTop(); renderCongreso(); renderEfectos(); renderCards(); renderLog(); drawSpark(); if(!$('sec2').classList.contains('hidden')) renderSeccion2(); if(!$('sec3').classList.contains('hidden')) renderSeccion3(); }
 
 /* ================= ALINEACIÓN ================= */
 function alinear(bloque){
@@ -1224,6 +1487,12 @@ function finDeMes(){
     e.m--; return e.m>0;
   });
   for(var f2 in state.support){ if(state.support[f2]<18 && Math.random()<0.25){ d.est-=1; addLog('El bloque <b style="color:'+IDEO[f2].color+'">'+IDEO[f2].nombre+'</b>, hostil, azuza disturbios en las calles.',IDEO[f2].color); } }
+  /* Simulación económica mensual */
+  var sim=simEconomia();
+  d.eco+=sim.eco; d.soc+=sim.soc; d.est+=sim.est; d.res+=sim.res;
+  if(state.econ){
+    addLog('Balanza comercial: exportaciones $'+state.econ.ingresosExport+', importaciones $'+state.econ.gastoImport+', aranceles $'+state.econ.arancelIngresos+'. Saldo '+(state.econ.neto>=0?'+':'−')+'$'+Math.abs(state.econ.neto)+'.', state.econ.neto>=0?'#a3c96f':'#d16b5a');
+  }
   aplicarDx(d);
   for(var f3 in state.support){ state.support[f3]=clamp(state.support[f3]+(50-state.support[f3])*0.03,5,95); }
   state.pp=clamp(state.pp+25+Math.floor(state.stats.est/10),0,150);
@@ -1296,8 +1565,9 @@ function terminar(motivo){
   var dom=null,max=-1; for(var k in state.support){ if(state.support[k]>max){max=state.support[k];dom=k;} }
   var leg = max>=55? EPILOGOS[dom] : EPILOGOS.neu;
   var inst = (state.bretton==='fmi'?'FMI':state.bretton==='molotov'?'Plan Mólotov':'—')+' · ONU: '+(state.onuVoto==='occ'?'Occidente':state.onuVoto==='sov'?'Moscú':'Abstención')+' · '+(state.comercio==='gatt'?'GATT/OMC':state.comercio==='comecon'?'COMECON':'—')+(state.kominform?' · Kominform':'');
+  var nproy=Object.keys(state.proyectos).length;
   $('endTitle').textContent=titulo;
-  $('endScore').textContent='CALIFICACIÓN DEL MANDATO: '+score+' / 100 · MESES GOBERNADOS: '+(motivo==='golpe'?state.mes:TOTAL_MESES)+' · ALINEACIÓN FINAL: '+(state.alineacion==='usa'?'EE.UU.':(state.alineacion==='urss'?'URSS':'NEUTRAL'))+' · INSTITUCIONES: '+inst;
+  $('endScore').textContent='CALIFICACIÓN DEL MANDATO: '+score+' / 100 · MESES GOBERNADOS: '+(motivo==='golpe'?state.mes:TOTAL_MESES)+' · ALINEACIÓN: '+(state.alineacion==='usa'?'EE.UU.':(state.alineacion==='urss'?'URSS':'NEUTRAL'))+' · PROYECTOS INDUSTRIALES: '+nproy+' · INSTITUCIONES: '+inst;
   var es='';
   for(var k2 in STATS){ es+='<div class="endRow"><span class="lb">'+STATS[k2].nombre+'</span><div class="bar"><i style="width:'+s[k2]+'%;background:'+STATS[k2].color+'"></i></div><b>'+Math.round(s[k2])+'</b></div>'; }
   $('endStats').innerHTML=es;
@@ -1310,15 +1580,21 @@ function terminar(motivo){
 function verSeccion(n){
   $('sec1').classList.toggle('hidden', n!==1);
   $('sec2').classList.toggle('hidden', n!==2);
+  $('sec3').classList.toggle('hidden', n!==3);
   $('tab1').classList.toggle('active', n===1);
   $('tab2').classList.toggle('active', n===2);
+  $('tab3').classList.toggle('active', n===3);
   if(n===2) renderSeccion2();
+  if(n===3) renderSeccion3();
 }
 $('tab1').onclick=function(){verSeccion(1);};
 $('tab2').onclick=function(){verSeccion(2);};
+$('tab3').onclick=function(){verSeccion(3);};
 $('mmHeg').onclick=function(){setMapMode('heg');};
 $('mmDip').onclick=function(){setMapMode('dip');};
 $('mmAtlas').onclick=function(){setMapMode('atlas');};
+$('arancelSlider').addEventListener('input',function(){ state.arancel=+this.value; $('arancelVal').textContent=state.arancel+'%'; });
+$('restriccionChk').addEventListener('change',function(){ state.restriccionMP=this.checked; renderSeccion3(); });
 
 /* ================= ARRANQUE ================= */
 function iniciar(){
@@ -1327,10 +1603,12 @@ function iniciar(){
   addLog('Cuatro doctrinas disputan el hemiciclo mientras el mundo se parte en dos bloques: EE.UU. y la URSS.','#8a7a4f');
   addLog('Los organismos de la posguerra esperan: FMI, ONU y GATT en Occidente; Plan Mólotov, Kominform y COMECON en Oriente.','#8a7a4f');
   aplicarGuerra(0);
+  simEconomia(); /* estado inicial de indicadores económicos */
   repartirMano();
   buildMapa();
   renderAll();
   renderSeccion2();
+  renderSeccion3();
   lanzarEvento();
 }
 $('startBtn').onclick=function(){ $('introOverlay').classList.add('hidden'); iniciar(); };
