@@ -123,6 +123,9 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .indRow .lbl b{color:var(--ink)}
 .indRow .bar{height:8px;background:#12100c;border:1px solid #000}
 .indRow .bar i{display:block;height:100%;transition:width .4s}
+.inflItem{font-size:11px;color:var(--dim);padding:5px 0;border-bottom:1px dashed #2c2a24;font-style:italic;line-height:1.4}
+.inflItem.pos{color:#b9c9a0}
+.inflItem.neg{color:#d1a090}
 .projCard{background:#1f1d18;border:1px solid var(--brass2);padding:9px;margin-bottom:8px}
 .projCard.built{border-color:var(--gold);background:#2a271c}
 .projCard h4{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:.5px}
@@ -373,7 +376,7 @@ input[type=range]{accent-color:var(--gold2);width:100%}
   <div class="col panel">
     <div class="panel-title">Industria y Política Comercial</div>
     <div class="scroll" style="padding:10px;flex:1">
-      <div class="secHead">Proyectos Industriales</div>
+      <div class="secHead" style="margin-top:0">Proyectos Industriales</div>
       <div id="projList"></div>
       <div class="secHead">Modelo Comercial</div>
       <div id="modeloBtns" style="display:flex;gap:6px;flex-wrap:wrap"></div>
@@ -384,14 +387,15 @@ input[type=range]{accent-color:var(--gold2);width:100%}
       </label>
     </div>
   </div>
-  <div class="col">
-    <div class="panel">
-      <div class="panel-title">Balanza Comercial · Último Mes</div>
-      <div id="balanza" style="padding:8px 10px"></div>
-    </div>
-    <div class="panel" style="flex:1;display:flex;flex-direction:column;min-height:0">
-      <div class="panel-title">Detalle de Flujos</div>
-      <div id="flujos" class="scroll" style="padding:8px 10px;flex:1"></div>
+  <div class="col panel">
+    <div class="panel-title">Mercado y Comercio Exterior</div>
+    <div class="scroll" style="padding:10px;flex:1">
+      <div class="secHead" style="margin-top:0">Influencias Geopolíticas</div>
+      <div id="mercado"></div>
+      <div class="secHead">Balanza Comercial · Último Mes</div>
+      <div id="balanza"></div>
+      <div class="secHead">Detalle de Flujos</div>
+      <div id="flujos"></div>
     </div>
   </div>
 </div>
@@ -415,9 +419,9 @@ input[type=range]{accent-color:var(--gold2);width:100%}
       <div id="introGrid">
         <div class="lore">
           <p>La República de Valdivia arde en silencio: tras la Gran Depresión y la guerra mundial, la inflación devora los salarios, la deuda externa asfixia al fisco y las calles hierven. El viejo presidente ha caído y usted asume el <b style="color:var(--gold)">Gobierno de Emergencia</b> con un mandato de <b style="color:var(--gold)">36 meses</b> (enero 1945 – diciembre 1947).</p>
-          <p>Mientras tanto, el mundo se parte en dos: Washington y Moscú disputan cada palmo de la posguerra. Cada mes de su mandato coincide con un mes real de la Guerra Fría.</p>
+          <p>Mientras tanto, el mundo se parte en dos: Washington y Moscú disputan cada palmo de la posguerra. Los grandes acontecimientos del período —el Telón de Acero, la crisis del carbón, el Plan Marshall— sacudirán los precios y la producción de sus recursos.</p>
           <div id="introFactions"></div>
-          <div class="rules"><b>CÓMO SE JUEGA:</b> <b>Sección I</b>: apruebe 3 paquetes mensuales de un mazo de 66 medidas y enfrente más de 50 problemáticas. <b>Sección II</b>: mapa mundial de la Guerra Fría, alineación y organismos internacionales. <b>Sección III</b>: gestione los recursos nacionales, construya industria para transformarlos y defina su política comercial (exportaciones, importaciones, aranceles y restricciones). Si la <b>Estabilidad</b> llega a 0, habrá un quiebre institucional.</div>
+          <div class="rules"><b>CÓMO SE JUEGA:</b> <b>Sección I</b>: apruebe 3 paquetes mensuales de un mazo de 66 medidas y enfrente más de 50 problemáticas. <b>Sección II</b>: mapa mundial de la Guerra Fría, alineación y organismos internacionales. <b>Sección III</b>: gestione los recursos nacionales —cuya producción y precios reaccionan a la geopolítica del período—, construya industria para transformarlos y defina su política comercial. Si la <b>Estabilidad</b> llega a 0, habrá un quiebre institucional.</div>
         </div>
         <div style="text-align:center;display:flex;flex-direction:column;justify-content:center;gap:12px">
           <img class="introImg" src="https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1a9a098f1-73be-4cdf-a2bb-d4de89b26f24.png" alt="Mapamundi de 1945">
@@ -435,7 +439,7 @@ input[type=range]{accent-color:var(--gold2);width:100%}
     <div class="body">
       <p><b style="color:var(--gold)">Sección I — Congreso:</b> cada mes, 3 paquetes de políticas. Aprobar cuesta Capital Político; postergar da +12 CP pero −2 Estabilidad. Se necesitan 101 escaños leales.</p>
       <p><b style="color:var(--gold)">Sección II — Guerra Fría:</b> mapa con tres modos de visión, ficha de nación, tensión mundial y crónica del período. Cada mes del juego equivale a un mes real.</p>
-      <p><b style="color:var(--gold)">Sección III — Economía Nacional:</b> cada mes se producen recursos (cobre, hierro, carbón, madera, trigo). La población consume trigo y la industria consume carbón. Los excedentes se exportan y los déficits se importan. Invierta Capital Político y Reservas en proyectos industriales para transformar materias primas en acero y manufacturas de mayor valor. El modelo comercial, el arancel y las restricciones a la exportación modifican la Economía, el Bienestar, la Estabilidad y las Reservas.</p>
+      <p><b style="color:var(--gold)">Sección III — Economía Nacional:</b> cada mes se producen recursos (cobre, hierro, carbón, madera, trigo). La población consume trigo y la industria consume carbón. Los excedentes se exportan y los déficits se importan. Invierta en proyectos industriales para transformar materias primas en acero y manufacturas. <b>La geopolítica mueve el mercado:</b> el auge de posguerra, la crisis del carbón de 1946, el Plan Marshall de 1947, los embargos por alineación y las huelgas internas alteran precios y producción cada mes. El modelo comercial, el arancel y las restricciones modifican la Economía, el Bienestar, la Estabilidad y las Reservas.</p>
       <p><b style="color:var(--gold)">Organismos internacionales:</b> FMI frente al Plan Mólotov; voto en la ONU; GATT/OMC frente al COMECON; y el Kominform. Las membresías occidental y oriental del mismo eje se excluyen.</p>
       <p><b style="color:var(--gold)">Fin:</b> al cabo de 36 meses (o antes si la Estabilidad colapsa), el Congreso juzga su mandato y el legado doctrinario dominante.</p>
       <button class="btn" id="closeHelp" type="button" style="width:100%">Volver al Hemiciclo</button>
@@ -533,10 +537,67 @@ function produccionBase(){
  if(state.proyectos.silos){p.trigo+=4;}
  return p;
 }
+function produccionEfectiva(){
+ var p=produccionBase();
+ if(state.prodMod){ for(var r in p){ p[r]=Math.max(0,Math.round(p[r]*state.prodMod[r])); } }
+ return p;
+}
+/* ===== GEOPOLÍTICA: precios y producción según el período histórico ===== */
+function calcularGeopolitica(){
+ var pm={}, pr={}, infl=[];
+ for(var r in RECURSOS){ pm[r]=1; pr[r]=1; }
+ var m=state.mes;
+ if(m<12){
+   pm.cobre+=.2; pm.madera+=.2; pm.trigo+=.15;
+   infl.push({t:'Posguerra inmediata (1945): la Europa en ruinas compra cobre, madera y trigo a toda marcha. Precios al alza.',k:'pos'});
+ }else if(m<24){
+   pm.carbon+=.25; pm.cobre+=.1; pm.trigo+=.1;
+   infl.push({t:'Reconstrucción y crisis energética (1946): la escasez de carbón en Europa encarece el combustible y los alimentos.',k:'pos'});
+ }else{
+   pm.carbon+=.15; pm.trigo+=.25;
+   infl.push({t:'Duro invierno y crisis alimentaria (1947): el trigo alcanza precios récord en los mercados mundiales.',k:'pos'});
+   if(m>=29){
+     pm.cobre+=.3; pm.madera+=.3; pm.acero+=.3; pm.manufacturas+=.3;
+     infl.push({t:'Plan Marshall (junio de 1947): demanda masiva de materiales de reconstrucción. Cobre, madera, acero y manufacturas se revalorizan.',k:'pos'});
+   }
+ }
+ if(state.alineacion==='usa'){
+   pm.cobre+=.1; pm.manufacturas+=.1;
+   infl.push({t:'Alianza con Washington: precios preferentes y cupos garantizados para las exportaciones valdivianas.',k:'pos'});
+   if(m>=29){ pr.cobre+=.1; pr.madera+=.1; infl.push({t:'Maquinaria y créditos del Plan Marshall modernizan la producción nacional.',k:'pos'}); }
+ }else if(state.alineacion==='urss'){
+   pm.cobre*=.7; pm.madera*=.7; pm.manufacturas*=.7; pr.cobre*=.9; pr.manufacturas*=.9;
+   infl.push({t:'Embargo occidental: el bloque estadounidense castiga los precios de sus exportaciones y retira capitales.',k:'neg'});
+   if(state.comercio==='comecon'){
+     pm.cobre+=.2; pm.madera+=.2; pm.hierro+=.15;
+     infl.push({t:'COMECON: el bloque oriental compra materias primas a precio pactado, amortiguando el embargo.',k:'pos'});
+   }
+ }
+ if(state.comercio==='gatt'){
+   pm.manufacturas+=.1; pm.trigo+=.05;
+   infl.push({t:'GATT: el comercio multilateral sostiene los precios de manufacturas y alimentos.',k:'pos'});
+ }
+ /* shocks persistentes de la crónica histórica */
+ GUERRA.forEach(function(g){
+   if(g.m<=m && g.rec){
+     for(var r in g.rec){ if(g.rec[r].p) pm[r]*=(1+g.rec[r].p); if(g.rec[r].q) pr[r]*=(1+g.rec[r].q); }
+     infl.push({t:'Efecto persistente de «'+g.titulo+'» sobre el mercado mundial.',k:'neu'});
+   }
+ });
+ /* conflictividad social: huelgas mineras */
+ var riesgo=(state.stats.soc<25||state.support.mar<18);
+ if(riesgo && Math.random()<0.5){
+   pr.cobre*=.7; pr.carbon*=.8; state._huelga=true;
+   infl.push({t:'Huelgas mineras: el descontento social paraliza parte de la extracción de cobre y carbón este mes.',k:'neg'});
+ }else{ state._huelga=false; }
+ state.precioMod=pm; state.prodMod=pr; state.influencias=infl;
+}
+function precioEfectivo(r){ return RECURSOS[r].precio*(state.precioMod?state.precioMod[r]:1); }
 function clampD(v,mn,mx){return Math.max(mn,Math.min(mx,v));}
 function simEconomia(){
  var s=state;
- var prod=produccionBase();
+ calcularGeopolitica();
+ var prod=produccionEfectiva();
  for(var r in prod){ s.recursos[r]+=prod[r]; }
  var producido={acero:0,manufacturas:0};
  if(s.proyectos.siderurgica){
@@ -564,7 +625,7 @@ function simEconomia(){
    if(r==='madera'&&s.proyectos.aserradero)mult=1.5;
    s.recursos[r]-=qty;
    exportados[r]=qty;
-   ingresosExport+=qty*RECURSOS[r].precio*mult;
+   ingresosExport+=qty*precioEfectivo(r)*mult;
  });
  var gastoImport=0, arancelIngresos=0, importados={}, importPlan={};
  if(!foodOK) importPlan.trigo=deficitTrigo;
@@ -574,7 +635,7 @@ function simEconomia(){
    if(s.modelo==='autarquico'){ importados[ir]=0; continue; }
    var qty=s.modelo==='proteccionista'?Math.ceil(importPlan[ir]*0.5):importPlan[ir];
    importados[ir]=qty;
-   var cost=qty*RECURSOS[ir].precio;
+   var cost=qty*precioEfectivo(ir);
    gastoImport+=cost;
    arancelIngresos+=cost*(s.arancel/100);
    s.recursos[ir]+=qty;
@@ -593,8 +654,9 @@ function simEconomia(){
  if(!foodOK)estD-=0.8;
  if(!energyOK)estD-=0.4;
  if(producido.manufacturas>0)estD+=0.2;
+ if(state._huelga)estD-=0.3;
  var resD=neto*0.08;
- var empleo=Math.min(100, 40+(producibleIsSet(producido)?25:0)+(s.proyectos.siderurgica?15:0)+(s.proyectos.manufacturas?20:0));
+ var empleo=Math.min(100, 40+(producibleIsSet(producido)?25:0)+(s.proyectos.siderurgica?15:0)+(s.proyectos.manufacturas?20:0)-(state._huelga?10:0));
  var segAlim=foodOK?(s.recursos.trigo>10?100:80):Math.max(0, 60-deficitTrigo*4);
  s.econ={empleo:empleo,segAlim:segAlim,ingresosExport:Math.round(ingresosExport),gastoImport:Math.round(gastoImport),arancelIngresos:Math.round(arancelIngresos),neto:Math.round(neto),exportados:exportados,importados:importados,producido:producido,foodOK:foodOK,energyOK:energyOK};
  return {eco:clampD(ecoD,-4,4), soc:clampD(socD,-3,3), est:clampD(estD,-3,3), res:clampD(resD,-6,6)};
@@ -620,22 +682,24 @@ function setModelo(m){
  renderSeccion3();
 }
 function renderResTable(){
- var prod=produccionBase();
+ var prod=produccionEfectiva();
  var h='';
  for(var r in RECURSOS){
    var rc=RECURSOS[r];
    var mult='';
    if(r==='cobre'&&state.proyectos.fundicion)mult=' <span style="color:var(--pos)">×1.5</span>';
    if(r==='madera'&&state.proyectos.aserradero)mult=' <span style="color:var(--pos)">×1.5</span>';
+   var pmv=state.precioMod?state.precioMod[r]:1;
+   var pe=Math.round(precioEfectivo(r)*10)/10;
    h+='<div class="resRow"><span class="rn"><span class="rdot" style="background:'+rc.color+'"></span>'+rc.nombre+'</span>'+
-      '<span class="rv"><span>+<b>'+prod[r]+'</b>/mes</span><span>Stock <b>'+Math.round(state.recursos[r])+'</b></span><span>$<b>'+rc.precio+'</b>'+mult+'</span></span></div>';
+      '<span class="rv"><span>+<b>'+prod[r]+'</b>/mes</span><span>Stock <b>'+Math.round(state.recursos[r])+'</b></span><span>$<b>'+pe+'</b>'+mult+'</span></span></div>';
  }
  $('resTable').innerHTML=h;
 }
 function renderEconInd(){
  var e=state.econ;
  var h='';
- function bar(label,val,col){
+ function bar(label,val){
    var c=val>60?'var(--pos)':(val>30?'var(--gold2)':'var(--neg)');
    return '<div class="indRow"><div class="lbl"><span>'+label+'</span><b>'+val+'%</b></div><div class="bar"><i style="width:'+val+'%;background:'+c+'"></i></div></div>';
  }
@@ -643,10 +707,29 @@ function renderEconInd(){
    h+=bar('Empleo industrial', e.empleo);
    h+=bar('Seguridad alimentaria', e.segAlim);
    h+='<div class="indRow"><div class="lbl"><span>Energía industrial</span><b>'+(e.energyOK?'Cubierta':'Escasa')+'</b></div></div>';
+   if(state._huelga) h+='<div class="indRow"><div class="lbl" style="color:var(--neg)"><span>⚠ Huelgas mineras activas</span></div></div>';
  }else{
    h+='<div style="font-size:11px;color:var(--dim);font-style:italic">Los indicadores se calcularán al cierre del primer mes.</div>';
  }
  $('econInd').innerHTML=h;
+}
+function renderMercado(){
+ var h='';
+ if(state.influencias && state.influencias.length){
+   state.influencias.forEach(function(i){ h+='<div class="inflItem '+(i.k||'')+'">'+i.t+'</div>'; });
+ }else{
+   h+='<div class="inflItem">Sin influencias extraordinarias este mes.</div>';
+ }
+ h+='<div class="secHead">Precios Mundiales</div>';
+ for(var r in RECURSOS){
+   var base=RECURSOS[r].precio;
+   var pmv=state.precioMod?state.precioMod[r]:1;
+   var cur=Math.round(base*pmv*10)/10;
+   var diff=Math.round((pmv-1)*100);
+   var cls=diff>0?'var(--pos)':(diff<0?'var(--neg)':'var(--dim)');
+   h+='<div class="resRow"><span class="rn"><span class="rdot" style="background:'+RECURSOS[r].color+'"></span>'+RECURSOS[r].nombre+'</span><span class="rv"><span>$<b>'+cur+'</b>/u</span><span style="color:'+cls+'">'+(diff>0?'+':'')+diff+'%</span></span></div>';
+ }
+ $('mercado').innerHTML=h;
 }
 function renderProjList(){
  var h='';
@@ -698,29 +781,29 @@ function renderFlujos(){
  $('flujos').innerHTML=h;
 }
 function renderSeccion3(){
- renderResTable(); renderEconInd(); renderProjList(); renderModeloBtns(); renderBalanza(); renderFlujos();
+ renderResTable(); renderEconInd(); renderMercado(); renderProjList(); renderModeloBtns(); renderBalanza(); renderFlujos();
  $('arancelVal').textContent=state.arancel+'%';
  $('arancelSlider').value=state.arancel;
  $('restriccionChk').checked=state.restriccionMP;
 }
 
-/* ================= GUERRA FRÍA: CRÓNICA REAL ================= */
+/* ================= GUERRA FRÍA: CRÓNICA REAL (con shocks de mercado) ================= */
 var GUERRA=[
  {m:0,titulo:'Ofensiva del Vístula-Óder',texto:'El Ejército Rojo avanza hacia Berlín; Varsovia cae en sus manos.',tipo:'urss',foco:'europa'},
  {m:1,titulo:'Conferencia de Yalta',texto:'Roosevelt, Churchill y Stalin reparten la posguerra; Europa Oriental queda en la órbita soviética.',tipo:'mundo',foco:'europa'},
  {m:2,titulo:'Conferencia de Chapultepec',texto:'Washington sella la solidaridad hemisférica en México: la antesala del tratado interamericano.',tipo:'usa',foco:'latam',dx:{usa:{int:2},neu:{int:1},urss:{int:-1}}},
  {m:3,titulo:'Muere Roosevelt; Truman asume',texto:'El nuevo presidente endurece el tono frente a Moscú desde su primer día.',tipo:'usa',foco:'mundo'},
- {m:4,titulo:'Día de la Victoria en Europa',texto:'Alemania capitula. El Ejército Rojo ocupa Berlín y Europa Oriental; comienza la carrera atómica.',tipo:'mundo',foco:'europa',dx:{usa:{int:2,eco:1},neu:{int:1},urss:{int:-2}}},
+ {m:4,titulo:'Día de la Victoria en Europa',texto:'Alemania capitula. Termina la demanda militar: el cobre y el hierro se ajustan a la baja.',tipo:'mundo',foco:'europa',dx:{usa:{int:2,eco:1},neu:{int:1},urss:{int:-2}},rec:{cobre:{p:-0.1},hierro:{p:-0.1}}},
  {m:5,titulo:'Carta de San Francisco',texto:'Nace la ONU: cincuenta naciones firman la carta; el Consejo de Seguridad nace dividido.',tipo:'mundo',foco:'mundo'},
  {m:6,titulo:'Conferencia de Potsdam',texto:'Truman insinúa el arma atómica; Stalin exige bases en el Mediterráneo y tutela sobre Libia.',tipo:'mundo',foco:'africa',dx:{usa:{est:1}}},
- {m:7,titulo:'Hiroshima, Nagasaki y rendición del Japón',texto:'El hongo atómico cambia el mundo. Corea queda dividida en el paralelo 38.',tipo:'usa',foco:'asia',dx:{usa:{int:2,est:1},urss:{est:-2}}},
+ {m:7,titulo:'Hiroshima, Nagasaki y rendición del Japón',texto:'El hongo atómico cambia el mundo. Corea queda dividida en el paralelo 38. Asia reabre sus mercados.',tipo:'usa',foco:'asia',dx:{usa:{int:2,est:1},urss:{est:-2}},rec:{manufacturas:{p:0.15}}},
  {m:8,titulo:'Deserción de Gouzenko en Canadá',texto:'Un cifrador soviético denuncia redes de espías en Occidente: primer escándalo de la Guerra Fría.',tipo:'urss',foco:'mundo',dx:{usa:{int:1},urss:{int:-2,est:-1}}},
  {m:9,titulo:'Perón concentra poder en Argentina',texto:'El coronel del 17 de octubre desafía a la oligarquía; Washington observa el Cono Sur con recelo.',tipo:'mundo',foco:'latam',dx:{neu:{int:1}}},
  {m:10,titulo:'Moscú exige tutela sobre Libia',texto:'La URSS reclama participación en la ocupación del África italiana y bases en Tripolitania.',tipo:'urss',foco:'africa',dx:{usa:{int:-1},urss:{int:1}}},
  {m:11,titulo:'Conferencia de Moscú',texto:'Los cancilleres negocian la paz; la crisis del fideicomiso coreano enfrenta a las dos potencias.',tipo:'mundo',foco:'asia'},
  {m:12,titulo:'Primera Asamblea de la ONU',texto:'Londres acoge la Asamblea; el veto soviético paraliza el Consejo desde el primer mes.',tipo:'mundo',foco:'mundo'},
  {m:13,titulo:'El Telegrama Largo de Kennan',texto:'Desde Moscú, George Kennan dicta la doctrina de la contención: Washington ya tiene hoja de ruta.',tipo:'usa',foco:'mundo'},
- {m:14,titulo:'El Telón de Acero',texto:'Churchill denuncia en Fulton una cortina que cruza Europa; Stalin habla de provocación.',tipo:'mundo',foco:'europa'},
+ {m:14,titulo:'El Telón de Acero',texto:'Churchill denuncia en Fulton una cortina que cruza Europa. La crisis energética europea encarece el carbón.',tipo:'mundo',foco:'europa',rec:{carbon:{p:0.15}}},
  {m:15,titulo:'Crisis de Irán',texto:'Teherán denuncia la ocupación soviética del Azerbaiyán iraní; la ONU debate el caso.',tipo:'urss',foco:'mundo'},
  {m:16,titulo:'Retirada soviética de Irán',texto:'Bajo presión de Washington y la ONU, el Ejército Rojo abandona Irán: primera victoria de la contención.',tipo:'usa',foco:'mundo',dx:{usa:{int:2},urss:{int:-2}}},
  {m:17,titulo:'Plan Baruch',texto:'EE.UU. propone el control internacional del átomo; Moscú lo rechaza y acelera su propio programa.',tipo:'usa',foco:'mundo'},
@@ -732,14 +815,14 @@ var GUERRA=[
  {m:23,titulo:'Guerra en Indochina',texto:'Ho Chi Minh pasa a la clandestinidad; comienza la guerra contra Francia.',tipo:'urss',foco:'asia'},
  {m:24,titulo:'Elecciones en Polonia',texto:'Comicios amañados consolidan el gobierno comunista; Occidente protesta sin actuar.',tipo:'urss',foco:'europa'},
  {m:25,titulo:'Londres se retira',texto:'Gran Bretaña comunica a Truman que ya no puede sostener a Grecia ni a Turquía.',tipo:'mundo',foco:'europa'},
- {m:26,titulo:'Doctrina Truman',texto:'EE.UU. promete apoyar a los pueblos libres contra la subyugación; llega ayuda a Grecia y Turquía.',tipo:'usa',foco:'mundo',dx:{usa:{res:4,int:2},neu:{est:-1},urss:{est:-2,int:-2}}},
+ {m:26,titulo:'Doctrina Truman',texto:'EE.UU. promete apoyar a los pueblos libres: comienza el rearme y la demanda estratégica de cobre.',tipo:'usa',foco:'mundo',dx:{usa:{res:4,int:2},neu:{est:-1},urss:{est:-2,int:-2}},rec:{cobre:{p:0.1}}},
  {m:27,titulo:'Fracaso de Moscú',texto:'La conferencia de cancilleres se rompe: Alemania quedará dividida.',tipo:'mundo',foco:'europa'},
  {m:28,titulo:'Brasil proscribe a los comunistas',texto:'El gobierno Dutra ilegaliza el PCB y gira hacia Washington; ola anticomunista regional.',tipo:'usa',foco:'latam',dx:{usa:{int:1},urss:{est:-3,int:-2},neu:{est:-1}},fa:{urss:{mar:-5}}},
- {m:29,titulo:'Plan Marshall',texto:'EE.UU. ofrece miles de millones para reconstruir Europa; Moscú lo llama imperialismo del dólar.',tipo:'usa',foco:'mundo',dx:{usa:{res:6,eco:2},neu:{res:2},urss:{int:-1}}},
+ {m:29,titulo:'Plan Marshall',texto:'EE.UU. ofrece miles de millones para reconstruir Europa: demanda masiva de materiales.',tipo:'usa',foco:'mundo',dx:{usa:{res:6,eco:2},neu:{res:2},urss:{int:-1}},rec:{cobre:{p:0.2},madera:{p:0.2},acero:{p:0.25},manufacturas:{p:0.2}}},
  {m:30,titulo:'Nace la CIA',texto:'La Ley de Seguridad Nacional crea la Agencia Central de Inteligencia; la contención tendrá brazos invisibles.',tipo:'usa',foco:'mundo'},
  {m:31,titulo:'Conferencia de Petrópolis',texto:'Las repúblicas americanas negocian el Tratado Interamericano de Asistencia Recíproca.',tipo:'usa',foco:'latam',dx:{usa:{int:2,res:2},urss:{int:-3},neu:{int:-1}}},
- {m:32,titulo:'Tratado de Río y Kominform',texto:'Se firma el TIAR, alianza militar hemisférica; la URSS responde con el Kominform: el mundo queda en dos campos.',tipo:'mundo',foco:'latam',dx:{usa:{res:4,int:2},urss:{est:-3,res:-3,int:-2},neu:{est:-1}}},
- {m:33,titulo:'GATT y ruptura de Brasil con la URSS',texto:'Se firma en Ginebra el Acuerdo General de Aranceles (GATT), semilla de la OMC; Brasil rompe relaciones con Moscú.',tipo:'mundo',foco:'mundo',dx:{usa:{int:1},urss:{int:-2,est:-2}}},
+ {m:32,titulo:'Tratado de Río y Kominform',texto:'Se firma el TIAR; la URSS responde con el Kominform. El mundo queda en dos campos y el bloque oriental demanda acero.',tipo:'mundo',foco:'latam',dx:{usa:{res:4,int:2},urss:{est:-3,res:-3,int:-2},neu:{est:-1}},rec:{hierro:{p:0.1}}},
+ {m:33,titulo:'GATT y ruptura de Brasil con la URSS',texto:'Se firma el Acuerdo General de Aranceles (GATT): baja el trigo por competencia y suben las manufacturas.',tipo:'mundo',foco:'mundo',dx:{usa:{int:1},urss:{int:-2,est:-2}},rec:{trigo:{p:-0.1},manufacturas:{p:0.1}}},
  {m:34,titulo:'Partición de Palestina',texto:'La ONU vota dividir Palestina; Londres abandona el Mandato; Oriente Medio hierve.',tipo:'mundo',foco:'mundo'},
  {m:35,titulo:'Balance de la posguerra',texto:'Europa partida, Alemania partida, Asia en llamas: la Guerra Fría será larga. El veredicto del mandato, en el Congreso.',tipo:'mundo',foco:'mundo'}
 ];
@@ -1097,6 +1180,7 @@ function nuevoEstado(){
     bretton:'none', onuVoto:'abs', comercio:'none', kominform:false,
     recursos:{cobre:5,hierro:4,carbon:6,madera:6,trigo:25,acero:0,manufacturas:0},
     proyectos:{}, modelo:'libre', arancel:10, restriccionMP:false, econ:null,
+    precioMod:null, prodMod:null, influencias:null, _huelga:false,
     stats:{eco:32,soc:28,est:40,int:35,res:20},
     support:{key:52,mar:48,hay:46,smi:50},
     efectos:[], recientes:[], eventosUsados:{}, hist:{eco:[32],soc:[28],est:[40],int:[35],res:[20]},
@@ -1437,6 +1521,7 @@ function aplicarGuerra(mesNuevo){
     var clave = state.alineacion==='neutral'?'neu':state.alineacion;
     if(g.dx && g.dx[clave]) aplicarDx(g.dx[clave]);
     if(g.fa && g.fa[clave]) aplicarFa(g.fa[clave]);
+    if(g.rec) addLog('📈 Mercado mundial: «'+g.titulo+'» altera los precios internacionales de los recursos.','#c8a24a');
     addLog('🌍 Guerra Fría: <b>'+g.titulo+'</b>.','#d8c48a');
   });
 }
@@ -1487,11 +1572,14 @@ function finDeMes(){
     e.m--; return e.m>0;
   });
   for(var f2 in state.support){ if(state.support[f2]<18 && Math.random()<0.25){ d.est-=1; addLog('El bloque <b style="color:'+IDEO[f2].color+'">'+IDEO[f2].nombre+'</b>, hostil, azuza disturbios en las calles.',IDEO[f2].color); } }
-  /* Simulación económica mensual */
+  /* Simulación económica mensual (incluye efectos geopolíticos) */
   var sim=simEconomia();
   d.eco+=sim.eco; d.soc+=sim.soc; d.est+=sim.est; d.res+=sim.res;
   if(state.econ){
     addLog('Balanza comercial: exportaciones $'+state.econ.ingresosExport+', importaciones $'+state.econ.gastoImport+', aranceles $'+state.econ.arancelIngresos+'. Saldo '+(state.econ.neto>=0?'+':'−')+'$'+Math.abs(state.econ.neto)+'.', state.econ.neto>=0?'#a3c96f':'#d16b5a');
+  }
+  if(state._huelga){
+    addLog('⚠ Huelgas mineras: la producción de cobre y carbón cae este mes por el descontento social.','#d16b5a');
   }
   aplicarDx(d);
   for(var f3 in state.support){ state.support[f3]=clamp(state.support[f3]+(50-state.support[f3])*0.03,5,95); }
@@ -1601,9 +1689,9 @@ function iniciar(){
   state=nuevoEstado();
   addLog('Jura el Gobierno de Emergencia. Comienza el mandato de 36 meses sobre la República de Valdivia (1945–1947).','#d8c48a');
   addLog('Cuatro doctrinas disputan el hemiciclo mientras el mundo se parte en dos bloques: EE.UU. y la URSS.','#8a7a4f');
-  addLog('Los organismos de la posguerra esperan: FMI, ONU y GATT en Occidente; Plan Mólotov, Kominform y COMECON en Oriente.','#8a7a4f');
+  addLog('El mercado mundial reaccionará a la geopolítica: auge de posguerra, crisis del carbón, Plan Marshall y embargos moverán precios y producción.','#c8a24a');
   aplicarGuerra(0);
-  simEconomia(); /* estado inicial de indicadores económicos */
+  simEconomia(); /* estado inicial de precios y producción */
   repartirMano();
   buildMapa();
   renderAll();
