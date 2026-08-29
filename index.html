@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valdivia 1945–1947 — El Congreso de la Encrucijada</title>
+<title>Valdivia 1945–1960 — El Congreso de la Encrucijada</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/latin-600.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/latin-700.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/latin-900.css">
@@ -111,7 +111,6 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .logEntry{margin-bottom:8px;padding-bottom:7px;border-bottom:1px dashed #3a352a}
 .logEntry .ld{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;color:var(--gold2)}
 .logEntry .dot{display:inline-block;width:7px;height:7px;margin-right:5px}
-/* ===== SECCIÓN ECONOMÍA ===== */
 .secHead{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--gold);margin:12px 0 6px;text-transform:uppercase;border-bottom:1px dashed #3a352a;padding-bottom:3px}
 .resRow{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #2c2a24;font-size:12px}
 .resRow .rn{display:flex;align-items:center;gap:7px}
@@ -141,7 +140,6 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .flowChip{display:inline-block;font-size:10px;border:1px solid var(--brass2);background:#1c1a14;padding:3px 7px;margin:2px;color:var(--dim)}
 .flowChip b{color:var(--ink)}
 input[type=range]{accent-color:var(--gold2);width:100%}
-/* ===== SECCIÓN 2 — ESTILO HOI4 ===== */
 .hoiPanel{background:linear-gradient(var(--steel),var(--steel2));border:1px solid var(--steelEdge);box-shadow:inset 0 0 0 1px #141414,0 3px 10px rgba(0,0,0,.6)}
 .hoiTitleBar{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:2px;color:#d8c48a;background:linear-gradient(#4a463c,#2f2c26);border-bottom:1px solid #141414;padding:6px 10px;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;text-shadow:0 1px 2px #000}
 #sec2{position:relative;z-index:4;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:8px;padding:8px;height:calc(100vh - 64px)}
@@ -253,14 +251,13 @@ input[type=range]{accent-color:var(--gold2);width:100%}
     <button class="tab" id="tab2" type="button">II · Guerra Fría</button>
     <button class="tab" id="tab3" type="button">III · Economía</button>
   </div>
-  <div id="dateBox"><b id="dateLabel">Enero 1945</b><span id="monthLabel">MES 1 / 36 DEL MANDATO</span></div>
+  <div id="dateBox"><b id="dateLabel">Enero 1945</b><span id="monthLabel">MES 1 / 192 DEL MANDATO</span></div>
   <div id="alinChip">Alineación: Neutral</div>
   <div id="ppBox"><div class="ppIcon">P</div><div><b id="ppVal">80</b><span>Capital Político</span></div></div>
   <div id="statsRow"></div>
   <button class="btn" id="helpBtn" type="button">Manual</button>
 </div>
 
-<!-- ============ SECCIÓN 1 ============ -->
 <div id="sec1">
   <div class="col">
     <div class="panel">
@@ -298,7 +295,6 @@ input[type=range]{accent-color:var(--gold2);width:100%}
   </div>
 </div>
 
-<!-- ============ SECCIÓN 2 ============ -->
 <div id="sec2" class="hidden">
   <div id="hoiTop">
     <img class="hoiFlag" src="https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1c692f453-9aa4-4552-bd2a-73e3175bcfec.png" alt="">
@@ -312,7 +308,7 @@ input[type=range]{accent-color:var(--gold2);width:100%}
       <b id="tensionVal">10%</b>
     </div>
     <div style="flex:1"></div>
-    <div class="hoiMonth" id="hoiMonth">MES 1 / 36</div>
+    <div class="hoiMonth" id="hoiMonth">MES 1 / 192</div>
     <div class="hoiDateBox">
       <div class="hoiDate" id="hoiDate">01.ENE.1945</div>
       <div class="speedIcons" title="La partida avanza por turnos al aprobar decretos">
@@ -333,7 +329,7 @@ input[type=range]{accent-color:var(--gold2);width:100%}
       </button>
     </div>
     <div class="hoiPanel" style="min-height:0;display:flex;flex-direction:column">
-      <div class="hoiTitleBar">Teatro Mundial · Guerra Fría <span style="font-size:9px;color:var(--dim)" id="mapMes2">ENERO 1945</span></div>
+      <div class="hoiTitleBar">Teatro Mundial · Guerra Fría 1945–1960 <span style="font-size:9px;color:var(--dim)" id="mapMes2">ENERO 1945</span></div>
       <div class="scroll" style="flex:1;padding:8px;background:#12151c">
         <svg viewBox="0 0 1000 520" id="worldMap"></svg>
       </div>
@@ -345,7 +341,7 @@ input[type=range]{accent-color:var(--gold2);width:100%}
         <div id="nationPanel" style="padding:8px 10px"></div>
       </div>
       <div class="hoiPanel">
-        <div class="hoiTitleBar">Alineación de Valdivia</div>
+        <div class="hoiTitleBar">Alineacion de Valdivia</div>
         <div id="alinPanel" style="padding:8px"></div>
       </div>
       <div class="hoiPanel" style="flex:1;display:flex;flex-direction:column;min-height:120px">
@@ -355,12 +351,11 @@ input[type=range]{accent-color:var(--gold2);width:100%}
     </div>
   </div>
   <div id="hoiBottom">
-    <div class="bbLabel">CRÓNICA 1945–47</div>
+    <div class="bbLabel">CRÓNICA 1945–60</div>
     <div id="ticker"></div>
   </div>
 </div>
 
-<!-- ============ SECCIÓN 3: ECONOMÍA NACIONAL ============ -->
 <div id="sec3" class="hidden">
   <div class="col">
     <div class="panel" style="flex:1;display:flex;flex-direction:column;min-height:0">
@@ -413,15 +408,15 @@ input[type=range]{accent-color:var(--gold2);width:100%}
   <div class="modal" id="introModal">
     <div id="introTitle">
       <img src="https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1c692f453-9aa4-4552-bd2a-73e3175bcfec.png" alt="">
-      <div><h1>VALDIVIA · 1945–1947</h1><span>EL CONGRESO DE LA ENCRUCIJADA — JUEGO DE MESA POLÍTICO-ECONÓMICO</span></div>
+      <div><h1>VALDIVIA · 1945–1960</h1><span>EL CONGRESO DE LA ENCRUCIJADA — JUEGO DE MESA POLÍTICO-ECONÓMICO</span></div>
     </div>
     <div class="body">
       <div id="introGrid">
         <div class="lore">
-          <p>La República de Valdivia arde en silencio: tras la Gran Depresión y la guerra mundial, la inflación devora los salarios, la deuda externa asfixia al fisco y las calles hierven. El viejo presidente ha caído y usted asume el <b style="color:var(--gold)">Gobierno de Emergencia</b> con un mandato de <b style="color:var(--gold)">36 meses</b> (enero 1945 – diciembre 1947).</p>
-          <p>Mientras tanto, el mundo se parte en dos: Washington y Moscú disputan cada palmo de la posguerra. Los grandes acontecimientos del período —el Telón de Acero, la crisis del carbón, el Plan Marshall— sacudirán los precios y la producción de sus recursos.</p>
+          <p>La República de Valdivia arde en silencio: tras la Gran Depresión y la guerra mundial, la inflación devora los salarios, la deuda externa asfixia al fisco y las calles hierven. El viejo presidente ha caído y usted asume el <b style="color:var(--gold)">Gobierno de Emergencia</b> con un mandato de <b style="color:var(--gold)">192 meses</b> (enero 1945 – diciembre 1960).</p>
+          <p>Atravesará toda la Guerra Fría temprana: la posguerra, el Plan Marshall, la Guerra de Corea, Bandung, Suez, el Sputnik y la Revolución Cubana. Cada mes del juego coincide con un mes real y la geopolítica moverá los precios de sus recursos.</p>
           <div id="introFactions"></div>
-          <div class="rules"><b>CÓMO SE JUEGA:</b> <b>Sección I</b>: apruebe 3 paquetes mensuales de un mazo de 66 medidas y enfrente más de 50 problemáticas. <b>Sección II</b>: mapa mundial de la Guerra Fría, alineación y organismos internacionales. <b>Sección III</b>: gestione los recursos nacionales —cuya producción y precios reaccionan a la geopolítica del período—, construya industria para transformarlos y defina su política comercial. Si la <b>Estabilidad</b> llega a 0, habrá un quiebre institucional.</div>
+          <div class="rules"><b>CÓMO SE JUEGA:</b> <b>Sección I</b>: apruebe 3 paquetes mensuales de un mazo de <b>90 decisiones</b> y enfrente <b>más de 70 sucesos</b> condicionados a su época. <b>Sección II</b>: mapa mundial de la Guerra Fría 1945–60, alineación y organismos internacionales. <b>Sección III</b>: gestione recursos —cuya producción y precios reaccionan a la geopolítica—, construya industria y defina su política comercial. Si la <b>Estabilidad</b> llega a 0, habrá un quiebre institucional.</div>
         </div>
         <div style="text-align:center;display:flex;flex-direction:column;justify-content:center;gap:12px">
           <img class="introImg" src="https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1a9a098f1-73be-4cdf-a2bb-d4de89b26f24.png" alt="Mapamundi de 1945">
@@ -437,11 +432,12 @@ input[type=range]{accent-color:var(--gold2);width:100%}
   <div class="modal">
     <div class="banner"><span>MANUAL DE GOBIERNO</span><b>REGLAS DE LA PARTIDA</b></div>
     <div class="body">
-      <p><b style="color:var(--gold)">Sección I — Congreso:</b> cada mes, 3 paquetes de políticas. Aprobar cuesta Capital Político; postergar da +12 CP pero −2 Estabilidad. Se necesitan 101 escaños leales.</p>
-      <p><b style="color:var(--gold)">Sección II — Guerra Fría:</b> mapa con tres modos de visión, ficha de nación, tensión mundial y crónica del período. Cada mes del juego equivale a un mes real.</p>
-      <p><b style="color:var(--gold)">Sección III — Economía Nacional:</b> cada mes se producen recursos (cobre, hierro, carbón, madera, trigo). La población consume trigo y la industria consume carbón. Los excedentes se exportan y los déficits se importan. Invierta en proyectos industriales para transformar materias primas en acero y manufacturas. <b>La geopolítica mueve el mercado:</b> el auge de posguerra, la crisis del carbón de 1946, el Plan Marshall de 1947, los embargos por alineación y las huelgas internas alteran precios y producción cada mes. El modelo comercial, el arancel y las restricciones modifican la Economía, el Bienestar, la Estabilidad y las Reservas.</p>
+      <p><b style="color:var(--gold)">Período:</b> enero de 1945 a diciembre de 1960 (192 meses). Cada mes del juego equivale a un mes real y activa los hechos históricos correspondientes.</p>
+      <p><b style="color:var(--gold)">Sección I — Congreso:</b> cada mes, 3 paquetes de políticas de un mazo de 90 decisiones. Aprobar cuesta Capital Político; postergar da +12 CP pero −2 Estabilidad. Se necesitan 101 escaños leales.</p>
+      <p><b style="color:var(--gold)">Sección II — Guerra Fría:</b> mapa con tres modos de visión, ficha de nación, tensión mundial y crónica del período. El bloque de cada territorio cambia con los años (Cuba gira a la URSS en 1959, etc.).</p>
+      <p><b style="color:var(--gold)">Sección III — Economía Nacional:</b> cada mes se producen recursos (cobre, hierro, carbón, madera, trigo). La población consume trigo y la industria consume carbón. Los excedentes se exportan y los déficits se importan. Invierta en proyectos industriales. <b>La geopolítica mueve el mercado:</b> posguerra, crisis del carbón, Plan Marshall, boom de la Guerra de Corea, recesión del 58, Revolución Cubana… alteran precios y producción. El modelo comercial, el arancel y las restricciones modifican la Economía, el Bienestar, la Estabilidad y las Reservas.</p>
       <p><b style="color:var(--gold)">Organismos internacionales:</b> FMI frente al Plan Mólotov; voto en la ONU; GATT/OMC frente al COMECON; y el Kominform. Las membresías occidental y oriental del mismo eje se excluyen.</p>
-      <p><b style="color:var(--gold)">Fin:</b> al cabo de 36 meses (o antes si la Estabilidad colapsa), el Congreso juzga su mandato y el legado doctrinario dominante.</p>
+      <p><b style="color:var(--gold)">Fin:</b> al cabo de 192 meses (o antes si la Estabilidad colapsa), el Congreso juzga su mandato y el legado doctrinario dominante.</p>
       <button class="btn" id="closeHelp" type="button" style="width:100%">Volver al Hemiciclo</button>
     </div>
   </div>
@@ -463,7 +459,6 @@ input[type=range]{accent-color:var(--gold2);width:100%}
 <div id="toast"></div>
 
 <script>
-/* ================= DATOS BASE ================= */
 var IMG = {
   key:'https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/12d26f302-8b92-4b84-a609-573ad14f9df5.png',
   mar:'https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/160c2b307-e7bd-4156-8a82-5eb660cad115.png',
@@ -502,12 +497,11 @@ var STATS = {
 };
 var MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 var MES3 = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
-var TOTAL_MESES = 36;
+var TOTAL_MESES = 192;
 
-var LIDERES={gro:'—',can:'W. L. Mackenzie King',usa:'Harry S. Truman',mex:'Manuel Ávila Camacho',car:'Administraciones aliadas',sud:'Repúblicas americanas',val:'Usted, Presidente de Emergencia',uk:'Clement Attlee',esc:'Monarquías nórdicas',esp:'Francisco Franco',eur:'Gobiernos de coalición',ale:'Autoridades de ocupación',ita:'Alcide De Gasperi',bal:'Josip Broz Tito',euror:'Gobiernos populares',urss:'Iósif Stalin',tur:'İsmet İnönü',ira:'Mohammad Reza Pahleví',orm:'Monarquías y mandatos',egip:'Faruk I',lib:'Administración aliada',nafr:'Administraciones coloniales',aoc:'Colonias de Europa Occidental',aor:'Haile Selassie (Etiopía)',suda:'Jan Smuts',ind:'Jawaharlal Nehru',chi:'Chiang Kai-shek',cor:'Kim Il-sung / Syngman Rhee',jap:'Douglas MacArthur (SCAP)',sea:'Ho Chi Minh / Bao Dai',aus:'Ben Chifley'};
+var LIDERES={gro:'—',can:'W. L. Mackenzie King',usa:'Harry S. Truman',mex:'Manuel Ávila Camacho',car:'Administraciones aliadas',sud:'Repúblicas americanas',val:'Usted, Presidente de Emergencia',uk:'Clement Attlee',esc:'Monarquías nórdicas',esp:'Francisco Franco',eur:'Gobiernos de coalición',ale:'Autoridades de ocupación',ita:'Alcide De Gasperi',bal:'Josip Broz Tito',euror:'Gobiernos populares',urss:'Iósif Stalin',tur:'İsmet İnönü',ira:'Mohammad Reza Pahleví',orm:'Monarquías y mandatos',egip:'Faruk I',lib:'Administración aliada',nafr:'Administraciones coloniales',aoc:'Colonias de Europa Occidental',aor:'Haile Selassie (Etiopía)',suda:'Jan Smuts',ind:'Jawaharlal Nehru',chi:'Chiang Kai-shek',cor:'Kim Il-sung / Syngman Rhee',jap:'Douglas MacArthur (SCAP)',sea:'Ho Chi Minh / Bao Dai',aus:'Ben Chifley',cub:'Fulgencio Batista'};
 var SISTEMA={usa:'Democracia liberal · esfera de Washington',urss:'Democracia popular · esfera de Moscú',contested:'Teatro en disputa / guerra civil',neutral:'País no alineado',ocupada:'Territorio bajo ocupación',val:'República en emergencia'};
 
-/* ================= ECONOMÍA NACIONAL ================= */
 var RECURSOS = {
  cobre:{nombre:'Cobre', precio:8, color:'#d08a4e', bruto:true},
  hierro:{nombre:'Hierro', precio:5, color:'#9aa0a6', bruto:true},
@@ -542,25 +536,23 @@ function produccionEfectiva(){
  if(state.prodMod){ for(var r in p){ p[r]=Math.max(0,Math.round(p[r]*state.prodMod[r])); } }
  return p;
 }
-/* ===== GEOPOLÍTICA: precios y producción según el período histórico ===== */
 function calcularGeopolitica(){
- var pm={}, pr={}, infl=[];
- for(var r in RECURSOS){ pm[r]=1; pr[r]=1; }
+ var pm={},pr={},infl=[];
+ for(var r in RECURSOS){pm[r]=1;pr[r]=1;}
  var m=state.mes;
- if(m<12){
-   pm.cobre+=.2; pm.madera+=.2; pm.trigo+=.15;
-   infl.push({t:'Posguerra inmediata (1945): la Europa en ruinas compra cobre, madera y trigo a toda marcha. Precios al alza.',k:'pos'});
- }else if(m<24){
-   pm.carbon+=.25; pm.cobre+=.1; pm.trigo+=.1;
-   infl.push({t:'Reconstrucción y crisis energética (1946): la escasez de carbón en Europa encarece el combustible y los alimentos.',k:'pos'});
- }else{
-   pm.carbon+=.15; pm.trigo+=.25;
-   infl.push({t:'Duro invierno y crisis alimentaria (1947): el trigo alcanza precios récord en los mercados mundiales.',k:'pos'});
-   if(m>=29){
-     pm.cobre+=.3; pm.madera+=.3; pm.acero+=.3; pm.manufacturas+=.3;
-     infl.push({t:'Plan Marshall (junio de 1947): demanda masiva de materiales de reconstrucción. Cobre, madera, acero y manufacturas se revalorizan.',k:'pos'});
-   }
- }
+ if(m<12){ pm.cobre+=.2;pm.madera+=.2;pm.trigo+=.15; infl.push({t:'Posguerra inmediata (1945): Europa compra cobre, madera y trigo a toda marcha.',k:'pos'}); }
+ else if(m<24){ pm.carbon+=.25;pm.cobre+=.1;pm.trigo+=.1; infl.push({t:'Reconstrucción y crisis del carbón (1946): el combustible y los alimentos se encarecen.',k:'pos'}); }
+ else if(m<36){ pm.carbon+=.15;pm.trigo+=.25; infl.push({t:'Duro invierno y crisis alimentaria (1947): el trigo en máximos.',k:'pos'});
+   if(m>=29){ pm.cobre+=.3;pm.madera+=.3;pm.acero+=.3;pm.manufacturas+=.3; infl.push({t:'Plan Marshall (1947): demanda masiva de materiales de reconstrucción.',k:'pos'}); } }
+ else if(m<48){ pm.cobre+=.15;pm.acero+=.15; infl.push({t:'Bloqueo de Berlín y consolidación de bloques (1948): la reconstrucción sigue tirando de los metales.',k:'pos'}); }
+ else if(m<60){ pm.cobre-=.1;pm.hierro-=.1; infl.push({t:'Recesión de 1949 y victoria comunista en China: los mercados se ajustan.',k:'neg'}); }
+ else if(m<96){ pm.cobre+=.25;pm.hierro+=.3;pm.carbon+=.2; infl.push({t:'GUERRA DE COREA (1950-53): la demanda bélica dispara cobre, hierro y carbón.',k:'pos'}); }
+ else if(m<108){ pm.cobre-=.2;pm.hierro-=.15; infl.push({t:'Fin de la Guerra de Corea (1953): los precios de los metales se desploman.',k:'neg'}); }
+ else if(m<132){ pm.cobre+=.1;pm.manufacturas+=.1; infl.push({t:'Recuperación y boom industrial (1954-55): consumo y construcción al alza.',k:'pos'}); }
+ else if(m<144){ pm.carbon+=.15; infl.push({t:'Crisis de Suez (1956): tensiones energéticas y fletes más caros.',k:'pos'}); }
+ else if(m<156){ pm.manufacturas+=.15;pm.cobre+=.1; infl.push({t:'Era Sputnik (1957): carrera tecnológica y consumo en expansión.',k:'pos'}); }
+ else if(m<168){ pm.cobre-=.15;pm.hierro-=.1; infl.push({t:'Recesión de 1958: el comercio mundial se enfría.',k:'neg'}); }
+ else { pm.cobre+=.1; infl.push({t:'Revolución Cubana (1959) y nueva tensión hemisférica: América Latina en ebullición.',k:'pos'}); }
  if(state.alineacion==='usa'){
    pm.cobre+=.1; pm.manufacturas+=.1;
    infl.push({t:'Alianza con Washington: precios preferentes y cupos garantizados para las exportaciones valdivianas.',k:'pos'});
@@ -577,14 +569,12 @@ function calcularGeopolitica(){
    pm.manufacturas+=.1; pm.trigo+=.05;
    infl.push({t:'GATT: el comercio multilateral sostiene los precios de manufacturas y alimentos.',k:'pos'});
  }
- /* shocks persistentes de la crónica histórica */
  GUERRA.forEach(function(g){
    if(g.m<=m && g.rec){
      for(var r in g.rec){ if(g.rec[r].p) pm[r]*=(1+g.rec[r].p); if(g.rec[r].q) pr[r]*=(1+g.rec[r].q); }
      infl.push({t:'Efecto persistente de «'+g.titulo+'» sobre el mercado mundial.',k:'neu'});
    }
  });
- /* conflictividad social: huelgas mineras */
  var riesgo=(state.stats.soc<25||state.support.mar<18);
  if(riesgo && Math.random()<0.5){
    pr.cobre*=.7; pr.carbon*=.8; state._huelga=true;
@@ -689,7 +679,6 @@ function renderResTable(){
    var mult='';
    if(r==='cobre'&&state.proyectos.fundicion)mult=' <span style="color:var(--pos)">×1.5</span>';
    if(r==='madera'&&state.proyectos.aserradero)mult=' <span style="color:var(--pos)">×1.5</span>';
-   var pmv=state.precioMod?state.precioMod[r]:1;
    var pe=Math.round(precioEfectivo(r)*10)/10;
    h+='<div class="resRow"><span class="rn"><span class="rdot" style="background:'+rc.color+'"></span>'+rc.nombre+'</span>'+
       '<span class="rv"><span>+<b>'+prod[r]+'</b>/mes</span><span>Stock <b>'+Math.round(state.recursos[r])+'</b></span><span>$<b>'+pe+'</b>'+mult+'</span></span></div>';
@@ -722,9 +711,8 @@ function renderMercado(){
  }
  h+='<div class="secHead">Precios Mundiales</div>';
  for(var r in RECURSOS){
-   var base=RECURSOS[r].precio;
    var pmv=state.precioMod?state.precioMod[r]:1;
-   var cur=Math.round(base*pmv*10)/10;
+   var cur=Math.round(RECURSOS[r].precio*pmv*10)/10;
    var diff=Math.round((pmv-1)*100);
    var cls=diff>0?'var(--pos)':(diff<0?'var(--neg)':'var(--dim)');
    h+='<div class="resRow"><span class="rn"><span class="rdot" style="background:'+RECURSOS[r].color+'"></span>'+RECURSOS[r].nombre+'</span><span class="rv"><span>$<b>'+cur+'</b>/u</span><span style="color:'+cls+'">'+(diff>0?'+':'')+diff+'%</span></span></div>';
@@ -787,7 +775,7 @@ function renderSeccion3(){
  $('restriccionChk').checked=state.restriccionMP;
 }
 
-/* ================= GUERRA FRÍA: CRÓNICA REAL (con shocks de mercado) ================= */
+/* ===== CRÓNICA GUERRA FRÍA 1945–1960 ===== */
 var GUERRA=[
  {m:0,titulo:'Ofensiva del Vístula-Óder',texto:'El Ejército Rojo avanza hacia Berlín; Varsovia cae en sus manos.',tipo:'urss',foco:'europa'},
  {m:1,titulo:'Conferencia de Yalta',texto:'Roosevelt, Churchill y Stalin reparten la posguerra; Europa Oriental queda en la órbita soviética.',tipo:'mundo',foco:'europa'},
@@ -824,23 +812,41 @@ var GUERRA=[
  {m:32,titulo:'Tratado de Río y Kominform',texto:'Se firma el TIAR; la URSS responde con el Kominform. El mundo queda en dos campos y el bloque oriental demanda acero.',tipo:'mundo',foco:'latam',dx:{usa:{res:4,int:2},urss:{est:-3,res:-3,int:-2},neu:{est:-1}},rec:{hierro:{p:0.1}}},
  {m:33,titulo:'GATT y ruptura de Brasil con la URSS',texto:'Se firma el Acuerdo General de Aranceles (GATT): baja el trigo por competencia y suben las manufacturas.',tipo:'mundo',foco:'mundo',dx:{usa:{int:1},urss:{int:-2,est:-2}},rec:{trigo:{p:-0.1},manufacturas:{p:0.1}}},
  {m:34,titulo:'Partición de Palestina',texto:'La ONU vota dividir Palestina; Londres abandona el Mandato; Oriente Medio hierve.',tipo:'mundo',foco:'mundo'},
- {m:35,titulo:'Balance de la posguerra',texto:'Europa partida, Alemania partida, Asia en llamas: la Guerra Fría será larga. El veredicto del mandato, en el Congreso.',tipo:'mundo',foco:'mundo'}
+ {m:35,titulo:'Balance de la posguerra',texto:'Europa partida, Alemania partida, Asia en llamas: la Guerra Fría será larga.',tipo:'mundo',foco:'mundo'},
+ {m:36,titulo:'Golpe de Praga',texto:'Los comunistas toman Checoslovaquia; Occidente se alarma y acelera su unión.',tipo:'urss',foco:'europa'},
+ {m:39,titulo:'Bloqueo de Berlín',texto:'Stalin bloquea Berlín Occidental; comienza el puente aéreo aliado.',tipo:'urss',foco:'europa',rec:{carbon:{p:0.1}}},
+ {m:45,titulo:'Declaración Universal de DD.HH.',texto:'La ONU proclama la Declaración Universal de los Derechos Humanos.',tipo:'mundo',foco:'mundo'},
+ {m:48,titulo:'Se funda la OTAN',texto:'Doce países firman el Tratado del Atlántico Norte.',tipo:'usa',foco:'europa'},
+ {m:52,titulo:'Fin del bloqueo; dos Alemanias',texto:'Termina el bloqueo de Berlín; se constituyen la RFA y la RDA.',tipo:'mundo',foco:'europa'},
+ {m:57,titulo:'Triunfa Mao en China',texto:'Se proclama la República Popular China; el bloque comunista se expande.',tipo:'urss',foco:'asia',rec:{hierro:{p:0.1}}},
+ {m:65,titulo:'Estalla la Guerra de Corea',texto:'Corea del Norte invade el Sur; EE.UU. interviene bajo bandera de la ONU.',tipo:'usa',foco:'asia',rec:{cobre:{p:0.2},hierro:{p:0.15},carbon:{p:0.1}}},
+ {m:97,titulo:'Muere Stalin',texto:'Fallece Iósif Stalin; comienza la lucha por la sucesión en el Kremlin.',tipo:'urss',foco:'mundo'},
+ {m:101,titulo:'Armisticio en Corea',texto:'Se firma el alto el fuego en Panmunjom; la guerra termina en tablas.',tipo:'mundo',foco:'asia',rec:{cobre:{p:-0.15},hierro:{p:-0.1}}},
+ {m:109,titulo:'Dien Bien Phu',texto:'Francia es derrotada en Indochina; se acerca la intervención estadounidense.',tipo:'urss',foco:'asia'},
+ {m:121,titulo:'Pacto de Varsovia',texto:'El bloque oriental formaliza su alianza militar.',tipo:'urss',foco:'europa'},
+ {m:123,titulo:'Conferencia de Bandung',texto:'Las naciones afroasiáticas proclaman el Movimiento de Países No Alineados.',tipo:'mundo',foco:'mundo'},
+ {m:132,titulo:'Desestalinización',texto:'Jruschov denuncia los crímenes de Stalin en el XX Congreso.',tipo:'urss',foco:'mundo'},
+ {m:139,titulo:'Crisis de Suez y Hungría',texto:'Egipto nacionaliza el canal; la URSS aplasta la revuelta húngara.',tipo:'mundo',foco:'mundo',rec:{carbon:{p:0.1}}},
+ {m:148,titulo:'Sputnik en órbita',texto:'La URSS lanza el primer satélite artificial; comienza la carrera espacial.',tipo:'urss',foco:'mundo',rec:{manufacturas:{p:0.1}}},
+ {m:168,titulo:'Revolución Cubana',texto:'Fidel Castro entra en La Habana; América Latina entra en la Guerra Fría.',tipo:'urss',foco:'latam'},
+ {m:184,titulo:'Incidente del U-2',texto:'Un avión espía estadounidense es derribado sobre la URSS; la cumbre colapsa.',tipo:'mundo',foco:'mundo'},
+ {m:191,titulo:'Amanecer de los sesenta',texto:'El mundo entra en 1961 entre descolonización y carrera espacial.',tipo:'mundo',foco:'mundo'}
 ];
 
-/* ================= MAPA ================= */
 var REGIONES=[
  {id:'gro',nombre:'Groenlandia',b:'usa',nota:'Bases árticas estadounidenses desde 1941.',d:'M352 106 L344 92 L348 74 L360 58 L378 48 L400 44 L424 48 L440 60 L444 76 L432 92 L414 102 L394 108 L372 110 Z'},
  {id:'can',nombre:'Canadá',b:'usa',nota:'Fiel a Washington; base del espionaje aliado.',d:'M108 58 L126 52 L148 50 L170 46 L196 46 L222 48 L244 52 L262 50 L282 54 L304 58 L322 64 L318 74 L302 72 L286 70 L268 74 L254 76 L246 88 L250 98 L258 104 L266 100 L276 96 L288 100 L300 108 L316 112 L336 110 L348 106 L354 114 L348 122 L336 126 L322 122 L308 126 L296 122 L284 128 L272 126 L262 128 L252 122 L240 124 L228 118 L210 118 L190 118 L170 118 L152 118 L138 116 L128 106 L120 92 L112 76 Z',lx:235,ly:80,lb:'CANADÁ'},
  {id:'usa',nombre:'Estados Unidos',b:'usa',nota:'Potencia atómica e industrial; arquitecto de la contención.',d:'M138 116 L152 118 L170 118 L190 118 L210 118 L228 118 L240 124 L252 122 L262 128 L272 126 L284 128 L296 122 L308 126 L322 122 L318 132 L310 138 L302 146 L294 152 L288 160 L284 168 L281 175 L284 180 L280 188 L274 183 L268 180 L258 178 L250 176 L242 180 L234 184 L228 186 L222 190 L214 194 L206 198 L198 196 L190 192 L182 190 L176 184 L170 176 L164 168 L160 158 L156 148 L150 138 L144 128 Z M33 72 L48 62 L66 58 L84 56 L100 58 L108 58 L110 70 L104 80 L96 88 L86 92 L76 96 L66 98 L56 96 L46 90 L38 82 Z',lx:235,ly:155,lb:'EE.UU.'},
  {id:'mex',nombre:'México y Centroamérica',b:'usa',nota:'Esfera estadounidense; sede de Chapultepec (1945).',d:'M176 167 L184 170 L192 172 L200 174 L210 176 L220 178 L228 180 L234 184 L240 190 L246 196 L250 202 L254 206 L258 202 L264 200 L270 202 L272 208 L266 212 L260 214 L256 218 L260 222 L266 224 L272 228 L278 232 L282 238 L286 244 L282 248 L276 244 L270 240 L264 234 L258 230 L252 224 L246 218 L238 212 L230 206 L222 200 L214 194 L206 190 L198 186 L190 184 L184 180 L180 174 Z M170 168 L176 172 L182 180 L186 190 L182 194 L176 186 L172 178 Z'},
- {id:'car',nombre:'El Caribe',b:'usa',nota:'Lago estadounidense; azúcar, bases y marines.',d:'M262 210 L274 206 L286 206 L292 210 L284 214 L272 214 L264 212 Z M296 212 L308 210 L312 214 L300 216 Z M316 216 L324 215 L325 218 L317 219 Z'},
+ {id:'cub',nombre:'Cuba',b:'usa',tn:168,tc:'urss',nota:'La Revolución Cubana triunfa en enero de 1959 y la isla gira hacia Moscú.',d:'M262 210 L274 206 L286 206 L292 210 L284 214 L272 214 L264 212 Z'},
+ {id:'car',nombre:'El Caribe',b:'usa',nota:'Lago estadounidense; azúcar, bases y marines.',d:'M296 212 L308 210 L312 214 L300 216 Z M316 216 L324 215 L325 218 L317 219 Z'},
  {id:'sud',nombre:'América del Sur',b:'usa',nota:'La esfera interamericana; Washington vigila cualquier guiño a Moscú.',d:'M281 236 L287 242 L291 248 L295 252 L302 250 L310 246 L318 242 L326 238 L334 240 L342 244 L350 250 L358 256 L366 262 L374 268 L382 272 L390 276 L398 280 L403 286 L400 294 L394 302 L388 310 L382 318 L378 326 L372 334 L366 342 L360 350 L352 356 L344 358 L338 360 L332 366 L326 374 L320 382 L316 392 L313 402 L311 412 L308 418 L303 412 L300 402 L298 390 L297 378 L296 366 L296 354 L297 342 L298 330 L300 320 L303 310 L306 300 L302 292 L296 284 L290 276 L284 268 L280 260 L278 252 L279 244 Z',lx:345,ly:290,lb:'AMÉRICA DEL SUR'},
  {id:'val',nombre:'REPÚBLICA DE VALDIVIA',b:'val',nota:'Su nación. Defina la alineación y membresías en el panel derecho.',d:'M293 360 L304 357 L311 364 L310 375 L302 383 L295 376 L292 368 Z',lx:302,ly:352,lb:'VALDIVIA'},
  {id:'uk',nombre:'Reino Unido',b:'usa',nota:'Aliado atlántico; agotado pero firme frente a Moscú.',d:'M486 92 L494 88 L498 96 L496 106 L492 114 L486 116 L482 108 L484 98 Z M474 104 L482 102 L483 110 L476 112 Z'},
  {id:'esc',nombre:'Escandinavia',b:'neutral',nota:'Entre los dos bloques; Finlandia bajo la sombra soviética.',d:'M514 80 L522 68 L534 60 L548 56 L560 58 L572 56 L580 62 L576 72 L568 80 L560 90 L552 98 L544 104 L536 100 L530 92 L524 86 L518 84 Z M522 102 L530 100 L532 106 L524 108 Z'},
  {id:'esp',nombre:'Península Ibérica',b:'neutral',nota:'Dictaduras neutrales; ni la ONU ni Moscú las quieren.',d:'M470 148 L480 142 L492 140 L502 142 L506 148 L500 154 L490 158 L478 158 L470 154 Z'},
  {id:'eur',nombre:'Europa Occidental',b:'usa',nota:'Francia, Benelux y los Alpes: reconstrucción bajo el paraguas de Washington.',d:'M497 116 L506 112 L514 114 L520 118 L524 124 L520 130 L512 134 L504 136 L496 132 L490 126 L486 120 Z'},
- {id:'ale',nombre:'Alemania',b:'ocupada',nota:'Dividida en zonas de ocupación; el futuro de Europa se decide aquí.',d:'M517 106 L528 102 L538 104 L542 110 L540 118 L532 122 L522 122 L516 116 Z',lx:528,ly:100,lb:'ALEMANIA'},
+ {id:'ale',nombre:'Alemania',b:'ocupada',tn:52,tc:'contested',nota:'Dividida en zonas de ocupación; desde 1949, dos Estados alemanes frente a frente.',d:'M517 106 L528 102 L538 104 L542 110 L540 118 L532 122 L522 122 L516 116 Z',lx:528,ly:100,lb:'ALEMANIA'},
  {id:'ita',nombre:'Italia',b:'contested',nota:'Democracia frágil con el partido comunista más fuerte de Occidente.',d:'M519 130 L528 126 L534 132 L540 138 L548 142 L552 146 L546 150 L538 146 L530 140 L524 136 Z M538 154 L548 152 L550 157 L540 158 Z M526 144 L531 143 L532 150 L527 151 Z'},
  {id:'bal',nombre:'Balcanes',b:'urss',nota:'Yugoslavia partisana y Albania roja; Grecia resiste.',d:'M539 128 L548 124 L558 126 L566 130 L572 136 L568 144 L560 148 L552 150 L546 144 L542 136 Z M556 154 L566 153 L567 156 L557 157 Z'},
  {id:'euror',nombre:'Europa Oriental',b:'urss',nota:'Polonia, Hungría, Rumanía y Checoslovaquia: la órbita soviética.',d:'M540 100 L552 96 L564 94 L576 96 L584 100 L588 108 L586 116 L578 122 L568 126 L558 128 L548 124 L542 116 L540 108 Z'},
@@ -878,7 +884,7 @@ function dipColor(b){
   return '#6b665a';
 }
 
-/* ================= DECISIONES (66) ================= */
+/* ===== DECISIONES (90) ===== */
 var DECISIONES = [
  {id:'k1',i:'key',n:'Plan Nacional de Obras Públicas',d:'Autopistas, puentes y represas: miles de manos ociosas vuelven al trabajo y la demanda despierta.',c:45,dx:{eco:6,soc:3,res:-8},eff:{m:6,d:{eco:0.6,res:-0.4}},fa:{key:12,mar:3,hay:-7,smi:-4}},
  {id:'k2',i:'key',n:'Subsidios al Consumo Familiar',d:'Bonos y giros directos para la canasta básica: el comercio de los barrios vuelve a moverse.',c:35,dx:{soc:7,res:-6},eff:{m:4,d:{soc:0.5,res:-0.3}},fa:{key:10,mar:4,hay:-6,smi:-3}},
@@ -894,6 +900,12 @@ var DECISIONES = [
  {id:'k12',i:'key',n:'Cupones de Abastecimiento Popular',d:'Cartillas y comedores para que ningún hogar pase hambre en la posguerra.',c:35,dx:{soc:5,res:-4},fa:{key:9,mar:5,hay:-6,smi:-3}},
  {id:'k13',i:'key',n:'Inversión en Ciencia y Universidades',d:'Becas, laboratorios y salarios dignos para la investigación valdiviana.',c:35,dx:{eco:2,soc:3,res:-4},eff:{m:8,d:{eco:0.3}},fa:{key:10,mar:2,smi:2,hay:-3}},
  {id:'k14',i:'key',n:'Reactivación del Turismo',d:'Rutas escénicas y fomento a la hotelería del sur: que el mundo vuelva a Valdivia.',c:30,dx:{eco:4,int:2,res:-3},fa:{key:9,smi:4,mar:-2,hay:-2}},
+ {id:'k15',i:'key',n:'Industrialización por Sustitución de Importaciones',d:'La CEPAL lo recomienda: fabricar en casa lo que hoy se compra afuera.',c:50,dx:{eco:6,res:-6,est:-1},eff:{m:8,d:{eco:0.6,res:-0.3}},fa:{key:13,mar:4,hay:-8,smi:-6}},
+ {id:'k16',i:'key',n:'Estado de Bienestar',d:'Pensiones, salud pública y asignaciones familiares: la red social como pilar del desarrollo.',c:55,dx:{soc:7,res:-7},eff:{m:8,d:{soc:0.5,res:-0.4}},fa:{key:13,mar:5,hay:-9,smi:-5}},
+ {id:'k17',i:'key',n:'Plan de Estabilización y Desarrollo',d:'Un plan indicativo que coordina inversión pública y privada a cinco años.',c:40,dx:{eco:4,est:2,res:-5},fa:{key:10,smi:3,hay:-3,mar:1}},
+ {id:'k18',i:'key',n:'Empresa Nacional de Energía',d:'Represas y electrificación rural: energía estatal para la industria nacional.',c:45,dx:{eco:5,res:-6},eff:{m:8,d:{eco:0.4}},fa:{key:11,mar:2,hay:-5,smi:-2}},
+ {id:'k19',i:'key',n:'Reforma Universitaria y Técnica',d:'Universidad gratuita y escuelas técnicas para formar la mano de obra industrial.',c:35,dx:{soc:4,eco:2,res:-4},fa:{key:10,mar:3,hay:-2,smi:1}},
+ {id:'k20',i:'key',n:'Banca de Desarrollo Activa',d:'Crédito barato y dirigido a los sectores estratégicos definidos por el Estado.',c:40,dx:{est:3,eco:2,res:-3},fa:{key:9,hay:-4,mar:2,smi:-1}},
  {id:'m1',i:'mar',n:'Nacionalización del Cobre',d:'El metal rojo vuelve a la patria: renta para el fisco, furia en las cancillerías.',c:50,dx:{res:8,int:-6,est:-3},eff:{m:8,d:{res:0.6,int:-0.2}},fa:{mar:14,key:-2,hay:-9,smi:-8}},
  {id:'m2',i:'mar',n:'Reforma Agraria Integral',d:'La tierra para quien la trabaja: expropiación de latifundios improductivos y titulación campesina.',c:50,dx:{soc:7,eco:2,est:-4},fa:{mar:13,key:2,hay:-8,smi:-9}},
  {id:'m3',i:'mar',n:'Cogestión Obrera en Empresas',d:'Consejos de trabajadores participan en directorios, producción y salarios.',c:40,dx:{soc:5,eco:-3,est:-3},fa:{mar:12,hay:-8,smi:-6,key:-3}},
@@ -908,6 +920,12 @@ var DECISIONES = [
  {id:'m12',i:'mar',n:'Control de Precios de la Canasta',d:'Precios máximos para lo esencial: pan, arroz, pasajes y arriendos básicos.',c:35,dx:{soc:5,eco:-4,res:-2},fa:{mar:11,hay:-10,smi:-8,key:-2}},
  {id:'m13',i:'mar',n:'Red de Guarderías y Cuidados',d:'Salas cuna, hogares de mayores y reconocimiento del trabajo de cuidar.',c:35,dx:{soc:6,res:-4},fa:{mar:10,key:4,hay:-5,smi:-3}},
  {id:'m14',i:'mar',n:'Empresa Estatal de Alimentos',d:'Producción y distribución pública para quebrar la especulación de la mesa.',c:40,dx:{res:3,soc:3,eco:-2},fa:{mar:11,hay:-8,smi:-6}},
+ {id:'m15',i:'mar',n:'Reforma Agraria Profunda',d:'Cooperativas campesinas y expropiación total del latifundio: el campo se colectiviza.',c:55,dx:{soc:6,eco:1,est:-4},fa:{mar:14,hay:-10,smi:-9,key:-2}},
+ {id:'m16',i:'mar',n:'Nacionalización del Petróleo',d:'El oro negro en manos del Estado: soberanía energética y renta nacional.',c:50,dx:{res:7,int:-5,est:-2},fa:{mar:13,hay:-8,smi:-7,key:-1}},
+ {id:'m17',i:'mar',n:'Control de Cambios y Comercio Exterior',d:'El Estado decide qué entra y qué sale: fin de la fuga de capitales.',c:40,dx:{res:4,eco:-2,int:-3},fa:{mar:11,hay:-9,smi:-8}},
+ {id:'m18',i:'mar',n:'Estatización de Servicios Públicos',d:'Luz, teléfono y tranvías pasan al Estado: tarifas sociales garantizadas.',c:45,dx:{soc:4,res:2,int:-4},fa:{mar:12,hay:-8,smi:-6}},
+ {id:'m19',i:'mar',n:'Sindicato Único y Poder Popular',d:'Una sola central obrera cogobierna la producción con el Estado.',c:40,dx:{soc:4,est:-3},fa:{mar:13,hay:-9,smi:-7}},
+ {id:'m20',i:'mar',n:'Plan Quinquenal',d:'Metas obligatorias de producción a cinco años bajo dirección estatal.',c:55,dx:{eco:5,soc:3,res:-8,est:-2},eff:{m:8,d:{eco:0.5,res:-0.4}},fa:{mar:12,key:2,hay:-10,smi:-7}},
  {id:'h1',i:'hay',n:'Autonomía Total del Banco Central',d:'La moneda deja de servir al gobierno de turno y a la radio oficialista.',c:45,dx:{est:3,eco:2,int:3,soc:-2},fa:{hay:12,smi:4,mar:-8,key:-5}},
  {id:'h2',i:'hay',n:'Fin de los Subsidios Estatales',d:'Que el mercado, y no el fisco, decida qué es rentable. La tarifa la fija la oferta.',c:45,dx:{res:7,soc:-6},fa:{hay:12,smi:3,mar:-10,key:-8}},
  {id:'h3',i:'hay',n:'Ley de Libre Competencia',d:'Un tribunal desmantela monopolios y cárteles, públicos o privados.',c:40,dx:{eco:4,est:2},fa:{hay:10,smi:5,mar:-5,key:-3}},
@@ -922,6 +940,12 @@ var DECISIONES = [
  {id:'h12',i:'hay',n:'Vouchers Educativos',d:'La familia elige escuela; el Estado financia al alumno, no al aparato.',c:35,dx:{eco:2,soc:2,res:-3},fa:{hay:10,smi:4,mar:-7,key:-4}},
  {id:'h13',i:'hay',n:'Ley de Quiebras Exprés',d:'Cerrar rápido para emprender de nuevo: el fracaso como escuela, no como tumba.',c:30,dx:{eco:3,est:1,soc:-2},fa:{hay:10,smi:4,mar:-6,key:-3}},
  {id:'h14',i:'hay',n:'Banca Libre',d:'Bancos libres de privilegios oficiales: que la gente vote con su billetera.',c:35,dx:{eco:3,int:1,est:-1},fa:{hay:10,smi:3,mar:-6,key:-3}},
+ {id:'h15',i:'hay',n:'Plan de Estabilización Ortodoxa',d:'Recorte del gasto, moneda fuerte y precios libres: el ajuste que duele pero ordena.',c:50,dx:{est:2,res:5,soc:-5},fa:{hay:13,smi:4,mar:-9,key:-7}},
+ {id:'h16',i:'hay',n:'Apertura a la Inversión Extranjera',d:'Garantías y libre giro de utilidades para atraer fábricas del Norte.',c:45,dx:{eco:5,int:2,soc:-3,res:2},fa:{hay:11,smi:5,mar:-8,key:-4}},
+ {id:'h17',i:'hay',n:'Reforma Tributaria Pro-Mercado',d:'Menos impuestos a la producción, más incentivos para invertir.',c:40,dx:{res:5,soc:-3},fa:{hay:10,smi:4,mar:-8,key:-4}},
+ {id:'h18',i:'hay',n:'Privatización de Servicios Públicos',d:'Luz y teléfono en manos privadas: eficiencia y capital fresco.',c:45,dx:{res:6,soc:-5,eco:2},fa:{hay:11,smi:4,mar:-9,key:-5}},
+ {id:'h19',i:'hay',n:'Libre Convertibilidad',d:'Cualquiera puede comprar y vender divisas sin permiso del Estado.',c:40,dx:{est:2,eco:3,soc:-3},fa:{hay:10,smi:3,mar:-7,key:-4}},
+ {id:'h20',i:'hay',n:'Desregulación del Comercio Interior',d:'Fin de controles de precios y permisos: el mercado interno se libera.',c:35,dx:{eco:4,soc:-2},fa:{hay:9,smi:4,mar:-7,key:-3}},
  {id:'s1',i:'smi',n:'Tratados de Libre Comercio',d:'Valdivia se abre al mundo y al Pacífico: exporta hoy, importa mañana.',c:45,dx:{int:6,eco:4,soc:-2},fa:{smi:12,hay:5,mar:-8,key:-4}},
  {id:'s2',i:'smi',n:'Reducción de Aranceles',d:'Puertos baratos, mercancías baratas, pueblo mejor servido.',c:35,dx:{eco:4,res:-3,int:2},fa:{smi:11,hay:4,key:-5,mar:-5}},
  {id:'s3',i:'smi',n:'Zona Franca del Puerto de Corral',d:'Puerto libre y hub mercante: Valdivia, emporio de los mares del sur.',c:45,dx:{eco:5,int:3,res:-2},eff:{m:6,d:{eco:0.5,int:0.2}},fa:{smi:12,hay:4,key:-4,mar:-4}},
@@ -936,6 +960,12 @@ var DECISIONES = [
  {id:'s12',i:'smi',n:'Zonas Francas y Depósitos Portuarios',d:'Nodos de carga y almacenamiento para el comercio sin fricción.',c:45,dx:{eco:4,int:2,res:-4},eff:{m:6,d:{eco:0.4}},fa:{smi:11,key:2,hay:2,mar:-3}},
  {id:'s13',i:'smi',n:'Crédito al Pequeño Comerciante',d:'Cajas de fomento mercantil para el que empieza con poco.',c:35,dx:{eco:3,soc:2,res:-3},fa:{smi:10,key:3,hay:3,mar:-1}},
  {id:'s14',i:'smi',n:'Diplomacia Comercial',d:'Agregados comerciales, ferias y sellos de origen valdiviano en el mundo.',c:30,dx:{int:5,res:-2},fa:{smi:10,hay:3,key:-1,mar:-3}},
+ {id:'s15',i:'smi',n:'Integración Económica Regional',d:'Un mercado común con los vecinos: escala para la industria valdiviana.',c:45,dx:{int:5,eco:3},fa:{smi:12,key:3,hay:2,mar:-4}},
+ {id:'s16',i:'smi',n:'Fomento a la Exportación Manufacturera',d:'Crédito y seguros para vender bienes con valor agregado al mundo.',c:40,dx:{eco:5,res:-3},eff:{m:6,d:{eco:0.4}},fa:{smi:11,key:3,hay:2,mar:-2}},
+ {id:'s17',i:'smi',n:'Zona de Libre Comercio del Pacífico',d:'Arancel cero con las economías del Pacífico: competencia y eficiencia.',c:45,dx:{int:4,eco:3,res:-2},fa:{smi:12,hay:4,mar:-6,key:-3}},
+ {id:'s18',i:'smi',n:'Cooperación Técnica Internacional',d:'Misiones técnicas y becas para modernizar la producción nacional.',c:30,dx:{soc:3,int:3,res:-2},fa:{smi:9,key:3,hay:2,mar:-1}},
+ {id:'s19',i:'smi',n:'Modernización Portuaria',d:'Grúas, muelles y frigoríficos nuevos para multiplicar las exportaciones.',c:40,dx:{eco:4,res:-4},eff:{m:6,d:{eco:0.3}},fa:{smi:10,hay:3,key:1,mar:-2}},
+ {id:'s20',i:'smi',n:'Marina Mercante Nacional',d:'Buques propios para no pagar fletes extranjeros: comercio en manos valdivianas.',c:40,dx:{eco:3,soc:2,res:-3},fa:{smi:10,key:2,hay:2,mar:-1}},
  {id:'n1',i:'neu',n:'Estado de Excepción',d:'Toque de queda, censura de prensa y calles militarizadas: el orden por decreto.',c:30,dx:{est:6,soc:-6,int:-4},fa:{mar:-6,key:-3,hay:-2,smi:-2}},
  {id:'n2',i:'neu',n:'Gira Diplomática',d:'El presidente recorre cumbres y cancillerías en busca de crédito y respeto.',c:30,dx:{int:5,res:-3},fa:{smi:2,hay:2}},
  {id:'n3',i:'neu',n:'Préstamo del FMI',d:'Dólares frescos con condicionalidad técnica, nacidos en Bretton Woods.',c:25,dx:{res:10,est:-2,int:-2},fa:{hay:3,smi:3,mar:-5}},
@@ -948,7 +978,7 @@ var DECISIONES = [
  {id:'n10',i:'neu',n:'Modernización del Registro Civil',d:'Trámites con registro ordenado y sin coimas: un Estado que funciona.',c:35,dx:{eco:2,est:2,res:-3},fa:{smi:3,key:3,hay:2,mar:1}}
 ];
 
-/* ================= EVENTOS (53) ================= */
+/* ===== SUCESOS (~70) ===== */
 var EVENTOS = [
  {id:'ev_invest',titulo:'LA INVESTIDURA',texto:'El hemiciclo está repleto: la investidura se transmite por cadena radial y noticiarios, y su primera declaración copa los titulares. Cuatro bloques doctrinarios lo observan desde sus bancas.',opciones:[
    {t:'Llamar a la unidad nacional',dx:{est:3},fa:{key:2,mar:2,hay:2,smi:2}},
@@ -1160,7 +1190,67 @@ var EVENTOS = [
  {id:'ev_feriaEste',cond:function(s){return s.comercio==='comecon'},titulo:'FERIA COMERCIAL DEL ESTE',texto:'Valdivia exhibe cobre, lana y vino en la feria de los países socialistas.',opciones:[
    {t:'Firmar contratos largos',dx:{res:3,eco:2},fa:{}},
    {t:'Pedir maquinaria a cambio',dx:{eco:3},fa:{mar:2}},
-   {t:'Cobrar en oro',dx:{res:4,int:-1},fa:{hay:3}}]}
+   {t:'Cobrar en oro',dx:{res:4,int:-1},fa:{hay:3}}]},
+ {id:'ev_nato',cond:function(s){return s.mes>=48&&s.mes<52},titulo:'SE FUNDA LA OTAN',texto:'El bloque occidental se militariza. Washington consulta a sus socios hemisféricos su aporte a la contención.',opciones:[
+   {t:'Apoyar la contención',dx:{int:3,res:-2},fa:{hay:3,smi:2,mar:-4}},
+   {t:'Mantener distancia',dx:{est:1},fa:{}},
+   {t:'Cuestionar el bloque',dx:{int:-2},fa:{mar:4,hay:-3}}]},
+ {id:'ev_china',cond:function(s){return s.mes>=57&&s.mes<60},titulo:'LA REVOLUCIÓN CHINA TRIUNFA',texto:'Mao proclama la República Popular. El comercio del Pacífico se reconfigura.',opciones:[
+   {t:'Reconocer a Pekín',dx:{int:2,res:-2},fa:{mar:5,hay:-4}},
+   {t:'Mantener la neutralidad',dx:{est:1},fa:{}},
+   {t:'Alinearse con Taiwán y EE.UU.',dx:{int:2},fa:{smi:3,hay:3,mar:-5}}]},
+ {id:'ev_korea',cond:function(s){return s.mes>=60&&s.mes<96},titulo:'ESTALLA LA GUERRA DE COREA',texto:'La demanda bélica dispara los precios de las materias primas. Valdivia puede vender como nunca.',opciones:[
+   {t:'Vender todo lo producido',dx:{res:6,eco:3},fa:{smi:4,hay:3}},
+   {t:'Reservar para la industria propia',dx:{eco:4},fa:{key:4}},
+   {t:'Embargo solidario al bloque rival',dx:{int:2,res:-2},fa:{mar:-4}}]},
+ {id:'ev_stalin',cond:function(s){return s.mes>=97&&s.mes<100},titulo:'MUERE STALIN',texto:'El mundo contiene la respiración. Se abre una ventana de distensión.',opciones:[
+   {t:'Ofrecer distensión',dx:{int:3,est:1},fa:{}},
+   {t:'Mantener la guardia alta',dx:{est:1},fa:{hay:2}},
+   {t:'Acercarse a Moscú',dx:{int:-1},fa:{mar:4}}]},
+ {id:'ev_bandung',cond:function(s){return s.mes>=123&&s.mes<126},titulo:'CONFERENCIA DE BANDUNG',texto:'Asia y África proclaman el no alineamiento. Valdivia es invitada a sumarse.',opciones:[
+   {t:'Adherir al Movimiento No Alineado',dx:{int:4,est:1},fa:{key:3,mar:2}},
+   {t:'Rechazar la invitación',dx:{int:1},fa:{hay:2,smi:2}},
+   {t:'Enviar solo observadores',dx:{int:2},fa:{}}]},
+ {id:'ev_suez',cond:function(s){return s.mes>=139&&s.mes<142},titulo:'CRISIS DEL CANAL DE SUEZ',texto:'Egipto nacionaliza el canal; los fletes se encarecen y el comercio se tensiona.',opciones:[
+   {t:'Defender la libre navegación',dx:{int:2,eco:-1},fa:{smi:3,hay:2}},
+   {t:'Apoyar la nacionalización egipcia',dx:{int:1,res:-1},fa:{mar:4,key:2}},
+   {t:'Abstenerse',dx:{est:1},fa:{}}]},
+ {id:'ev_sputnik',cond:function(s){return s.mes>=148&&s.mes<152},titulo:'EL SPUTNIK EN ÓRBITA',texto:'La URSS gana la carrera espacial temprana. Valdivia debate su política científica.',opciones:[
+   {t:'Crear una agencia espacial y técnica',dx:{eco:3,soc:2,res:-3},fa:{key:5,smi:2}},
+   {t:'Comprar tecnología estadounidense',dx:{eco:2,int:1,res:-2},fa:{smi:3,hay:2}},
+   {t:'No invertir en eso',dx:{res:1},fa:{hay:3}}]},
+ {id:'ev_hungria',cond:function(s){return s.mes>=139&&s.mes<142},titulo:'REVUELTA EN HUNGRÍA',texto:'Los tanques soviéticos aplastan Budapest. La opinión mundial se conmueve.',opciones:[
+   {t:'Condenar la intervención',dx:{int:2},fa:{hay:3,smi:2,mar:-4}},
+   {t:'Guardar silencio',dx:{est:1},fa:{}},
+   {t:'Justificar la acción soviética',dx:{int:-2},fa:{mar:5,hay:-4}}]},
+ {id:'ev_cuba',cond:function(s){return s.mes>=168},titulo:'TRIUNFA LA REVOLUCIÓN CUBANA',texto:'Fidel Castro toma La Habana. América Latina se sacude; Washington presiona al continente.',opciones:[
+   {t:'Condenar junto a EE.UU.',dx:{int:2,res:1},fa:{hay:3,smi:2,mar:-5}},
+   {t:'Reconocer al nuevo gobierno',dx:{int:-1},fa:{mar:5,key:2,hay:-3}},
+   {t:'Pedir no intervención',dx:{int:3},fa:{key:3}}]},
+ {id:'ev_u2',cond:function(s){return s.mes>=184},titulo:'INCIDENTE DEL AVIÓN ESPÍA U-2',texto:'Un avión estadounidense es derribado sobre la URSS; la tensión mundial se dispara.',opciones:[
+   {t:'Llamar a la calma',dx:{int:2,est:1},fa:{}},
+   {t:'Culpar a Washington',dx:{int:-1},fa:{mar:4,hay:-3}},
+   {t:'Culpar a Moscú',dx:{int:-1},fa:{hay:3,mar:-4}}]},
+ {id:'ev_cepal',cond:function(s){return s.mes>=48},titulo:'LA CEPAL PROPONE EL DESARROLLISMO',texto:'Prebisch y la CEPAL instan a industrializar América Latina. El Congreso debate el modelo.',opciones:[
+   {t:'Adoptar el desarrollismo',dx:{eco:4,res:-4},fa:{key:6,mar:3,hay:-5,smi:-4}},
+   {t:'Mantener el modelo primario-exportador',dx:{res:2},fa:{smi:4,hay:3,key:-3}},
+   {t:'Modelo mixto',dx:{eco:2,res:-2},fa:{key:3,smi:2}}]},
+ {id:'ev_welfare',titulo:'PRESIÓN POR EL ESTADO DE BIENESTAR',texto:'Sindicatos y partidos exigen pensiones, salud y vivienda como derechos.',opciones:[
+   {t:'Ampliar el Estado de bienestar',dx:{soc:6,res:-6},fa:{key:6,mar:4,hay:-6}},
+   {t:'Reforma gradual',dx:{soc:3,res:-3},fa:{key:3}},
+   {t:'Rechazar por costo fiscal',dx:{res:3,soc:-4},fa:{hay:5,mar:-5}}]},
+ {id:'ev_petroleo',titulo:'HALLAZGO DE PETRÓLEO EN LA PLATAFORMA',texto:'Pozos prometedores frente a la costa. Las petroleras extranjeras ofrecen desarrollarlo.',opciones:[
+   {t:'Explotación estatal',dx:{res:5,eco:2},fa:{mar:5,key:4,hay:-4}},
+   {t:'Concesión a extranjeras',dx:{eco:4,int:2},fa:{smi:5,hay:4,mar:-5}},
+   {t:'Reserva estratégica',dx:{est:1},fa:{}}]},
+ {id:'ev_debt50s',titulo:'RENEGOCIACIÓN DE LA DEUDA EXTERNA',texto:'Los acreedores ofrecen reestructurar a cambio de metas fiscales.',opciones:[
+   {t:'Aceptar con metas',dx:{res:5,soc:-3},fa:{hay:3}},
+   {t:'Negociar sin ajuste',dx:{res:2},fa:{}},
+   {t:'Rechazar la reestructuración',dx:{int:-2,res:-2},fa:{mar:3}}]},
+ {id:'ev_television',titulo:'LLEGA LA TELEVISIÓN',texto:'La TV estatal inicia transmisiones; la política entra en los hogares.',opciones:[
+   {t:'Invertir en TV educativa',dx:{soc:3,res:-2},fa:{key:4}},
+   {t:'Abrir canales privados',dx:{eco:2},fa:{smi:3,hay:2}},
+   {t:'No priorizarlo',dx:{res:1},fa:{}}}
 ];
 
 var EPILOGOS = {
@@ -1171,7 +1261,6 @@ var EPILOGOS = {
  neu:'Ningún bloque impuso su doctrina: el Gobierno navegó entre facciones y potencias, equilibrando sin transformar. Valdivia sigue, como siempre, de pie en la encrucijada.'
 };
 
-/* ================= ESTADO ================= */
 var state = null;
 function nuevoEstado(){
   return {
@@ -1190,10 +1279,9 @@ function nuevoEstado(){
 function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
 function fecha(m){return MESES[m%12]+' '+(1945+Math.floor(m/12));}
 function fechaHoi(m){return '01.'+MES3[m%12]+'.'+(1945+Math.floor(m/12));}
-function tensionCalc(){ return Math.min(100,Math.round(10+state.mes*2.2+(state.alineacion!=='neutral'?8:0))); }
+function tensionCalc(){ return Math.min(100,Math.round(10+state.mes*0.4+(state.alineacion!=='neutral'?8:0))); }
 function $(id){return document.getElementById(id);}
 
-/* ================= RENDER SECCIÓN 1 ================= */
 function renderTop(){
   $('dateLabel').textContent = fecha(state.mes);
   $('monthLabel').textContent = 'MES '+(state.mes+1)+' / '+TOTAL_MESES+' DEL MANDATO';
@@ -1281,7 +1369,251 @@ function drawSpark(){
   $('legend').innerHTML=lg;
 }
 
-/* ================= RENDER SECCIÓN 2 ================= */
+function produccionBase2(){return produccionBase();}
+function produccionEfectiva(){
+  var p=produccionBase();
+  if(state.prodMod){ for(var r in p){ p[r]=Math.max(0,Math.round(p[r]*state.prodMod[r])); } }
+  return p;
+}
+function calcularGeopolitica(){
+  var pm={},pr={},infl=[];
+  for(var r in RECURSOS){pm[r]=1;pr[r]=1;}
+  var m=state.mes;
+  if(m<12){ pm.cobre+=.2;pm.madera+=.2;pm.trigo+=.15; infl.push({t:'Posguerra inmediata (1945): Europa compra cobre, madera y trigo a toda marcha.',k:'pos'}); }
+  else if(m<24){ pm.carbon+=.25;pm.cobre+=.1;pm.trigo+=.1; infl.push({t:'Reconstrucción y crisis del carbón (1946): el combustible y los alimentos se encarecen.',k:'pos'}); }
+  else if(m<36){ pm.carbon+=.15;pm.trigo+=.25; infl.push({t:'Duro invierno y crisis alimentaria (1947): el trigo en máximos.',k:'pos'});
+    if(m>=29){ pm.cobre+=.3;pm.madera+=.3;pm.acero+=.3;pm.manufacturas+=.3; infl.push({t:'Plan Marshall (1947): demanda masiva de materiales de reconstrucción.',k:'pos'}); } }
+  else if(m<48){ pm.cobre+=.15;pm.acero+=.15; infl.push({t:'Bloqueo de Berlín y consolidación de bloques (1948): la reconstrucción sigue tirando de los metales.',k:'pos'}); }
+  else if(m<60){ pm.cobre-=.1;pm.hierro-=.1; infl.push({t:'Recesión de 1949 y victoria comunista en China: los mercados se ajustan.',k:'neg'}); }
+  else if(m<96){ pm.cobre+=.25;pm.hierro+=.3;pm.carbon+=.2; infl.push({t:'GUERRA DE COREA (1950-53): la demanda bélica dispara cobre, hierro y carbón.',k:'pos'}); }
+  else if(m<108){ pm.cobre-=.2;pm.hierro-=.15; infl.push({t:'Fin de la Guerra de Corea (1953): los precios de los metales se desploman.',k:'neg'}); }
+  else if(m<132){ pm.cobre+=.1;pm.manufacturas+=.1; infl.push({t:'Recuperación y boom industrial (1954-55): consumo y construcción al alza.',k:'pos'}); }
+  else if(m<144){ pm.carbon+=.15; infl.push({t:'Crisis de Suez (1956): tensiones energéticas y fletes más caros.',k:'pos'}); }
+  else if(m<156){ pm.manufacturas+=.15;pm.cobre+=.1; infl.push({t:'Era Sputnik (1957): carrera tecnológica y consumo en expansión.',k:'pos'}); }
+  else if(m<168){ pm.cobre-=.15;pm.hierro-=.1; infl.push({t:'Recesión de 1958: el comercio mundial se enfría.',k:'neg'}); }
+  else { pm.cobre+=.1; infl.push({t:'Revolución Cubana (1959) y nueva tensión hemisférica: América Latina en ebullición.',k:'pos'}); }
+  if(state.alineacion==='usa'){
+    pm.cobre+=.1; pm.manufacturas+=.1;
+    infl.push({t:'Alianza con Washington: precios preferentes y cupos garantizados para las exportaciones valdivianas.',k:'pos'});
+    if(m>=29){ pr.cobre+=.1; pr.madera+=.1; infl.push({t:'Maquinaria y créditos del Plan Marshall modernizan la producción nacional.',k:'pos'}); }
+  }else if(state.alineacion==='urss'){
+    pm.cobre*=.7; pm.madera*=.7; pm.manufacturas*=.7; pr.cobre*=.9; pr.manufacturas*=.9;
+    infl.push({t:'Embargo occidental: el bloque estadounidense castiga los precios de sus exportaciones y retira capitales.',k:'neg'});
+    if(state.comercio==='comecon'){
+      pm.cobre+=.2; pm.madera+=.2; pm.hierro+=.15;
+      infl.push({t:'COMECON: el bloque oriental compra materias primas a precio pactado, amortiguando el embargo.',k:'pos'});
+    }
+  }
+  if(state.comercio==='gatt'){
+    pm.manufacturas+=.1; pm.trigo+=.05;
+    infl.push({t:'GATT: el comercio multilateral sostiene los precios de manufacturas y alimentos.',k:'pos'});
+  }
+  GUERRA.forEach(function(g){
+    if(g.m<=m && g.rec){
+      for(var r in g.rec){ if(g.rec[r].p) pm[r]*=(1+g.rec[r].p); if(g.rec[r].q) pr[r]*=(1+g.rec[r].q); }
+      infl.push({t:'Efecto persistente de «'+g.titulo+'» sobre el mercado mundial.',k:'neu'});
+    }
+  });
+  var riesgo=(state.stats.soc<25||state.support.mar<18);
+  if(riesgo && Math.random()<0.5){
+    pr.cobre*=.7; pr.carbon*=.8; state._huelga=true;
+    infl.push({t:'Huelgas mineras: el descontento social paraliza parte de la extracción de cobre y carbón este mes.',k:'neg'});
+  }else{ state._huelga=false; }
+  state.precioMod=pm; state.prodMod=pr; state.influencias=infl;
+}
+function precioEfectivo(r){ return RECURSOS[r].precio*(state.precioMod?state.precioMod[r]:1); }
+function clampD(v,mn,mx){return Math.max(mn,Math.min(mx,v));}
+function simEconomia(){
+  var s=state;
+  calcularGeopolitica();
+  var prod=produccionEfectiva();
+  for(var r in prod){ s.recursos[r]+=prod[r]; }
+  var producido={acero:0,manufacturas:0};
+  if(s.proyectos.siderurgica){
+    var v1=Math.min(Math.floor(s.recursos.hierro/4), Math.floor(s.recursos.carbon/4), 3);
+    if(v1>0){ s.recursos.hierro-=4*v1; s.recursos.carbon-=4*v1; s.recursos.acero+=3*v1; producido.acero=3*v1; }
+  }
+  if(s.proyectos.manufacturas){
+    var v2=Math.min(Math.floor(s.recursos.acero/2), Math.floor(s.recursos.madera/2), 3);
+    if(v2>0){ s.recursos.acero-=2*v2; s.recursos.madera-=2*v2; s.recursos.manufacturas+=3*v2; producido.manufacturas=3*v2; }
+  }
+  var demandaTrigo=20, foodOK=true, deficitTrigo=0;
+  if(s.recursos.trigo>=demandaTrigo){ s.recursos.trigo-=demandaTrigo; }
+  else { deficitTrigo=demandaTrigo-s.recursos.trigo; s.recursos.trigo=0; foodOK=false; }
+  var energyOK = s.recursos.carbon>=6;
+  if(energyOK){ s.recursos.carbon-=6; }
+  var ingresosExport=0, exportados={};
+  ['cobre','hierro','madera','acero','manufacturas'].forEach(function(r){
+    var surplus=Math.max(0, s.recursos[r]-2);
+    if(surplus<=0){exportados[r]=0;return;}
+    var ratio=(RECURSOS[r].bruto && s.restriccionMP)?0.2:0.8;
+    var qty=Math.floor(surplus*ratio);
+    if(qty<=0){exportados[r]=0;return;}
+    var mult=1;
+    if(r==='cobre'&&s.proyectos.fundicion)mult=1.5;
+    if(r==='madera'&&s.proyectos.aserradero)mult=1.5;
+    s.recursos[r]-=qty;
+    exportados[r]=qty;
+    ingresosExport+=qty*precioEfectivo(r)*mult;
+  });
+  var gastoImport=0, arancelIngresos=0, importados={}, importPlan={};
+  if(!foodOK) importPlan.trigo=deficitTrigo;
+  if(!energyOK) importPlan.carbon=6;
+  if(s.modelo==='libre' && !s.proyectos.manufacturas) importPlan.manufacturas=3;
+  for(var ir in importPlan){
+    if(s.modelo==='autarquico'){ importados[ir]=0; continue; }
+    var qty=s.modelo==='proteccionista'?Math.ceil(importPlan[ir]*0.5):importPlan[ir];
+    importados[ir]=qty;
+    var cost=qty*precioEfectivo(ir);
+    gastoImport+=cost;
+    arancelIngresos+=cost*(s.arancel/100);
+    s.recursos[ir]+=qty;
+  }
+  if((importados.trigo||0)>=deficitTrigo && deficitTrigo>0){ foodOK=true; }
+  var neto=ingresosExport+arancelIngresos-gastoImport;
+  var ecoD=(ingresosExport-gastoImport)/25;
+  if(producido.acero>0||producibleIsSet(producido)) ecoD+=0.5;
+  ecoD+=energyOK?0.3:-0.8;
+  if(s.modelo==='libre')ecoD+=0.2; else if(s.modelo==='autarquico')ecoD-=0.3;
+  var socD=foodOK?0.5:-1.5;
+  if(producido.manufacturas>0||producido.acero>0)socD+=0.3;
+  if(s.arancel>20)socD-=0.3; else if(s.modelo==='libre')socD+=0.2;
+  if(s.modelo==='autarquico'&&!foodOK)socD-=0.5;
+  var estD=neto>0?0.2:-0.3;
+  if(!foodOK)estD-=0.8;
+  if(!energyOK)estD-=0.4;
+  if(producido.manufacturas>0)estD+=0.2;
+  if(state._huelga)estD-=0.3;
+  var resD=neto*0.08;
+  var empleo=Math.min(100, 40+(producibleIsSet(producido)?25:0)+(s.proyectos.siderurgica?15:0)+(s.proyectos.manufacturas?20:0)-(state._huelga?10:0));
+  var segAlim=foodOK?(s.recursos.trigo>10?100:80):Math.max(0, 60-deficitTrigo*4);
+  s.econ={empleo:empleo,segAlim:segAlim,ingresosExport:Math.round(ingresosExport),gastoImport:Math.round(gastoImport),arancelIngresos:Math.round(arancelIngresos),neto:Math.round(neto),exportados:exportados,importados:importados,producido:producido,foodOK:foodOK,energyOK:energyOK};
+  return {eco:clampD(ecoD,-4,4), soc:clampD(socD,-3,3), est:clampD(estD,-3,3), res:clampD(resD,-6,6)};
+}
+function producibleIsSet(p){ return (p.acero||0)>0 || (p.manufacturas||0)>0; }
+function construirProyecto(id){
+ if(state.over) return;
+ var p=null; PROYECTOS.forEach(function(x){if(x.id===id)p=x;});
+ if(!p||state.proyectos[id]) return;
+ if(p.req && !state.proyectos[p.req]){ toast('<b>Requisito previo:</b> '+PROYECTOS.filter(function(x){return x.id===p.req;})[0].nombre); return; }
+ if(state.pp<p.cp){ toast('<b>Capital Político insuficiente</b> · se requieren '+p.cp+' CP.'); return; }
+ if(state.stats.res<p.res){ toast('<b>Reservas insuficientes</b> · se requieren '+p.res+'.'); return; }
+ state.pp-=p.cp;
+ state.stats.res=clamp(state.stats.res-p.res,0,100);
+ state.proyectos[id]=true;
+ addLog('Se inaugura el proyecto industrial <b style="color:#c8a24a">'+p.nombre+'</b>.','#c8a24a');
+ renderAll(); renderSeccion3();
+}
+function setModelo(m){
+ if(state.over) return;
+ state.modelo=m;
+ addLog('Política comercial: <b>'+MODELOS[m].nombre+'</b>.','#c8a24a');
+ renderSeccion3();
+}
+function renderResTable(){
+ var prod=produccionEfectiva();
+ var h='';
+ for(var r in RECURSOS){
+   var rc=RECURSOS[r];
+   var mult='';
+   if(r==='cobre'&&state.proyectos.fundicion)mult=' <span style="color:var(--pos)">×1.5</span>';
+   if(r==='madera'&&state.proyectos.aserradero)mult=' <span style="color:var(--pos)">×1.5</span>';
+   var pe=Math.round(precioEfectivo(r)*10)/10;
+   h+='<div class="resRow"><span class="rn"><span class="rdot" style="background:'+rc.color+'"></span>'+rc.nombre+'</span>'+
+      '<span class="rv"><span>+<b>'+prod[r]+'</b>/mes</span><span>Stock <b>'+Math.round(state.recursos[r])+'</b></span><span>$<b>'+pe+'</b>'+mult+'</span></span></div>';
+ }
+ $('resTable').innerHTML=h;
+}
+function renderEconInd(){
+ var e=state.econ;
+ var h='';
+ function bar(label,val){
+   var c=val>60?'var(--pos)':(val>30?'var(--gold2)':'var(--neg)');
+   return '<div class="indRow"><div class="lbl"><span>'+label+'</span><b>'+val+'%</b></div><div class="bar"><i style="width:'+val+'%;background:'+c+'"></i></div></div>';
+ }
+ if(e){
+   h+=bar('Empleo industrial', e.empleo);
+   h+=bar('Seguridad alimentaria', e.segAlim);
+   h+='<div class="indRow"><div class="lbl"><span>Energía industrial</span><b>'+(e.energyOK?'Cubierta':'Escasa')+'</b></div></div>';
+   if(state._huelga) h+='<div class="indRow"><div class="lbl" style="color:var(--neg)"><span>⚠ Huelgas mineras activas</span></div></div>';
+ }else{
+   h+='<div style="font-size:11px;color:var(--dim);font-style:italic">Los indicadores se calcularán al cierre del primer mes.</div>';
+ }
+ $('econInd').innerHTML=h;
+}
+function renderMercado(){
+ var h='';
+ if(state.influencias && state.influencias.length){
+   state.influencias.forEach(function(i){ h+='<div class="inflItem '+(i.k||'')+'">'+i.t+'</div>'; });
+ }else{
+   h+='<div class="inflItem">Sin influencias extraordinarias este mes.</div>';
+ }
+ h+='<div class="secHead">Precios Mundiales</div>';
+ for(var r in RECURSOS){
+   var pmv=state.precioMod?state.precioMod[r]:1;
+   var cur=Math.round(RECURSOS[r].precio*pmv*10)/10;
+   var diff=Math.round((pmv-1)*100);
+   var cls=diff>0?'var(--pos)':(diff<0?'var(--neg)':'var(--dim)');
+   h+='<div class="resRow"><span class="rn"><span class="rdot" style="background:'+RECURSOS[r].color+'"></span>'+RECURSOS[r].nombre+'</span><span class="rv"><span>$<b>'+cur+'</b>/u</span><span style="color:'+cls+'">'+(diff>0?'+':'')+diff+'%</span></span></div>';
+ }
+ $('mercado').innerHTML=h;
+}
+function renderProjList(){
+ var h='';
+ PROYECTOS.forEach(function(p){
+   var built=state.proyectos[p.id];
+   var reqOK=!p.req||state.proyectos[p.req];
+   var can=built||(!reqOK)||(state.pp<p.cp)||(state.stats.res<p.res);
+   h+='<div class="projCard'+(built?' built':'')+'"><h4>'+p.nombre+'</h4><p>'+p.desc+'</p><div class="prow">'+
+      '<span class="cost">'+p.cp+' CP · '+p.res+' Reservas'+(p.req&&!reqOK?' · requiere '+PROYECTOS.filter(function(x){return x.id===p.req;})[0].nombre:'')+'</span>'+
+      (built?'<span class="ok">OPERATIVO</span>':'<button class="btn" style="padding:5px 10px;font-size:9px" '+(can?'disabled':'')+' onclick="construirProyecto(\''+p.id+'\')">Construir</button>')+
+      '</div></div>';
+   });
+ $('projList').innerHTML=h;
+}
+function renderModeloBtns(){
+ var h='';
+ for(var m in MODELOS){
+   h+='<button class="tradeBtn'+(state.modelo===m?' sel':'')+'" type="button" title="'+MODELOS[m].desc+'" onclick="setModelo(\''+m+'\')">'+MODELOS[m].nombre+'</button>';
+ }
+ $('modeloBtns').innerHTML=h;
+}
+function renderBalanza(){
+ var e=state.econ;
+ if(!e){ $('balanza').innerHTML='<div style="font-size:11px;color:var(--dim);font-style:italic">Sin datos aún.</div>'; return; }
+ var net=e.neto;
+ var h='';
+ h+='<div class="balRow"><span>Exportaciones</span><b style="color:var(--pos)">+$'+e.ingresosExport+'</b></div>';
+ h+='<div class="balRow"><span>Importaciones</span><b style="color:var(--neg)">−$'+e.gastoImport+'</b></div>';
+ h+='<div class="balRow"><span>Recaudo por aranceles</span><b style="color:var(--gold2)">+$'+e.arancelIngresos+'</b></div>';
+ h+='<div class="balRow" style="border-top:1px solid var(--brass2);margin-top:4px"><span><b>Saldo neto</b></span><b style="color:'+(net>=0?'var(--pos)':'var(--neg)')+'">'+(net>=0?'+':'−')+'$'+Math.abs(net)+'</b></div>';
+ $('balanza').innerHTML=h;
+}
+function renderFlujos(){
+ var e=state.econ;
+ if(!e){ $('flujos').innerHTML='<div style="font-size:11px;color:var(--dim);font-style:italic">Sin datos aún.</div>'; return; }
+ var h='<div class="secHead" style="margin-top:0">Exportado</div>';
+ var any=false;
+ for(var r in e.exportados){ if(e.exportados[r]>0){ h+='<span class="flowChip">'+RECURSOS[r].nombre+' <b>'+e.exportados[r]+'</b></span>'; any=true; } }
+ if(!any) h+='<span style="font-size:11px;color:var(--dim);font-style:italic">Nada este mes.</span>';
+ h+='<div class="secHead">Importado</div>';
+ any=false;
+ for(var r2 in e.importados){ if(e.importados[r2]>0){ h+='<span class="flowChip">'+RECURSOS[r2].nombre+' <b>'+e.importados[r2]+'</b></span>'; any=true; } }
+ if(!any) h+='<span style="font-size:11px;color:var(--dim);font-style:italic">Nada este mes.</span>';
+ h+='<div class="secHead">Producido por la industria</div>';
+ any=false;
+ if(e.producido.acero>0){ h+='<span class="flowChip">Acero <b>'+e.producido.acero+'</b></span>'; any=true; }
+ if(e.producido.manufacturas>0){ h+='<span class="flowChip">Manufacturas <b>'+e.producido.manufacturas+'</b></span>'; any=true; }
+ if(!any) h+='<span style="font-size:11px;color:var(--dim);font-style:italic">Sin producción industrial. Construya proyectos.</span>';
+ $('flujos').innerHTML=h;
+}
+function renderSeccion3(){
+ renderResTable(); renderEconInd(); renderMercado(); renderProjList(); renderModeloBtns(); renderBalanza(); renderFlujos();
+ $('arancelVal').textContent=state.arancel+'%';
+ $('arancelSlider').value=state.arancel;
+ $('restriccionChk').checked=state.restriccionMP;
+}
+
 function buildMapa(){
   var svg='<defs>';
   svg+='<radialGradient id="ocean" cx="50%" cy="45%" r="80%">';
@@ -1486,7 +1818,6 @@ function unirseOrg(org){
 function renderSeccion2(){ renderTopbar2(); renderMapa(); renderNacion(); renderAlineacion(); renderOrgs(); renderTicker(); }
 function renderAll(){ renderTop(); renderCongreso(); renderEfectos(); renderCards(); renderLog(); drawSpark(); if(!$('sec2').classList.contains('hidden')) renderSeccion2(); if(!$('sec3').classList.contains('hidden')) renderSeccion3(); }
 
-/* ================= ALINEACIÓN ================= */
 function alinear(bloque){
   if(state.over) return;
   if(state.alineacion===bloque) return;
@@ -1507,7 +1838,6 @@ function alinear(bloque){
   renderAll(); renderSeccion2();
 }
 
-/* ================= MECÁNICA ================= */
 function toast(html){
   var t=$('toast'); t.innerHTML=html; t.classList.add('show');
   clearTimeout(t._to); t._to=setTimeout(function(){t.classList.remove('show');},4200);
@@ -1572,7 +1902,6 @@ function finDeMes(){
     e.m--; return e.m>0;
   });
   for(var f2 in state.support){ if(state.support[f2]<18 && Math.random()<0.25){ d.est-=1; addLog('El bloque <b style="color:'+IDEO[f2].color+'">'+IDEO[f2].nombre+'</b>, hostil, azuza disturbios en las calles.',IDEO[f2].color); } }
-  /* Simulación económica mensual (incluye efectos geopolíticos) */
   var sim=simEconomia();
   d.eco+=sim.eco; d.soc+=sim.soc; d.est+=sim.est; d.res+=sim.res;
   if(state.econ){
@@ -1645,10 +1974,10 @@ function terminar(motivo){
   var score=Math.round(s.eco*0.25+s.soc*0.25+s.est*0.2+s.int*0.15+s.res*0.15);
   var titulo,texto;
   if(motivo==='golpe'){ titulo='QUIEBRE INSTITUCIONAL EN VALDIVIA'; texto='La estabilidad colapsó. Tanques en la Plaza de la República y un bando leído al alba en cadena radial: el Congreso queda disuelto, su Gobierno, depuesto.'; }
-  else if(score>=75){ titulo='EL MILAGRO VALDIVIANO'; texto='Los libros de historia hablarán de usted: la República salió de la posguerra con pulso firme y la bandera vuelve a ondear con orgullo sobre el Calle-Calle.'; }
+  else if(score>=75){ titulo='EL MILAGRO VALDIVIANO'; texto='Los libros de historia hablarán de usted: la República salió de la larga posguerra con pulso firme y la bandera vuelve a ondear con orgullo sobre el Calle-Calle.'; }
   else if(score>=58){ titulo='RECUPERACIÓN NOTABLE'; texto='El mandato deja una nación más firme que la que encontró. Quedan deudas y cicatrices, pero los cimientos resisten.'; }
   else if(score>=42){ titulo='UN MANDATO GRIS'; texto='Ni catástrofe ni milagro: Valdivia sobrevivió a su mandato como sobrevive a todo, con paciencia de río.'; }
-  else if(score>=25){ titulo='LA CRISIS PERSISTE'; texto='El país sigue hundido en la ciénaga de la posguerra. El Congreso aplaude su salida con escaso entusiasmo.'; }
+  else if(score>=25){ titulo='LA CRISIS PERSISTE'; texto='El país sigue hundido en la crisis estructural. El Congreso aplaude su salida con escaso entusiasmo.'; }
   else { titulo='EL HUNDIMIENTO'; texto='Deja una nación en ruinas: las chimeneas frías, las calles en llamas y el nombre de Valdivia borrado de los mercados del mundo.'; }
   var dom=null,max=-1; for(var k in state.support){ if(state.support[k]>max){max=state.support[k];dom=k;} }
   var leg = max>=55? EPILOGOS[dom] : EPILOGOS.neu;
@@ -1664,7 +1993,6 @@ function terminar(motivo){
   $('endOverlay').classList.remove('hidden');
 }
 
-/* ================= NAVEGACIÓN ================= */
 function verSeccion(n){
   $('sec1').classList.toggle('hidden', n!==1);
   $('sec2').classList.toggle('hidden', n!==2);
@@ -1684,14 +2012,13 @@ $('mmAtlas').onclick=function(){setMapMode('atlas');};
 $('arancelSlider').addEventListener('input',function(){ state.arancel=+this.value; $('arancelVal').textContent=state.arancel+'%'; });
 $('restriccionChk').addEventListener('change',function(){ state.restriccionMP=this.checked; renderSeccion3(); });
 
-/* ================= ARRANQUE ================= */
 function iniciar(){
   state=nuevoEstado();
-  addLog('Jura el Gobierno de Emergencia. Comienza el mandato de 36 meses sobre la República de Valdivia (1945–1947).','#d8c48a');
-  addLog('Cuatro doctrinas disputan el hemiciclo mientras el mundo se parte en dos bloques: EE.UU. y la URSS.','#8a7a4f');
-  addLog('El mercado mundial reaccionará a la geopolítica: auge de posguerra, crisis del carbón, Plan Marshall y embargos moverán precios y producción.','#c8a24a');
+  addLog('Jura el Gobierno de Emergencia. Comienza el mandato de 192 meses sobre la República de Valdivia (1945–1960).','#d8c48a');
+  addLog('Atravesará toda la Guerra Fría temprana: posguerra, Plan Marshall, Corea, Bandung, Suez, Sputnik y Cuba.','#8a7a4f');
+  addLog('El mercado mundial reaccionará a la geopolítica: auge coreano, recesión del 58 y Revolución Cubana moverán precios y producción.','#c8a24a');
   aplicarGuerra(0);
-  simEconomia(); /* estado inicial de precios y producción */
+  simEconomia();
   repartirMano();
   buildMapa();
   renderAll();
