@@ -75,9 +75,8 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .effChip b{color:var(--ink)}
 #centerHead{display:flex;align-items:center;justify-content:space-between;padding:8px 12px}
 #centerHead .sess{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;color:var(--gold)}
-#cards,#econDecList,#intlList{display:grid;gap:12px}
+#cards,#intlList{display:grid;gap:12px}
 #cards{grid-template-columns:repeat(3,1fr);padding:0 12px 12px;overflow-y:auto}
-#econDecList{grid-template-columns:1fr 1fr;padding:0 0 10px}
 #intlList{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));padding:8px}
 .card{--ic:#8a7a4f;background:linear-gradient(#312e25,#28251d);border:1px solid var(--brass2);border-top:3px solid var(--ic);display:flex;flex-direction:column;position:relative;transition:transform .18s,box-shadow .18s}
 .card:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.7)}
@@ -102,32 +101,41 @@ button{font-family:'Cinzel',serif;cursor:pointer}
 .logEntry{margin-bottom:8px;padding-bottom:7px;border-bottom:1px dashed #3a352a}
 .logEntry .ld{font-family:'Cinzel',serif;font-size:9px;letter-spacing:1.5px;color:var(--gold2)}
 .logEntry .dot{display:inline-block;width:7px;height:7px;margin-right:5px}
-.secHead{font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;color:var(--gold);margin:12px 0 6px;text-transform:uppercase;border-bottom:1px dashed #3a352a;padding-bottom:3px}
-.resRow{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #2c2a24;font-size:12px}
-.resRow .rn{display:flex;align-items:center;gap:7px}
-.resRow .rdot{width:9px;height:9px;border-radius:50%;border:1px solid rgba(0,0,0,.5)}
-.resRow .rv{display:flex;gap:12px;font-family:'Oswald',sans-serif;font-size:11px;color:var(--dim)}
+/* ===== SECCIÓN ECONOMÍA REORGANIZADA ===== */
+#sec3{position:relative;z-index:4;height:calc(100vh - 64px);padding:10px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:12px}
+#sec3Col1,#sec3Col2{display:flex;flex-direction:column;gap:10px;min-height:0;overflow:hidden}
+#sec3Col1 > .panel, #sec3Col2 > .panel{display:flex;flex-direction:column;min-height:0}
+#sec3Scroll1,#sec3Scroll2{overflow-y:auto;flex:1;padding:12px 14px;min-height:0}
+.secHead{font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;color:var(--gold);margin:14px 0 8px;text-transform:uppercase;border-bottom:1px dashed #3a352a;padding-bottom:4px;display:flex;align-items:center;gap:8px}
+.secHead:first-child{margin-top:0}
+.secHead .secIcon{width:18px;height:18px;background:linear-gradient(135deg,#4a453a,#2c2920);border:1px solid var(--brass2);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--gold2)}
+.resRow{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #2c2a24;font-size:12.5px}
+.resRow:last-child{border-bottom:none}
+.resRow .rn{display:flex;align-items:center;gap:8px}
+.resRow .rdot{width:10px;height:10px;border-radius:50%;border:1px solid rgba(0,0,0,.5)}
+.resRow .rv{display:flex;gap:14px;font-family:'Oswald',sans-serif;font-size:11.5px;color:var(--dim)}
 .resRow .rv b{color:var(--ink);font-weight:500}
-.indRow{margin-bottom:9px}
-.indRow .lbl{display:flex;justify-content:space-between;font-size:11px;color:var(--dim);margin-bottom:3px}
+.indRow{margin-bottom:10px}
+.indRow .lbl{display:flex;justify-content:space-between;font-size:11.5px;color:var(--dim);margin-bottom:3px}
 .indRow .lbl b{color:var(--ink)}
 .indRow .bar{height:8px;background:#12100c;border:1px solid #000}
 .indRow .bar i{display:block;height:100%;transition:width .4s}
-.inflItem{font-size:11px;color:var(--dim);padding:5px 0;border-bottom:1px dashed #2c2a24;font-style:italic;line-height:1.4}
+.inflItem{font-size:11.5px;color:var(--dim);padding:6px 0;border-bottom:1px dashed #2c2a24;font-style:italic;line-height:1.4}
 .inflItem.pos{color:#b9c9a0}.inflItem.neg{color:#d1a090}
-.projCard{background:#1f1d18;border:1px solid var(--brass2);padding:9px;margin-bottom:8px}
-.projCard.built{border-color:var(--gold);background:#2a271c}
-.projCard h4{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:.5px}
-.projCard p{font-size:11px;color:var(--dim);margin:4px 0;line-height:1.4;font-style:italic}
-.projCard .prow{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
-.projCard .cost{font-size:10px;color:var(--dim)}
+.projCard{background:linear-gradient(#1f1d18,#1a1815);border:1px solid var(--brass2);padding:11px 13px;margin-bottom:10px;border-radius:2px}
+.projCard.built{border-color:var(--gold);background:linear-gradient(#2a271c,#23201a);box-shadow:inset 0 0 0 1px rgba(216,196,138,.15)}
+.projCard h4{font-family:'Cinzel',serif;font-size:12.5px;color:var(--gold);letter-spacing:.5px;margin-bottom:4px}
+.projCard p{font-size:11.5px;color:var(--dim);margin:4px 0 8px;line-height:1.45;font-style:italic}
+.projCard .prow{display:flex;justify-content:space-between;align-items:center;margin-top:6px;gap:8px}
+.projCard .cost{font-size:10.5px;color:var(--dim);font-family:'Oswald',sans-serif;letter-spacing:.5px}
 .projCard .ok{font-size:11px;color:var(--pos);font-family:'Oswald',sans-serif;letter-spacing:1px}
 .tradeBtn{flex:1;min-width:84px;background:linear-gradient(#3a362b,#2c2920);border:1px solid var(--brass2);color:var(--ink);padding:8px 6px;font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .15s}
 .tradeBtn:hover{border-color:var(--gold2)}
 .tradeBtn.sel{border-color:var(--gold);color:var(--gold)}
-.balRow{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #2c2a24;font-size:12px}
+.balRow{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #2c2a24;font-size:12.5px}
+.balRow:last-child{border-bottom:none}
 .balRow b{font-family:'Oswald',sans-serif;font-weight:500}
-.flowChip{display:inline-block;font-size:10px;border:1px solid var(--brass2);background:#1c1a14;padding:3px 7px;margin:2px;color:var(--dim)}
+.flowChip{display:inline-block;font-size:10.5px;border:1px solid var(--brass2);background:#1c1a14;padding:3px 8px;margin:2px;color:var(--dim)}
 .flowChip b{color:var(--ink)}
 input[type=range]{accent-color:var(--gold2);width:100%}
 .hoiPanel{background:linear-gradient(var(--steel),var(--steel2));border:1px solid var(--steelEdge);box-shadow:inset 0 0 0 1px #141414,0 3px 10px rgba(0,0,0,.6)}
@@ -221,7 +229,7 @@ input[type=range]{accent-color:var(--gold2);width:100%}
 .endRow b{width:30px;text-align:right;font-family:'Cinzel',serif}
 #endTitle{font-size:22px;letter-spacing:4px;color:var(--gold);text-align:center;text-shadow:0 2px 6px #000}
 #endScore{font-family:'Cinzel',serif;text-align:center;font-size:13px;color:var(--dim);letter-spacing:2px;margin-top:4px}
-@media(max-width:1200px){#statsRow{gap:4px}.stat{width:96px}#sec1{height:auto;overflow-y:auto;grid-template-columns:280px 1fr}#hoiBody{grid-template-columns:1fr}}
+@media(max-width:1200px){#statsRow{gap:4px}.stat{width:96px}#sec1{height:auto;overflow-y:auto;grid-template-columns:280px 1fr}#hoiBody{grid-template-columns:1fr}#sec3{grid-template-columns:1fr;height:auto;overflow-y:auto}}
 @media(max-width:900px){body{overflow:auto}#sec1{grid-template-columns:1fr}#statsRow{flex-wrap:wrap}#introGrid{grid-template-columns:1fr}#cards{grid-template-columns:1fr}#hoiBody{grid-template-columns:1fr}}
 </style>
 </head>
@@ -288,27 +296,27 @@ input[type=range]{accent-color:var(--gold2);width:100%}
   </div>
 </div>
 
+<!-- SECCIÓN III REORGANIZADA -->
 <div id="sec3" class="hidden">
-  <div class="col">
-    <div class="panel" style="flex:1;display:flex;flex-direction:column;min-height:0"><div class="panel-title">Recursos e Inventario</div><div id="resTable" class="scroll" style="padding:8px 10px;flex:1"></div><div style="padding:6px 10px;border-top:1px solid #2c2a24;font-size:10.5px;color:var(--dim);font-style:italic">Demanda interna mensual: 20 de trigo (alimento) y 6 de carbón (energía industrial).</div></div>
-    <div class="panel"><div class="panel-title">Indicadores Económicos</div><div id="econInd" style="padding:8px 10px"></div></div>
-  </div>
-  <div class="col panel" style="min-height:0">
-    <div class="panel-title">Política Económica <span style="font-size:9px;color:var(--dim)">160 DECISIONES CONTEXTUALIZADAS</span></div>
-    <div class="scroll" style="padding:10px;flex:1">
-      <div class="secHead" style="margin-top:0">Decisiones Económicas</div><div id="econDecList"></div>
-      <div class="secHead">Proyectos Industriales</div><div id="projList"></div>
+  <div id="sec3Col1">
+    <div class="panel" style="flex:1;min-height:0">
+      <div class="panel-title">Macroproyectos de Financiación <span style="font-size:9px;color:var(--dim)">INFRAESTRUCTURA · ELECTRIFICACIÓN · PRODUCCIÓN · EDUCACIÓN</span></div>
+      <div id="sec3Scroll1"></div>
     </div>
   </div>
-  <div class="col panel">
-    <div class="panel-title">Mercado y Comercio Exterior</div>
-    <div class="scroll" style="padding:10px;flex:1">
-      <div class="secHead" style="margin-top:0">Modelo Comercial</div><div id="modeloBtns" style="display:flex;gap:6px;flex-wrap:wrap"></div>
-      <div class="secHead">Arancel · <span id="arancelVal">10%</span></div><input type="range" id="arancelSlider" min="0" max="40" step="5" value="10">
-      <label style="display:flex;align-items:center;gap:8px;margin-top:10px;font-size:12px;color:var(--dim);cursor:pointer"><input type="checkbox" id="restriccionChk" style="accent-color:var(--gold2)"> Restringir exportación de materias primas</label>
-      <div class="secHead">Influencias Geopolíticas</div><div id="mercado"></div>
-      <div class="secHead">Balanza Comercial · Último Mes</div><div id="balanza"></div>
-      <div class="secHead">Detalle de Flujos</div><div id="flujos"></div>
+  <div id="sec3Col2">
+    <div class="panel">
+      <div class="panel-title">Recursos e Inventario</div>
+      <div id="resTable" style="padding:10px 14px"></div>
+      <div style="padding:6px 14px 10px;font-size:10.5px;color:var(--dim);font-style:italic;border-top:1px solid #2c2a24">Demanda interna mensual: 20 de trigo (alimento) y 6 de carbón (energía industrial).</div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Indicadores Económicos</div>
+      <div id="econInd" style="padding:10px 14px"></div>
+    </div>
+    <div class="panel" style="flex:1;min-height:0">
+      <div class="panel-title">Mercado y Comercio Exterior</div>
+      <div id="sec3Scroll2" style="padding:10px 14px"></div>
     </div>
   </div>
 </div>
@@ -329,7 +337,7 @@ input[type=range]{accent-color:var(--gold2);width:100%}
           <p>La República de Valdivia arde en silencio: tras la Gran Depresión y la guerra mundial, la inflación devora los salarios, la deuda externa asfixia al fisco y las calles hierven. Usted asume el <b style="color:var(--gold)">Gobierno de Emergencia</b> con un mandato de <b style="color:var(--gold)">192 meses</b> (enero 1945 – diciembre 1960).</p>
           <p>Atravesará toda la Guerra Fría temprana: posguerra, Plan Marshall, Guerra de Corea, Bandung, Suez, Sputnik y Revolución Cubana. La geopolítica moverá precios y producción, y las potencias —aliadas o enemigas— intervendrán según su alineación.</p>
           <div id="introFactions"></div>
-          <div class="rules"><b>CÓMO SE JUEGA:</b> <b>I</b>: decisiones de Congreso. <b>II</b>: mapa 1945–60 con una sola barra de desplazamiento, alineación, organismos y decisiones internacionales que afectan al Congreso. <b>III</b>: 160 decisiones económicas, industria y comercio. Los niveles de Economía/Estabilidad/Prestigio/Bienestar generan modificadores y eventos internos. Si la <b>Estabilidad</b> llega a 0, quiebre institucional.</div>
+          <div class="rules"><b>CÓMO SE JUEGA:</b> <b>I</b>: el Congreso debate todas las decisiones —políticas, económicas y de Estado—. <b>II</b>: mapa 1945–60 con una sola barra de desplazamiento, alineación, organismos y decisiones internacionales que afectan al Congreso. <b>III</b>: financie macroproyectos de infraestructura, electrificación, producción y educación, y defina la política comercial. Si la <b>Estabilidad</b> llega a 0, quiebre institucional.</div>
         </div>
         <div style="text-align:center;display:flex;flex-direction:column;justify-content:center;gap:12px">
           <img class="introImg" src="https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1a9a098f1-73be-4cdf-a2bb-d4de89b26f24.png" alt="Mapamundi de 1945">
@@ -343,9 +351,9 @@ input[type=range]{accent-color:var(--gold2);width:100%}
 
 <div class="overlay hidden" id="helpOverlay"><div class="modal"><div class="banner"><span>MANUAL DE GOBIERNO</span><b>REGLAS DE LA PARTIDA</b></div><div class="body">
   <p><b style="color:var(--gold)">Período:</b> enero 1945 a diciembre 1960 (192 meses). Cada mes del juego equivale a un mes real.</p>
-  <p><b style="color:var(--gold)">I — Congreso:</b> 3 paquetes/mes. Aprobar cuesta CP; postergar da +12 CP pero −2 Estabilidad. Se necesitan 101 escaños leales.</p>
-  <p><b style="color:var(--gold)">II — Guerra Fría:</b> una sola barra de desplazamiento. Mapa con tres modos, alineación, organismos y decisiones internacionales que afectan al Congreso. Los niveles generan modificadores y eventos internos según su alineación.</p>
-  <p><b style="color:var(--gold)">III — Economía:</b> 160 decisiones contextualizadas, recursos, industria, exportación/importación, aranceles y restricciones.</p>
+  <p><b style="color:var(--gold)">I — Congreso:</b> 3 paquetes/mes de un mazo que incluye decisiones políticas, económicas y de Estado. Aprobar cuesta CP; postergar da +12 CP pero −2 Estabilidad. Se necesitan 101 escaños leales.</p>
+  <p><b style="color:var(--gold)">II — Guerra Fría:</b> una sola barra de desplazamiento. Mapa con tres modos, alineación, organismos y decisiones internacionales que afectan al Congreso.</p>
+  <p><b style="color:var(--gold)">III — Economía:</b> financie macroproyectos de infraestructura, electrificación, producción y educación nacional, y defina el modelo comercial, arancel y restricciones.</p>
   <p><b style="color:var(--gold)">Fin:</b> al cabo de 192 meses (o antes si la Estabilidad colapsa), el Congreso juzga su mandato.</p>
   <button class="btn" id="closeHelp" type="button" style="width:100%">Volver al Hemiciclo</button>
 </div></div></div>
@@ -354,19 +362,16 @@ input[type=range]{accent-color:var(--gold2);width:100%}
 
 <div id="toast"></div>
 
-<!-- ==================== TODO EL JUEGO EN UN SOLO BLOQUE (MOTOR + DATOS) ==================== -->
 <script>
 'use strict';
 window.addEventListener('error',function(m,s,l){var b=document.getElementById('errBanner');if(b){b.style.display='block';b.textContent='⚠ Error de script (línea '+l+'): '+m;}});
 function $(id){return document.getElementById(id);}
 function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
 function fecha(m){return MESES[m%12]+' '+(1945+Math.floor(m/12));}
-function fechaHoi(m){return '01.'+MES3[m%12]+'.'+(1945+Math.floor(m/12));}
+function fechaHoi(m){return '01.'+MES3[m%12]+' '+(1945+Math.floor(m/12));}
 function tensionCalc(){if(!state)return 10;return Math.min(100,Math.round(10+state.mes*0.4+(state.alineacion!=='neutral'?8:0)));}
 var state=null;
-function nuevoEstado(){return{mes:0,pp:80,over:false,bloqueado:false,mano:[],manoEcon:[],alineacion:'neutral',mapMode:'heg',selectedRegion:'val',bretton:'none',onuVoto:'abs',comercio:'none',kominform:false,recursos:{cobre:5,hierro:4,carbon:6,madera:6,trigo:25,acero:0,manufacturas:0},proyectos:{},modelo:'libre',arancel:10,restriccionMP:false,econ:null,precioMod:null,prodMod:null,influencias:null,_huelga:false,stats:{eco:32,soc:28,est:40,int:35,res:20},support:{key:52,mar:48,hay:46,smi:50},efectos:[],recientes:[],recientesEcon:[],interUsados:{},eventosUsados:{},hist:{eco:[32],soc:[28],est:[40],int:[35],res:[20]},log:[],avisos:{},conteo:{key:0,mar:0,hay:0,smi:0,neu:0}};}
-
-/* ===== DATOS ===== */
+function nuevoEstado(){return{mes:0,pp:80,over:false,bloqueado:false,mano:[],alineacion:'neutral',mapMode:'heg',selectedRegion:'val',bretton:'none',onuVoto:'abs',comercio:'none',kominform:false,recursos:{cobre:5,hierro:4,carbon:6,madera:6,trigo:25,acero:0,manufacturas:0},proyectos:{},macroProyectos:{},modelo:'libre',arancel:10,restriccionMP:false,econ:null,precioMod:null,prodMod:null,influencias:null,_huelga:false,stats:{eco:32,soc:28,est:40,int:35,res:20},support:{key:52,mar:48,hay:46,smi:50},efectos:[],recientes:[],interUsados:{},eventosUsados:{},hist:{eco:[32],soc:[28],est:[40],int:[35],res:[20]},log:[],avisos:{},conteo:{key:0,mar:0,hay:0,smi:0,neu:0}};}
 var IMG={key:'https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/12d26f302-8b92-4b84-a609-573ad14f9df5.png',mar:'https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/160c2b307-e7bd-4156-8a82-5eb660cad115.png',hay:'https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/19248564a-a9f1-4b32-88b9-dad24ad520d0.png',smi:'https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1e77bcd63-297f-43d6-b6e8-bf724ee289c2.png'};
 var SPRITE='https://image.qwenlm.ai/public_source/440a8ef3-fd73-46fc-af20-631df1efed29/1bbe70857-0e04-42b3-8995-9aaef3a0f033.png';
 var SPRITE_POS={key:'0% 0%',mar:'100% 0%',hay:'0% 100%',smi:'100% 100%'};
@@ -383,10 +388,34 @@ var SISTEMA={usa:'Democracia liberal · esfera de Washington',urss:'Democracia p
 var RECURSOS={cobre:{nombre:'Cobre',precio:8,color:'#d08a4e',bruto:true},hierro:{nombre:'Hierro',precio:5,color:'#9aa0a6',bruto:true},carbon:{nombre:'Carbón',precio:4,color:'#4a4a4a',bruto:true},madera:{nombre:'Madera',precio:3,color:'#8a6a3f',bruto:true},trigo:{nombre:'Trigo',precio:3,color:'#c8b45a',bruto:true,alimento:true},acero:{nombre:'Acero',precio:12,color:'#7f96c9',procesado:true},manufacturas:{nombre:'Manufacturas',precio:20,color:'#6fae6a',procesado:true}};
 var PROYECTOS=[{id:'mina',nombre:'Expansión Minera',cp:25,res:12,desc:'+4 de cobre y +3 de hierro por mes.'},{id:'fundicion',nombre:'Fundición de Cobre',cp:30,res:15,desc:'+50% al valor de exportación del cobre.'},{id:'aserradero',nombre:'Aserradero Industrial',cp:20,res:10,desc:'+50% al valor de exportación de la madera.'},{id:'silos',nombre:'Silos y Molinos',cp:18,res:8,desc:'+4 de trigo por mes.'},{id:'siderurgica',nombre:'Siderúrgica Nacional',cp:40,res:25,desc:'Transforma 4 de hierro + 4 de carbón en 3 de acero por mes.'},{id:'manufacturas',nombre:'Complejo Manufacturero',cp:45,res:30,req:'siderurgica',desc:'Transforma 2 de acero + 2 de madera en 3 manufacturas por mes.'}];
 var MODELOS={libre:{nombre:'Libre Comercio',desc:'Importaciones baratas; la industria local compite sin protección.'},proteccionista:{nombre:'Proteccionista',desc:'Aranceles elevados: protegen la industria y recaudan, pero encarecen el consumo.'},autarquico:{nombre:'Autárquico',desc:'Sin importaciones. Exige producir todo lo necesario en casa.'}};
-var BLOQUE_COL={usa:'#4a7fa5',urss:'#a54a45',contested:'url(#hatch)',neutral:'#6b665a',ocupada:'#77778a',val:'#c8a24a'};
-var BLOQUE_TXT={usa:'Bloque estadounidense',urss:'Bloque soviético',contested:'En disputa',neutral:'Neutral',ocupada:'Territorio ocupado',val:'Neutral activo (Valdivia)'};
-
-/* ===== 160 DECISIONES ECONÓMICAS (generador compacto: 8 sectores × 20 acciones) ===== */
+var MACROPROYECTOS=[
+ {id:'mp_inf1',cat:'infra',n:'Red Vial Nacional',d:'Autopistas y caminos que unen las regiones; empleo inmediato y mercado integrado.',cp:40,res:12,dx:{eco:4,soc:2},eff:{m:10,d:{eco:0.5}}},
+ {id:'mp_inf2',cat:'infra',n:'Modernización Portuaria',d:'Grúas, muelles y frigoríficos multiplican la capacidad exportadora.',cp:40,res:12,dx:{eco:4,int:2},eff:{m:10,d:{eco:0.4,int:0.2}}},
+ {id:'mp_inf3',cat:'infra',n:'Red Ferroviaria Nacional',d:'El tren une la cordillera con el mar; carga y pasajeros a bajo costo.',cp:50,res:15,dx:{eco:5,soc:2},eff:{m:12,d:{eco:0.6}}},
+ {id:'mp_inf4',cat:'infra',n:'Plan Nacional de Vivienda',d:'Vivienda digna en suelo fiscal; techo propio y obra en cada comuna.',cp:45,res:12,dx:{soc:5,eco:3},eff:{m:8,d:{soc:0.5}}},
+ {id:'mp_inf5',cat:'infra',n:'Aeropuertos Regionales',d:'Pistas y terminales conectan el sur con el mundo.',cp:35,res:10,dx:{eco:3,int:2}},
+ {id:'mp_inf6',cat:'infra',n:'Puentes y Conectividad Fluvial',d:'Puentes sobre el Calle-Calle integran las riberas.',cp:30,res:8,dx:{eco:3,soc:1}},
+ {id:'mp_ele1',cat:'elec',n:'Central Hidroeléctrica',d:'La fuerza de los ríos del sur se vuelve electricidad para la nación.',cp:50,res:15,dx:{eco:4,soc:2},eff:{m:12,d:{eco:0.5}}},
+ {id:'mp_ele2',cat:'elec',n:'Electrificación Rural',d:'La luz llega a los campos; se acaba el aislazo nocturno.',cp:40,res:10,dx:{soc:4,eco:2},eff:{m:10,d:{soc:0.4}}},
+ {id:'mp_ele3',cat:'elec',n:'Red de Transmisión Nacional',d:'Un tendido nacional lleva la energía donde se necesita.',cp:35,res:10,dx:{eco:3},eff:{m:10,d:{eco:0.3}}},
+ {id:'mp_ele4',cat:'elec',n:'Planta Termoeléctrica',d:'Carbón valdiviano convertido en electricidad constante.',cp:40,res:12,dx:{eco:4},eff:{m:10,d:{eco:0.4}}},
+ {id:'mp_ele5',cat:'elec',n:'Electrificación Industrial',d:'Energía barata para fábricas y talleres.',cp:40,res:12,dx:{eco:4},eff:{m:10,d:{eco:0.4}}},
+ {id:'mp_ele6',cat:'elec',n:'Interconexión Eléctrica Regional',d:'Valdivia vende excedentes a sus vecinos.',cp:45,res:12,dx:{eco:3,int:2},eff:{m:10,d:{eco:0.3,int:0.1}}},
+ {id:'mp_pro1',cat:'prod',n:'Complejo Siderúrgico',d:'Acero nacional para la industria y la construcción.',cp:55,res:18,dx:{eco:5},eff:{m:12,d:{eco:0.6}}},
+ {id:'mp_pro2',cat:'prod',n:'Planta de Cemento',d:'Cemento valdiviano para las obras de la nación.',cp:35,res:10,dx:{eco:3},eff:{m:10,d:{eco:0.3}}},
+ {id:'mp_pro3',cat:'prod',n:'Industria Textil Nacional',d:'Telas y vestuario hechos en casa; empleo femenino masivo.',cp:30,res:8,dx:{eco:3,soc:1},eff:{m:8,d:{eco:0.3,soc:0.1}}},
+ {id:'mp_pro4',cat:'prod',n:'Complejo Agroindustrial',d:'Del campo a la mesa sin intermediarios: conservas, molinos y frigoríficos.',cp:40,res:12,dx:{eco:3,soc:2},eff:{m:10,d:{eco:0.3,soc:0.2}}},
+ {id:'mp_pro5',cat:'prod',n:'Planta de Fertilizantes',d:'Fertilizante barato multiplica la cosecha.',cp:35,res:10,dx:{eco:3},eff:{m:10,d:{eco:0.3}}},
+ {id:'mp_pro6',cat:'prod',n:'Astilleros Nacionales',d:'Barcos con matrícula valdiviana para el comercio y la pesca.',cp:45,res:14,dx:{eco:4,soc:1},eff:{m:10,d:{eco:0.4}}},
+ {id:'mp_edu1',cat:'edu',n:'Plan Nacional de Alfabetización',d:'Escuelas nocturnas y cartillas: ningún valdiviano sin saber leer.',cp:35,res:8,dx:{soc:5},eff:{m:10,d:{soc:0.5}}},
+ {id:'mp_edu2',cat:'edu',n:'Escuelas Técnicas',d:'Técnicos y oficios para la industria nacional.',cp:35,res:8,dx:{soc:3,eco:1},eff:{m:10,d:{eco:0.2,soc:0.2}}},
+ {id:'mp_edu3',cat:'edu',n:'Red de Escuelas Rurales',d:'Una escuela en cada aldea del sur.',cp:30,res:8,dx:{soc:4},eff:{m:10,d:{soc:0.3}}},
+ {id:'mp_edu4',cat:'edu',n:'Reforma Universitaria',d:'Universidad gratuita y autonomía académica.',cp:40,res:10,dx:{soc:4,eco:1},eff:{m:10,d:{eco:0.2,soc:0.3}}},
+ {id:'mp_edu5',cat:'edu',n:'Becas de Posgrado en el Exterior',d:'Los mejores estudiantes se forman fuera y vuelven.',cp:30,res:8,dx:{int:2,soc:2}},
+ {id:'mp_edu6',cat:'edu',n:'Institutos de Investigación',d:'Ciencia aplicada a la producción nacional.',cp:40,res:10,dx:{eco:2,soc:2},eff:{m:10,d:{eco:0.3}}}
+];
+var MACRO_CATS={infra:'Infraestructura',elec:'Electrificación',prod:'Producción',edu:'Educación Nacional'};
+var MACRO_ICONS={infra:'🏗',elec:'⚡',prod:'🏭',edu:'📚'};
 var ECON_SECTORES=[
  {n:'Industria Siderúrgica',fl:'la industria siderúrgica'},
  {n:'Agricultura y Agroindustria',fl:'el agro y la agroindustria'},
@@ -422,9 +451,7 @@ var ECON_ACCIONES=[
 function dominantFa(fa){var best='neu',mx=0;for(var k in fa){if(fa[k]>mx){mx=fa[k];best=k;}}return best;}
 var DECISIONES_ECON=[];
 ECON_SECTORES.forEach(function(s,si){ECON_ACCIONES.forEach(function(a,ai){DECISIONES_ECON.push({id:'e'+si+'_'+ai,i:dominantFa(a.fa),n:a.n+' '+s.n,d:a.d+' '+s.fl+'.',c:25+((si+ai)%4)*8,dx:a.dx,fa:a.fa});});});
-
-/* ===== DECISIONES DE CONGRESO ===== */
-var DECISIONES=[
+var DECISIONES_CONGRESO=[
 {id:'k1',i:'key',n:'Plan Nacional de Obras Públicas',d:'Autopistas, puentes y represas: miles de manos ociosas vuelven al trabajo.',c:45,dx:{eco:6,soc:3,res:-8},eff:{m:6,d:{eco:0.6,res:-0.4}},fa:{key:12,mar:3,hay:-7,smi:-4}},
 {id:'k2',i:'key',n:'Subsidios al Consumo Familiar',d:'Bonos y giros directos para la canasta básica.',c:35,dx:{soc:7,res:-6},eff:{m:4,d:{soc:0.5,res:-0.3}},fa:{key:10,mar:4,hay:-6,smi:-3}},
 {id:'k3',i:'key',n:'Crédito Blando a las Pymes',d:'Préstamos del fisco a tasa mínima.',c:40,dx:{eco:5,res:-5},eff:{m:5,d:{eco:0.5}},fa:{key:10,smi:2,hay:-5,mar:-2}},
@@ -465,8 +492,7 @@ var DECISIONES=[
 {id:'n4',i:'neu',n:'Referéndum de Confianza',d:'El pueblo dirime si este Gobierno sigue en pie.',c:40,dx:{est:4},fa:{key:-2,mar:-2,hay:-2,smi:-2}},
 {id:'n5',i:'neu',n:'Comisión de Notables',d:'Juristas y académicos redactan un pacto de mínimos.',c:25,dx:{est:3,res:-1},fa:{hay:2,smi:2,key:1,mar:-2}},
 {id:'n6',i:'neu',n:'Cadena Nacional de Radio',d:'La voz del presidente en cada hogar.',c:20,dx:{est:2,soc:2},fa:{}}];
-
-/* ===== DECISIONES INTERNACIONALES ===== */
+var DECISIONES=DECISIONES_CONGRESO.concat(DECISIONES_ECON);
 var DECISIONES_INTER=[
 {id:'i1',i:'key',n:'Plan de Ayuda Mutua',d:'Acuerdo de asistencia técnica y económica con el bloque propio.',c:30,dx:{eco:4,res:3,int:2},fa:{key:5},req:'usa'},
 {id:'i2',i:'key',n:'Crédito de Reconstrucción',d:'Préstamo blando de la potencia aliada para infraestructura.',c:35,dx:{res:6,eco:3},fa:{key:5},req:'usa'},
@@ -498,8 +524,6 @@ var DECISIONES_INTER=[
 {id:'i28',i:'mar',n:'Conferencia de Solidaridad Latinoamericana',d:'Coordinación con gobiernos nacionalistas de la región.',c:25,dx:{int:2,soc:2},fa:{mar:5,key:2}},
 {id:'i29',i:'neu',n:'Neutralidad Armada',d:'Refuerzo de la defensa sin alinearse.',c:30,dx:{est:3,int:1,soc:-1},fa:{}},
 {id:'i30',i:'key',n:'Convenio de Precios de Commodities',d:'Acuerdo internacional para sostener precios de exportación.',c:30,dx:{eco:4,res:3},fa:{key:5,smi:2}}];
-
-/* ===== EVENTOS INTERNOS / DE ALINEACIÓN (modificadores por niveles y potencias) ===== */
 var EVENTOS_ALINEACION=[
  {cond:function(s){return s.alineacion==='usa'&&s.stats.est<35;},titulo:'OPERACIÓN ENCUBIERTA DE LA CIA',texto:'Documentos revelan contactos de la CIA con oficiales descontentos.',dx:{est:-4,int:-2},fa:{mar:3}},
  {cond:function(s){return s.alineacion==='usa'&&s.stats.soc<30;},titulo:'HUELGA GENERAL ANTIGUBERNAMENTAL',texto:'El malestar social estalla; Washington observa con preocupación.',dx:{soc:-3,est:-3},fa:{mar:4}},
@@ -520,8 +544,6 @@ var EVENTOS_ALINEACION=[
  {cond:function(s){return s.alineacion==='usa'&&s.stats.res<25;},titulo:'CONDICIONALIDAD DEL FMI',texto:'El FMI exige ajuste a cambio de renovar el crédito.',dx:{res:4,soc:-3},fa:{hay:3,mar:-3}},
  {cond:function(s){return s.alineacion==='urss'&&s.stats.res<25;},titulo:'CRÉDITOS DEL COMECON',texto:'El COMECON ofrece créditos blandos para sostener las reservas.',dx:{res:5},fa:{mar:3}}
 ];
-
-/* ===== CRÓNICA GUERRA FRÍA ===== */
 var GUERRA=[
 {m:0,titulo:'Ofensiva del Vístula-Óder',texto:'El Ejército Rojo avanza hacia Berlín.',tipo:'urss',foco:'europa'},
 {m:1,titulo:'Conferencia de Yalta',texto:'Roosevelt, Churchill y Stalin reparten la posguerra.',tipo:'mundo',foco:'europa'},
@@ -543,8 +565,6 @@ var GUERRA=[
 {m:168,titulo:'Revolución Cubana',texto:'Fidel Castro toma La Habana; América Latina en ebullición.',tipo:'urss',foco:'latam'},
 {m:184,titulo:'Incidente del U-2',texto:'Un avión espía derribado sobre la URSS.',tipo:'mundo',foco:'mundo'},
 {m:191,titulo:'Amanecer de los sesenta',texto:'El mundo entra en 1961 entre descolonización y carrera espacial.',tipo:'mundo',foco:'mundo'}];
-
-/* ===== REGIONES DEL MAPA ===== */
 var REGIONES=[
 {id:'gro',nombre:'Groenlandia',b:'usa',nota:'Bases árticas estadounidenses desde 1941.',d:'M352 106 L344 92 L348 74 L360 58 L378 48 L400 44 L424 48 L440 60 L444 76 L432 92 L414 102 L394 108 L372 110 Z'},
 {id:'can',nombre:'Canadá',b:'usa',nota:'Fiel a Washington; base del espionaje aliado.',d:'M108 58 L126 52 L148 50 L170 46 L196 46 L222 48 L244 52 L262 50 L282 54 L304 58 L322 64 L318 74 L302 72 L286 70 L268 74 L254 76 L246 88 L250 98 L258 104 L266 100 L276 96 L288 100 L300 108 L316 112 L336 110 L348 106 L354 114 L348 122 L336 126 L322 122 L308 126 L296 122 L284 128 L272 126 L262 128 L252 122 L240 124 L228 118 L210 118 L190 118 L170 118 L152 118 L138 116 L128 106 L120 92 L112 76 Z',lx:235,ly:80,lb:'CANADÁ'},
@@ -578,18 +598,15 @@ var REGIONES=[
 {id:'jap',nombre:'Japón',b:'contested',tn:8,tc:'usa',nota:'Bajo ocupación del general MacArthur desde septiembre de 1945.',d:'M870 168 L880 160 L890 156 L898 160 L902 168 L898 176 L890 180 L880 178 L872 174 Z M892 142 L902 138 L906 146 L898 150 Z'},
 {id:'sea',nombre:'Sudeste Asiático',b:'usa',tn:23,tc:'contested',nota:'Indochina francesa; Ho Chi Minh desafía a París.',d:'M762 208 L772 204 L782 206 L790 212 L796 220 L800 228 L798 236 L792 244 L786 252 L780 258 L774 252 L770 242 L766 232 L762 220 Z M764 250 L776 246 L788 254 L796 264 L790 272 L778 268 L768 260 Z M796 276 L812 274 L822 278 L816 284 L800 282 Z M806 246 L820 242 L830 250 L826 262 L814 266 L806 256 Z'},
 {id:'aus',nombre:'Australia y Oceanía',b:'usa',nota:'Aliado del Pacífico; vigila el avance rojo en Asia.',d:'M826 300 L842 292 L860 288 L878 290 L894 294 L908 302 L916 314 L918 328 L912 342 L900 352 L884 358 L866 360 L848 356 L834 348 L826 336 L822 322 L822 310 Z M950 366 L958 362 L962 372 L956 382 L950 376 Z',lx:872,ly:325,lb:'AUSTRALIA'}];
-
+var BLOQUE_COL={usa:'#4a7fa5',urss:'#a54a45',contested:'url(#hatch)',neutral:'#6b665a',ocupada:'#77778a',val:'#c8a24a'};
+var BLOQUE_TXT={usa:'Bloque estadounidense',urss:'Bloque soviético',contested:'En disputa',neutral:'Neutral',ocupada:'Territorio ocupado',val:'Neutral activo (Valdivia)'};
 var EPILOGOS={key:'El sello desarrollista quedó grabado en la era: el Estado valdiviano se hizo motor de la demanda, la obra pública y el cinturón industrial redibujaron el paisaje y el desempleo retrocedió. La deuda, empero, hipoteca el porvenir.',mar:'El Frente Obrero transformó la República: nacionalizaciones, tierra repartida y cogestión en las empresas. Las oligarquías y las cancillerías no lo perdonan; las clases populares jamás lo olvidarán.',hay:'La Liga Austriaca impuso su disciplina: moneda sana, precios libres y Estado adelgazado. Tras el duro ajuste, el capital vuelve a golpear las puertas; las cicatrices sociales tardarán en cerrar.',smi:'La Alianza Clásica abrió Valdivia al mundo: libre comercio, puertos florecientes y una república de comerciantes. La prosperidad, eso sí, queda atada a las mareas del comercio global.',neu:'Ningún bloque impuso su doctrina: el Gobierno navegó entre facciones y potencias, equilibrando sin transformar. Valdivia sigue, como siempre, de pie en la encrucijada.'};
-
-/* ===== VERIFICACIÓN DE DATOS (diagnóstico detallado + recuperación) ===== */
 function datosListos(){
-  var req={IDEO:typeof IDEO,STATS:typeof STATS,DECISIONES:typeof DECISIONES,DECISIONES_ECON:typeof DECISIONES_ECON,EVENTOS_ALINEACION:typeof EVENTOS_ALINEACION,REGIONES:typeof REGIONES,GUERRA:typeof GUERRA,PROYECTOS:typeof PROYECTOS,EPILOGOS:typeof EPILOGOS};
+  var req={IDEO:typeof IDEO,STATS:typeof STATS,DECISIONES:typeof DECISIONES,MACROPROYECTOS:typeof MACROPROYECTOS,EVENTOS_ALINEACION:typeof EVENTOS_ALINEACION,REGIONES:typeof REGIONES,BLOQUE_COL:typeof BLOQUE_COL,BLOQUE_TXT:typeof BLOQUE_TXT,GUERRA:typeof GUERRA,PROYECTOS:typeof PROYECTOS,EPILOGOS:typeof EPILOGOS};
   var falta=[];for(var k in req){if(req[k]==='undefined')falta.push(k);}
-  if(falta.length){var b=document.getElementById('errBanner');if(b){b.style.display='block';b.textContent='⚠ Datos faltantes: '+falta.join(', ')+'. El bloque de datos no se cargó.';}return false;}
+  if(falta.length){var b=document.getElementById('errBanner');if(b){b.style.display='block';b.textContent='⚠ Datos faltantes: '+falta.join(', ')+'.';}return false;}
   return true;
 }
-
-/* ===== MOTOR ===== */
 function bloqueDe(r,mes){if(r.id==='val'){return state.alineacion==='usa'?'usa':(state.alineacion==='urss'?'urss':'val');}if(r.tn!==undefined){return mes>=r.tn?(r.tc||'contested'):r.b;}return r.b;}
 function dipColor(b){var a=state.alineacion;if(b==='val')return '#c8a24a';if(b==='contested')return 'url(#hatch)';if(a==='neutral'){return b==='usa'?'#5a6f85':(b==='urss'?'#855a5a':'#6b665a');}if(b===a)return '#5c8a5c';if(b===(a==='usa'?'urss':'usa'))return '#8a4a4a';return '#6b665a';}
 function toast(html){var t=$('toast');t.innerHTML=html;t.classList.add('show');clearTimeout(t._to);t._to=setTimeout(function(){t.classList.remove('show');},4200);}
@@ -646,10 +663,9 @@ function simEconomia(){var s=state;calcularGeopolitica();var prod=produccionEfec
 function eventosInternos(d){if(!state)return;EVENTOS_ALINEACION.forEach(function(e){if(e.cond(state)&&Math.random()<0.35){aplicarDx(e.dx);if(e.fa)aplicarFa(e.fa);addLog('⚑ '+e.titulo+': '+e.texto,'#c8a24a');}});}
 function aplicarGuerra(mesNuevo){if(!state)return;GUERRA.forEach(function(g){if(g.m!==mesNuevo)return;var clave=state.alineacion==='neutral'?'neu':state.alineacion;if(g.dx&&g.dx[clave])aplicarDx(g.dx[clave]);if(g.rec)addLog('📈 Mercado mundial: «'+g.titulo+'» altera los precios internacionales.','#c8a24a');addLog('🌍 Guerra Fría: <b>'+g.titulo+'</b>.','#d8c48a');});}
 function repartirMano(){if(!state)return;var disp=DECISIONES.filter(function(d){return state.recientes.indexOf(d.id)<0;});for(var i=disp.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=disp[i];disp[i]=disp[j];disp[j]=tmp;}state.mano=disp.slice(0,3);}
-function repartirManoEcon(){if(!state)return;var disp=DECISIONES_ECON.filter(function(d){return state.recientesEcon.indexOf(d.id)<0;});for(var i=disp.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=disp[i];disp[i]=disp[j];disp[j]=tmp;}state.manoEcon=disp.slice(0,6);}
-function aprobar(id){if(!state||state.bloqueado||state.over)return;var d=null;DECISIONES.forEach(function(x){if(x.id===id)d=x;});if(!d||state.pp<d.c)return;state.pp-=d.c;aplicarDx(d.dx);aplicarFa(d.fa);if(d.eff)state.efectos.push({n:d.n,i:d.i,m:d.eff.m,d:d.eff.d});state.conteo[d.i]++;state.recientes.push(id);if(state.recientes.length>12)state.recientes.shift();var col=d.i==='neu'?'#8a7a4f':IDEO[d.i].color;addLog('El Congreso aprueba <b style="color:'+col+'">'+d.n+'</b>.',col);finDeMes();}
-function aprobarEcon(id){if(!state||state.bloqueado||state.over)return;var d=null;DECISIONES_ECON.forEach(function(x){if(x.id===id)d=x;});if(!d||state.pp<d.c)return;state.pp-=d.c;aplicarDx(d.dx);aplicarFa(d.fa);state.conteo[d.i]=(state.conteo[d.i]||0)+1;state.recientesEcon.push(id);if(state.recientesEcon.length>20)state.recientesEcon.shift();var idx=state.manoEcon.indexOf(d);if(idx>=0){state.manoEcon.splice(idx,1);var disp=DECISIONES_ECON.filter(function(x){return state.recientesEcon.indexOf(x.id)<0&&state.manoEcon.indexOf(x)<0;});if(disp.length)state.manoEcon.push(disp[Math.floor(Math.random()*disp.length)]);}renderAll();}
+function aprobar(id){if(!state||state.bloqueado||state.over)return;var d=null;DECISIONES.forEach(function(x){if(x.id===id)d=x;});if(!d||state.pp<d.c)return;state.pp-=d.c;aplicarDx(d.dx);aplicarFa(d.fa);if(d.eff)state.efectos.push({n:d.n,i:d.i,m:d.eff.m,d:d.eff.d});state.conteo[d.i]=(state.conteo[d.i]||0)+1;state.recientes.push(id);if(state.recientes.length>12)state.recientes.shift();var col=d.i==='neu'?'#8a7a4f':IDEO[d.i].color;addLog('El Congreso aprueba <b style="color:'+col+'">'+d.n+'</b>.',col);finDeMes();}
 function aprobarInter(id){if(!state||state.over)return;var d=null;DECISIONES_INTER.forEach(function(x){if(x.id===id)d=x;});if(!d||state.interUsados[d.id])return;if(d.req&&state.alineacion!==d.req)return;if(state.pp<d.c){toast('<b>Capital Político insuficiente</b>.');return;}state.pp-=d.c;state.interUsados[d.id]=true;aplicarDx(d.dx);aplicarFa(d.fa);var col=d.i==='neu'?'#8a7a4f':IDEO[d.i].color;addLog('Diplomacia: <b style="color:'+col+'">'+d.n+'</b>. Afecta al Congreso y a la estabilidad internacional.',col);renderAll();renderSeccion2();}
+function financiarMacro(id){if(!state||state.over)return;var p=null;MACROPROYECTOS.forEach(function(x){if(x.id===id)p=x;});if(!p||state.macroProyectos[id])return;if(state.pp<p.cp){toast('<b>Capital Político insuficiente</b> · se requieren '+p.cp+' CP.');return;}if(state.stats.res<p.res){toast('<b>Reservas insuficientes</b> · se requieren '+p.res+'.');return;}state.pp-=p.cp;state.stats.res=clamp(state.stats.res-p.res,0,100);state.macroProyectos[id]=true;aplicarDx(p.dx);if(p.eff)state.efectos.push({n:p.n,i:'neu',m:p.eff.m,d:p.eff.d});addLog('Se financia el macroproyecto <b style="color:#c8a24a">'+p.n+'</b> ('+MACRO_CATS[p.cat]+').','#c8a24a');renderAll();renderSeccion3();}
 function postergar(){if(!state||state.bloqueado||state.over)return;state.pp+=12;state.stats.est=clamp(state.stats.est-2,0,100);addLog('La sesión se posterga sin acuerdos. El hemiciclo murmura.','#8a7a4f');finDeMes();}
 function finDeMes(){if(!state)return;var d={eco:-0.5,soc:-0.35,est:0,int:-0.1,res:-0.3};
  if(state.stats.eco<25)d.soc-=0.3;if(state.stats.soc<25)d.est-=0.5;if(state.stats.res<15)d.est-=0.5;
@@ -680,7 +696,7 @@ function lanzarEvento(){if(!state||state.over)return;state.bloqueado=true;render
  var restantes=EVENTOS_ALINEACION.filter(function(e){return !state.eventosUsados[e.id];}).length;
  var mesesRest=TOTAL_MESES-state.mes;var p=restantes>mesesRest?0.9:0.6;
  if(cands.length&&Math.random()<p){var ev=cands[Math.floor(Math.random()*cands.length)];state.eventosUsados[ev.id]=true;mostrarEvento(ev);}
- else{state.bloqueado=false;repartirMano();repartirManoEcon();renderAll();}}
+ else{state.bloqueado=false;repartirMano();renderAll();}}
 function mostrarEvento(ev){if(!state)return;state.bloqueado=true;
  addLog('☰ Despacho urgente: <b>'+ev.titulo+'</b>.','#d8c48a');
  $('evTitle').textContent=ev.titulo;$('evDate').textContent=fecha(state.mes).toUpperCase();$('evText').textContent=ev.texto;
@@ -692,7 +708,7 @@ function resolverEvento(idx){if(!state||state.over)return;var ev=$('evChoices').
  addLog('Ante <b>'+ev.titulo+'</b>, el Gobierno decide: «'+op.t+'».','#d8c48a');
  $('eventOverlay').classList.add('hidden');state.bloqueado=false;
  if(state.stats.est<=0){terminar('golpe');return;}
- repartirMano();repartirManoEcon();renderAll();}
+ repartirMano();renderAll();}
 function terminar(motivo){if(!state||state.over)return;state.over=true;state.bloqueado=true;$('eventOverlay').classList.add('hidden');
  var s=state.stats;var score=Math.round(s.eco*0.25+s.soc*0.25+s.est*0.2+s.int*0.15+s.res*0.15);var titulo,texto;
  if(motivo==='golpe'){titulo='QUIEBRE INSTITUCIONAL EN VALDIVIA';texto='La estabilidad colapsó. Tanques en la Plaza de la República y un bando leído al alba: el Congreso queda disuelto, su Gobierno, depuesto.';}
@@ -704,15 +720,13 @@ function terminar(motivo){if(!state||state.over)return;state.over=true;state.blo
  var dom=null,max=-1;for(var k in state.support){if(state.support[k]>max){max=state.support[k];dom=k;}}
  var leg=max>=55?EPILOGOS[dom]:EPILOGOS.neu;
  var inst=(state.bretton==='fmi'?'FMI':state.bretton==='molotov'?'Plan Mólotov':'—')+' · ONU: '+(state.onuVoto==='occ'?'Occidente':state.onuVoto==='sov'?'Moscú':'Abstención')+' · '+(state.comercio==='gatt'?'GATT/OMC':state.comercio==='comecon'?'COMECON':'—')+(state.kominform?' · Kominform':'');
- var nproy=Object.keys(state.proyectos).length;
+ var nproy=Object.keys(state.proyectos).length+Object.keys(state.macroProyectos).length;
  $('endTitle').textContent=titulo;
  $('endScore').textContent='CALIFICACIÓN DEL MANDATO: '+score+' / 100 · MESES GOBERNADOS: '+(motivo==='golpe'?state.mes:TOTAL_MESES)+' · ALINEACIÓN: '+(state.alineacion==='usa'?'EE.UU.':(state.alineacion==='urss'?'URSS':'NEUTRAL'))+' · PROYECTOS: '+nproy+' · INSTITUCIONES: '+inst;
  var es='';for(var k2 in STATS){es+='<div class="endRow"><span class="lb">'+STATS[k2].nombre+'</span><div class="bar"><i style="width:'+s[k2]+'%;background:'+STATS[k2].color+'"></i></div><b>'+Math.round(s[k2])+'</b></div>';}
  $('endStats').innerHTML=es;$('endText').textContent=texto;
  $('endIdeo').innerHTML='<b style="color:'+(max>=55?IDEO[dom].color:'var(--dim)')+'">'+(max>=55?symBadge(dom):'')+' Legado doctrinario: '+(max>=55?IDEO[dom].nombre+' ('+IDEO[dom].escuela+', '+Math.round(max)+'% de respaldo)':'equilibrio entre bloques')+'</b><br>'+leg+'<br><span style="color:var(--dim);font-size:11.5px">Decretos — Keynesianos: '+state.conteo.key+' · Marxistas: '+state.conteo.mar+' · Hayekianos: '+state.conteo.hay+' · Smithianos: '+state.conteo.smi+' · Razón de Estado: '+(state.conteo.neu||0)+'</span>';
  $('endOverlay').classList.remove('hidden');renderAll();}
-
-/* ===== RENDER ===== */
 function renderTop(){if(!state)return;
  $('dateLabel').textContent=fecha(state.mes);
  $('monthLabel').textContent='MES '+(state.mes+1)+' / '+TOTAL_MESES+' DEL MANDATO';
@@ -746,43 +760,100 @@ function renderCards(){if(!state)return;var h='';
  $('sessLabel').textContent='SESIÓN ORDINARIA · '+fecha(state.mes).toUpperCase();
  $('postergarBtn').disabled=state.bloqueado||state.over;
  $('footHint').textContent=state.bloqueado?'Despacho en curso…':'Capital Político disponible: '+Math.round(state.pp);}
-function renderEconDecisiones(){if(!state)return;var h='';state.manoEcon.forEach(function(d){var col=d.i==='neu'?'#8a7a4f':IDEO[d.i].color;var nom=d.i==='neu'?'RAZÓN DE ESTADO':IDEO[d.i].escuela.toUpperCase();var puede=state.pp>=d.c&&!state.bloqueado&&!state.over;h+='<div class="card" style="--ic:'+col+'"><div class="card-top"><span class="card-ideo">'+symBadge(d.i)+nom+'</span><span class="card-cost">'+d.c+'</span></div><h3>'+d.n+'</h3><p>'+d.d+'</p><div class="chips">'+chipsHtml(d.dx)+'</div><button class="btn" type="button" '+(puede?'':'disabled')+' onclick="aprobarEcon(\''+d.id+'\')">Aprobar</button></div>';});$('econDecList').innerHTML=h;}
+function renderMacroProyectos(){
+  if(!state)return;
+  var cats={infra:[],elec:[],prod:[],edu:[]};
+  MACROPROYECTOS.forEach(function(p){if(cats[p.cat])cats[p.cat].push(p);});
+  var html='';
+  ['infra','elec','prod','edu'].forEach(function(cat){
+    html+='<div class="secHead"><span class="secIcon">'+MACRO_ICONS[cat]+'</span>'+MACRO_CATS[cat]+'</div>';
+    cats[cat].forEach(function(p){
+      var built=state.macroProyectos[p.id];
+      var puede=!built&&state.pp>=p.cp&&state.stats.res>=p.res&&!state.over;
+      var effTxt='';
+      if(p.eff){effTxt='<div style="font-size:10.5px;color:var(--dim);margin-top:4px;padding:4px 6px;background:#171510;border:1px dashed #3a352a">Efecto mensual: '+Object.keys(p.eff.d).map(function(k){return (p.eff.d[k]>0?'+':'')+p.eff.d[k]+' '+STATS[k].nombre;}).join(', ')+' × '+p.eff.m+' meses</div>';}
+      html+='<div class="projCard'+(built?' built':'')+'"><h4>'+p.n+'</h4><p>'+p.d+'</p>'+effTxt+'<div class="prow"><span class="cost">'+p.cp+' CP · '+p.res+' Reservas</span>'+(built?'<span class="ok">✓ FINANCIADO</span>':'<button class="btn" style="padding:5px 10px;font-size:9px" '+(puede?'':'disabled')+' onclick="financiarMacro(\''+p.id+'\')">Financiar</button>')+'</div></div>';
+    });
+  });
+  $('sec3Scroll1').innerHTML=html;
+}
 function renderIntl(){if(!state)return;var h='';DECISIONES_INTER.forEach(function(d){if(state.interUsados[d.id])return;if(d.req&&state.alineacion!==d.req)return;var puede=state.pp>=d.c&&!state.over;var col=d.i==='neu'?'#8a7a4f':IDEO[d.i].color;h+='<div class="card" style="--ic:'+col+'"><div class="card-top"><span class="card-ideo">'+symBadge(d.i)+(d.req?('REQ: '+d.req.toUpperCase()):'DIPLOMACIA')+'</span><span class="card-cost">'+d.c+'</span></div><h3>'+d.n+'</h3><p>'+d.d+'</p><div class="chips">'+chipsHtml(d.dx)+'</div><button class="btn" type="button" '+(puede?'':'disabled')+' onclick="aprobarInter(\''+d.id+'\')">Aprobar</button></div>';});$('intlList').innerHTML=h||'<div style="padding:10px;color:var(--dim);font-style:italic">Sin decisiones internacionales disponibles para su alineación actual.</div>';}
 function renderLog(){if(!state)return;var h='';state.log.slice().reverse().forEach(function(e){h+='<div class="logEntry"><span class="ld">'+e.f+'</span> <span class="dot" style="background:'+e.c+'"></span>'+e.t+'</div>';});$('log').innerHTML=h;}
 function drawSpark(){if(!state)return;var cv=$('spark'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;ctx.clearRect(0,0,W,H);ctx.strokeStyle='#2c2920';ctx.lineWidth=1;[25,50,75].forEach(function(y){ctx.beginPath();ctx.moveTo(0,H-(y/100)*H);ctx.lineTo(W,H-(y/100)*H);ctx.stroke();});
  for(var k in STATS){var arr=state.hist[k];if(arr.length<2)continue;ctx.strokeStyle=STATS[k].color;ctx.lineWidth=2;ctx.beginPath();arr.forEach(function(v,idx){var x=(idx/(TOTAL_MESES-1))*W,y=H-(clamp(v,0,100)/100)*H;if(idx===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.stroke();}
  var lg='';for(var k2 in STATS){lg+='<span><i style="background:'+STATS[k2].color+'"></i>'+STATS[k2].nombre+'</span>';}$('legend').innerHTML=lg;}
-function renderResTable(){if(!state)return;var prod=produccionEfectiva();var h='';for(var r in RECURSOS){var rc=RECURSOS[r];var mult='';if(r==='cobre'&&state.proyectos.fundicion)mult=' <span style="color:var(--pos)">×1.5</span>';if(r==='madera'&&state.proyectos.aserradero)mult=' <span style="color:var(--pos)">×1.5</span>';var pe=Math.round(precioEfectivo(r)*10)/10;h+='<div class="resRow"><span class="rn"><span class="rdot" style="background:'+rc.color+'"></span>'+rc.nombre+'</span><span class="rv"><span>+<b>'+prod[r]+'</b>/mes</span><span>Stock <b>'+Math.round(state.recursos[r])+'</b></span><span>$<b>'+pe+'</b>'+mult+'</span></span></div>';}$('resTable').innerHTML=h;}
-function renderEconInd(){if(!state)return;var e=state.econ;var h='';function bar(l,v){var c=v>60?'var(--pos)':(v>30?'var(--gold2)':'var(--neg)');return '<div class="indRow"><div class="lbl"><span>'+l+'</span><b>'+v+'%</b></div><div class="bar"><i style="width:'+v+'%;background:'+c+'"></i></div></div>';}if(e){h+=bar('Empleo industrial',e.empleo);h+=bar('Seguridad alimentaria',e.segAlim);h+='<div class="indRow"><div class="lbl"><span>Energía industrial</span><b>'+(e.energyOK?'Cubierta':'Escasa')+'</b></div></div>';if(state._huelga)h+='<div class="indRow"><div class="lbl" style="color:var(--neg)"><span>⚠ Huelgas mineras activas</span></div></div>';}else{h+='<div style="font-size:11px;color:var(--dim);font-style:italic">Los indicadores se calcularán al cierre del primer mes.</div>';}$('econInd').innerHTML=h;}
-function renderMercado(){if(!state)return;var h='';if(state.influencias&&state.influencias.length){state.influencias.forEach(function(i){h+='<div class="inflItem '+(i.k||'')+'">'+i.t+'</div>';});}else{h+='<div class="inflItem">Sin influencias extraordinarias este mes.</div>';}h+='<div class="secHead">Precios Mundiales</div>';for(var r in RECURSOS){var pmv=state.precioMod?state.precioMod[r]:1;var cur=Math.round(RECURSOS[r].precio*pmv*10)/10;var diff=Math.round((pmv-1)*100);var cls=diff>0?'var(--pos)':(diff<0?'var(--neg)':'var(--dim)');h+='<div class="resRow"><span class="rn"><span class="rdot" style="background:'+RECURSOS[r].color+'"></span>'+RECURSOS[r].nombre+'</span><span class="rv"><span>$<b>'+cur+'</b>/u</span><span style="color:'+cls+'">'+(diff>0?'+':'')+diff+'%</span></span></div>';}$('mercado').innerHTML=h;}
-function renderProjList(){if(!state)return;var h='';PROYECTOS.forEach(function(p){var built=state.proyectos[p.id];var reqOK=!p.req||state.proyectos[p.req];var can=built||(!reqOK)||(state.pp<p.cp)||(state.stats.res<p.res)||state.over;h+='<div class="projCard'+(built?' built':'')+'"><h4>'+p.nombre+'</h4><p>'+p.desc+'</p><div class="prow"><span class="cost">'+p.cp+' CP · '+p.res+' Reservas'+(p.req&&!reqOK?' · requiere '+PROYECTOS.filter(function(x){return x.id===p.req;})[0].nombre:'')+'</span>'+(built?'<span class="ok">OPERATIVO</span>':'<button class="btn" style="padding:5px 10px;font-size:9px" '+(can?'disabled':'')+' onclick="construirProyecto(\''+p.id+'\')">Construir</button>')+'</div></div>';});$('projList').innerHTML=h;}
-function renderModeloBtns(){if(!state)return;var h='';for(var m in MODELOS){h+='<button class="tradeBtn'+(state.modelo===m?' sel':'')+'" type="button" '+(state.over?'disabled':'')+' title="'+MODELOS[m].desc+'" onclick="setModelo(\''+m+'\')">'+MODELOS[m].nombre+'</button>';}$('modeloBtns').innerHTML=h;}
-function renderBalanza(){if(!state)return;var e=state.econ;if(!e){$('balanza').innerHTML='<div style="font-size:11px;color:var(--dim);font-style:italic">Sin datos aún.</div>';return;}var net=e.neto;var h='';h+='<div class="balRow"><span>Exportaciones</span><b style="color:var(--pos)">+$'+e.ingresosExport+'</b></div><div class="balRow"><span>Importaciones</span><b style="color:var(--neg)">−$'+e.gastoImport+'</b></div><div class="balRow"><span>Recaudo por aranceles</span><b style="color:var(--gold2)">+$'+e.arancelIngresos+'</b></div><div class="balRow" style="border-top:1px solid var(--brass2);margin-top:4px"><span><b>Saldo neto</b></span><b style="color:'+(net>=0?'var(--pos)':'var(--neg)')+'">'+(net>=0?'+':'−')+'$'+Math.abs(net)+'</b></div>';$('balanza').innerHTML=h;}
-function renderFlujos(){if(!state)return;var e=state.econ;if(!e){$('flujos').innerHTML='<div style="font-size:11px;color:var(--dim);font-style:italic">Sin datos aún.</div>';return;}var h='<div class="secHead" style="margin-top:0">Exportado</div>';var any=false;for(var r in e.exportados){if(e.exportados[r]>0){h+='<span class="flowChip">'+RECURSOS[r].nombre+' <b>'+e.exportados[r]+'</b></span>';any=true;}}if(!any)h+='<span style="font-size:11px;color:var(--dim);font-style:italic">Nada este mes.</span>';h+='<div class="secHead">Importado</div>';any=false;for(var r2 in e.importados){if(e.importados[r2]>0){h+='<span class="flowChip">'+RECURSOS[r2].nombre+' <b>'+e.importados[r2]+'</b></span>';any=true;}}if(!any)h+='<span style="font-size:11px;color:var(--dim);font-style:italic">Nada este mes.</span>';h+='<div class="secHead">Producido por la industria</div>';any=false;if(e.producido.acero>0){h+='<span class="flowChip">Acero <b>'+e.producido.acero+'</b></span>';any=true;}if(e.producido.manufacturas>0){h+='<span class="flowChip">Manufacturas <b>'+e.producido.manufacturas+'</b></span>';any=true;}if(!any)h+='<span style="font-size:11px;color:var(--dim);font-style:italic">Sin producción industrial. Construya proyectos.</span>';$('flujos').innerHTML=h;}
-function renderSeccion3(){if(!state)return;renderResTable();renderEconInd();renderMercado();renderProjList();renderModeloBtns();renderBalanza();renderFlujos();renderEconDecisiones();$('arancelVal').textContent=state.arancel+'%';$('arancelSlider').value=state.arancel;$('restriccionChk').checked=state.restriccionMP;}
-function buildMapa(){var svg='<defs><radialGradient id="ocean" cx="50%" cy="45%" r="80%"><stop offset="0%" stop-color="#152232"/><stop offset="70%" stop-color="#0e1724"/><stop offset="100%" stop-color="#090f18"/></radialGradient><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#8a6a2f"/><line x1="0" y1="0" x2="0" y2="6" stroke="#3a2f1a" stroke-width="3"/></pattern></defs>';
- svg+='<rect x="0" y="0" width="1000" height="520" fill="url(#ocean)"/>';
- var g='';for(var gx=69;gx<1000;gx+=69){g+='M'+gx+' 0 L'+gx+' 520 ';}for(var gy=65;gy<520;gy+=65){g+='M0 '+gy+' L1000 '+gy+' ';}
- svg+='<path class="grat" d="'+g+'"/><line class="grat" x1="0" y1="260" x2="1000" y2="260" stroke-dasharray="4 4"/>';
- svg+='<text class="oceanLabel" x="110" y="250">OCÉANO PACÍFICO</text><text class="oceanLabel" x="430" y="300">OCÉANO ATLÁNTICO</text><text class="oceanLabel" x="660" y="340">OCÉANO ÍNDICO</text>';
- var base='';REGIONES.forEach(function(r){base+='<path class="landBase" d="'+r.d+'"/>';});svg+='<g>'+base+'</g>';
- var order=REGIONES.slice().sort(function(a,b){return (a.id==='val'?1:0)-(b.id==='val'?1:0);});
- var tint='';order.forEach(function(r){tint+='<path class="region'+(r.id==='val'?' val':'')+'" data-id="'+r.id+'" d="'+r.d+'"/>';});svg+='<g id="gTint">'+tint+'</g>';
- order.forEach(function(r){if(r.lb){svg+='<text class="mapLabel" x="'+r.lx+'" y="'+r.ly+'">'+r.lb+'</text>';}});
- $('worldMap').innerHTML=svg;
- var tip=$('mapTip');
- document.querySelectorAll('#gTint .region').forEach(function(p){
-  p.addEventListener('mousemove',function(e){var r=null;REGIONES.forEach(function(x){if(x.id===p.getAttribute('data-id'))r=x;});if(!r||!state)return;var b=bloqueDe(r,state.mes);tip.innerHTML='<b>'+r.nombre+'</b>'+BLOQUE_TXT[b]+'<br><span style="color:var(--dim);font-size:11px">'+r.nota+'</span>';tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+10)+'px';});
-  p.addEventListener('mouseleave',function(){tip.style.display='none';});
-  p.addEventListener('click',function(){if(!state||state.over)return;state.selectedRegion=p.getAttribute('data-id');renderMapa();renderNacion();});});}
-function renderMapa(){if(!state)return;$('mapMes2').textContent=fecha(state.mes).toUpperCase();var mode=state.mapMode;
- document.querySelectorAll('#gTint .region').forEach(function(p){var r=null;REGIONES.forEach(function(x){if(x.id===p.getAttribute('data-id'))r=x;});if(!r)return;var b=bloqueDe(r,state.mes);var fill=mode==='heg'?BLOQUE_COL[b]:(mode==='dip'?dipColor(b):'#9aa0a6');p.setAttribute('fill',fill);p.classList.toggle('atlas',mode==='atlas');p.classList.toggle('sel',r.id===state.selectedRegion);});
- var lg=$('legendMapa');
- if(mode==='dip'){lg.innerHTML='<span><i style="background:#c8a24a"></i>Valdivia</span><span><i style="background:#5c8a5c"></i>Bloque propio</span><span><i style="background:#8a4a4a"></i>Bloque rival</span><span><i style="background:repeating-linear-gradient(45deg,#8a6a2f 0 3px,#3a2f1a 3px 5px)"></i>En disputa</span><span><i style="background:#6b665a"></i>Sin relación definida</span>';}
- else if(mode==='atlas'){lg.innerHTML='<span style="font-style:italic">Vista Atlas: geografía de referencia sin tintes políticos.</span>';}
- else{lg.innerHTML='<span><i style="background:#4a7fa5"></i>Bloque estadounidense</span><span><i style="background:#a54a45"></i>Bloque soviético</span><span><i style="background:repeating-linear-gradient(45deg,#8a6a2f 0 3px,#3a2f1a 3px 5px)"></i>En disputa</span><span><i style="background:#6b665a"></i>Neutral</span><span><i style="background:#77778a"></i>Occupada</span><span><i style="background:#c8a24a"></i>Valdivia</span>';}}
-function setMapMode(m){if(!state||state.over)return;state.mapMode=m;$('mmHeg').classList.toggle('active',m==='heg');$('mmDip').classList.toggle('active',m==='dip');$('mmAtlas').classList.toggle('active',m==='atlas');renderMapa();}
-function renderNacion(){if(!state)return;var r=null;REGIONES.forEach(function(x){if(x.id===state.selectedRegion)r=x;});if(!r)r=REGIONES[0];var b=bloqueDe(r,state.mes);var col=(state.mapMode==='dip')?dipColor(b):BLOQUE_COL[b];if(col==='url(#hatch)')col='#8a6a2f';var lider=LIDERES[r.id]||'—';var h='';h+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="npFlag" style="background:'+col+';width:26px;height:18px"></span><b style="font-family:Oswald;font-size:13px;letter-spacing:1px;color:var(--gold);text-transform:uppercase">'+r.nombre+'</b></div>';h+='<div class="npRow"><span class="k">Líder visible</span><span class="v">'+lider+'</span></div><div class="npRow"><span class="k">Bloque</span><span class="v">'+BLOQUE_TXT[b]+'</span></div><div class="npRow"><span class="k">Sistema</span><span class="v" style="font-size:11px">'+SISTEMA[b]+'</span></div>';if(r.id==='val'){var al=state.alineacion==='usa'?'Bloque estadounidense':(state.alineacion==='urss'?'Bloque soviético':'Neutralidad activa');h+='<div class="npRow"><span class="k">Alineación</span><span class="v">'+al+'</span></div>';}h+='<div class="npNote">'+r.nota+'</div>';$('nationPanel').innerHTML=h;}
+function renderResTable(){
+  if(!state)return;
+  var prod=produccionEfectiva();
+  var h='<div style="font-size:12px;color:var(--dim);margin-bottom:6px;font-style:italic">Producción y stock actual de cada recurso:</div>';
+  for(var r in RECURSOS){
+    var rc=RECURSOS[r];
+    var mult='';
+    if(r==='cobre'&&state.proyectos.fundicion)mult=' <span style="color:var(--pos)">×1.5</span>';
+    if(r==='madera'&&state.proyectos.aserradero)mult=' <span style="color:var(--pos)">×1.5</span>';
+    h+='<div class="resRow"><span class="rn"><span class="rdot" style="background:'+rc.color+'"></span>'+rc.nombre+'</span><span class="rv"><span>Producción: <b>+'+prod[r]+'</b>/mes'+mult+'</span><span>Stock: <b>'+Math.round(state.recursos[r])+'</b></span></span></div>';
+  }
+  $('resTable').innerHTML=h;
+}
+function renderEconInd(){
+  if(!state)return;
+  var e=state.econ;
+  var h='';
+  function bar(l,v){var c=v>60?'var(--pos)':(v>30?'var(--gold2)':'var(--neg)');return '<div class="indRow"><div class="lbl"><span>'+l+'</span><b>'+v+'%</b></div><div class="bar"><i style="width:'+v+'%;background:'+c+'"></i></div></div>';}
+  if(e){
+    h+=bar('Empleo industrial',e.empleo);
+    h+=bar('Seguridad alimentaria',e.segAlim);
+    h+='<div class="indRow"><div class="lbl"><span>Energía industrial</span><b>'+(e.energyOK?'Cubierta':'Escasa')+'</b></div></div>';
+    if(state._huelga)h+='<div class="indRow"><div class="lbl" style="color:var(--neg)"><span>⚠ Huelgas mineras activas</span></div></div>';
+  }else{
+    h+='<div style="font-size:11.5px;color:var(--dim);font-style:italic">Los indicadores se calcularán al cierre del primer mes.</div>';
+  }
+  $('econInd').innerHTML=h;
+}
+function renderMercado(){
+  if(!state)return;
+  var h='';
+  h+='<div class="secHead"><span class="secIcon">💱</span>Modelo Comercial</div>';
+  h+='<div id="modeloBtns" style="display:flex;gap:6px;flex-wrap:wrap"></div>';
+  h+='<div class="secHead"><span class="secIcon">📊</span>Arancel a las Importaciones · <span id="arancelVal">'+state.arancel+'%</span></div>';
+  h+='<input type="range" id="arancelSlider" min="0" max="40" step="5" value="'+state.arancel+'">';
+  h+='<label style="display:flex;align-items:center;gap:8px;margin-top:10px;font-size:12px;color:var(--dim);cursor:pointer"><input type="checkbox" id="restriccionChk" style="accent-color:var(--gold2)" '+(state.restriccionMP?'checked':'')+'> Restringir exportación de materias primas</label>';
+  h+='<div class="secHead"><span class="secIcon">🌐</span>Influencias Geopolíticas</div>';
+  h+='<div id="mercado"></div>';
+  h+='<div class="secHead"><span class="secIcon">⚖</span>Balanza Comercial · Último Mes</div>';
+  h+='<div id="balanza"></div>';
+  h+='<div class="secHead"><span class="secIcon">📦</span>Detalle de Flujos</div>';
+  h+='<div id="flujos"></div>';
+  $('sec3Scroll2').innerHTML=h;
+  /* Re-render sub-paneles */
+  var mh='';for(var m in MODELOS){mh+='<button class="tradeBtn'+(state.modelo===m?' sel':'')+'" type="button" '+(state.over?'disabled':'')+' title="'+MODELOS[m].desc+'" onclick="setModelo(\''+m+'\')">'+MODELOS[m].nombre+'</button>';}
+  $('modeloBtns').innerHTML=mh;
+  var ih='';
+  if(state.influencias&&state.influencias.length){state.influencias.forEach(function(i){ih+='<div class="inflItem '+(i.k||'')+'">'+i.t+'</div>';});}else{ih='<div class="inflItem">Sin influencias extraordinarias este mes.</div>';}
+  ih+='<div style="margin-top:8px">';
+  for(var r in RECURSOS){var pmv=state.precioMod?state.precioMod[r]:1;var cur=Math.round(RECURSOS[r].precio*pmv*10)/10;var diff=Math.round((pmv-1)*100);var cls=diff>0?'var(--pos)':(diff<0?'var(--neg)':'var(--dim)');ih+='<div class="resRow"><span class="rn"><span class="rdot" style="background:'+RECURSOS[r].color+'"></span>'+RECURSOS[r].nombre+'</span><span class="rv"><span>$<b>'+cur+'</b>/u</span><span style="color:'+cls+'">'+(diff>0?'+':'')+diff+'%</span></span></div>';}
+  ih+='</div>';
+  $('mercado').innerHTML=ih;
+  var e=state.econ;
+  if(!e){$('balanza').innerHTML='<div style="font-size:11.5px;color:var(--dim);font-style:italic">Sin datos aún.</div>';}
+  else{var net=e.neto;var bh='';bh+='<div class="balRow"><span>Exportaciones</span><b style="color:var(--pos)">+$'+e.ingresosExport+'</b></div><div class="balRow"><span>Importaciones</span><b style="color:var(--neg)">−$'+e.gastoImport+'</b></div><div class="balRow"><span>Recaudo por aranceles</span><b style="color:var(--gold2)">+$'+e.arancelIngresos+'</b></div><div class="balRow"><span><b>Saldo neto</b></span><b style="color:'+(net>=0?'var(--pos)':'var(--neg)')+'">'+(net>=0?'+':'−')+'$'+Math.abs(net)+'</b></div>';$('balanza').innerHTML=bh;}
+  if(!e){$('flujos').innerHTML='<div style="font-size:11.5px;color:var(--dim);font-style:italic">Sin datos aún.</div>';}
+  else{var fh='<div style="font-size:11px;color:var(--dim);margin-bottom:6px;font-weight:bold">Exportado</div>';var any=false;for(var r in e.exportados){if(e.exportados[r]>0){fh+='<span class="flowChip">'+RECURSOS[r].nombre+' <b>'+e.exportados[r]+'</b></span>';any=true;}}if(!any)fh+='<span style="font-size:11px;color:var(--dim);font-style:italic">Nada este mes.</span>';fh+='<div style="font-size:11px;color:var(--dim);margin:8px 0 6px;font-weight:bold">Importado</div>';any=false;for(var r2 in e.importados){if(e.importados[r2]>0){fh+='<span class="flowChip">'+RECURSOS[r2].nombre+' <b>'+e.importados[r2]+'</b></span>';any=true;}}if(!any)fh+='<span style="font-size:11px;color:var(--dim);font-style:italic">Nada este mes.</span>';fh+='<div style="font-size:11px;color:var(--dim);margin:8px 0 6px;font-weight:bold">Producido por la industria</div>';any=false;if(e.producido.acero>0){fh+='<span class="flowChip">Acero <b>'+e.producido.acero+'</b></span>';any=true;}if(e.producido.manufacturas>0){fh+='<span class="flowChip">Manufacturas <b>'+e.producido.manufacturas+'</b></span>';any=true;}if(!any)fh+='<span style="font-size:11px;color:var(--dim);font-style:italic">Sin producción industrial. Construya proyectos.</span>';$('flujos').innerHTML=fh;}
+  /* Re-attach listeners */
+  var as=$('arancelSlider');
+  if(as){as.addEventListener('input',function(){if(!state)return;state.arancel=+this.value;var av=$('arancelVal');if(av)av.textContent=state.arancel+'%';});}
+  var rc=$('restriccionChk');
+  if(rc){rc.addEventListener('change',function(){if(!state)return;state.restriccionMP=this.checked;});}
+}
+function renderSeccion3(){if(!state)return;renderResTable();renderEconInd();renderMacroProyectos();renderMercado();}
+function renderProjList(){}
+function renderModeloBtns(){}
+function renderBalanza(){}
+function renderFlujos(){}
+function renderSeccion2(){if(!state)return;renderTopbar2();renderMapa();renderNacion();renderAlineacion();renderOrgs();renderIntl();renderTicker();}
+function renderAll(){if(!state)return;renderTop();renderCongreso();renderEfectos();renderCards();renderLog();drawSpark();if(!$('sec2').classList.contains('hidden'))renderSeccion2();if(!$('sec3').classList.contains('hidden'))renderSeccion3();}
+function construirProyecto(id){if(!state||state.over)return;var p=null;PROYECTOS.forEach(function(x){if(x.id===id)p=x;});if(!p||state.proyectos[id])return;if(p.req&&!state.proyectos[p.req]){toast('<b>Requisito previo:</b> '+PROYECTOS.filter(function(x){return x.id===p.req;})[0].nombre);return;}if(state.pp<p.cp){toast('<b>Capital Político insuficiente</b>.');return;}if(state.stats.res<p.res){toast('<b>Reservas insuficientes</b>.');return;}state.pp-=p.cp;state.stats.res=clamp(state.stats.res-p.res,0,100);state.proyectos[id]=true;addLog('Se inaugura el proyecto industrial <b style="color:#c8a24a">'+p.nombre+'</b>.','#c8a24a');renderAll();renderSeccion3();}
+function setModelo(m){if(!state||state.over)return;state.modelo=m;addLog('Política comercial: <b>'+MODELOS[m].nombre+'</b>.','#c8a24a');renderSeccion3();}
 function renderTopbar2(){if(!state)return;$('hoiDate').textContent=fechaHoi(state.mes);$('hoiMonth').textContent='MES '+(state.mes+1)+' / '+TOTAL_MESES;var ide=state.alineacion==='usa'?'BLOQUE OCCIDENTAL · REPÚBLICA ALIADA':(state.alineacion==='urss'?'BLOQUE ORIENTAL · REPÚBLICA POPULAR ASOCIADA':'NO ALINEADO · REPÚBLICA EN EMERGENCIA');$('hoiIdeo').textContent=ide;var t=tensionCalc();$('tensionBar2').style.width=t+'%';$('tensionVal').textContent=t+'%';}
 function renderTicker(){if(!state)return;var h='';for(var m=state.mes;m>=0;m--){var g=null;GUERRA.forEach(function(x){if(x.m===m)g=x;});if(!g)continue;var dot=g.tipo==='usa'?'#4a7fa5':(g.tipo==='urss'?'#a54a45':'#8a7a4f');h+='<div class="tickItem '+(m===state.mes?'now':'')+'" title="'+g.texto.replace(/"/g,'&quot;')+'"><span class="td">'+fecha(m).toUpperCase()+' · <span style="color:'+dot+'">'+g.foco.toUpperCase()+'</span></span><b>'+g.titulo+'</b></div>';}$('ticker').innerHTML=h;}
 function renderAlineacion(){if(!state)return;var cur=state.alineacion;var costo=cur==='neutral'?20:30;var dis=state.over?'disabled':'';var h='';h+='<button class="alinBtn '+(cur==='neutral'?'sel':'')+'" type="button" '+dis+' onclick="alinear(\'neutral\')">Neutralidad activa'+(cur!=='neutral'?' · '+costo+' CP':'')+'<small>Efecto mensual: +0.15 Prestigio.</small></button>';h+='<button class="alinBtn '+(cur==='usa'?'sel':'')+'" type="button" '+dis+' onclick="alinear(\'usa\')">Bloque estadounidense'+(cur!=='usa'?' · '+costo+' CP':'')+'<small>Efecto mensual: +0.3 Reservas, +0.2 Prestigio.</small></button>';h+='<button class="alinBtn '+(cur==='urss'?'sel':'')+'" type="button" '+dis+' onclick="alinear(\'urss\')">Bloque soviético'+(cur!=='urss'?' · '+costo+' CP':'')+'<small>Efecto mensual: +0.3 Economía, −0.3 Prestigio.</small></button>';$('alinPanel').innerHTML=h;}
@@ -821,10 +892,30 @@ function unirseOrg(org){if(!state||state.over)return;function cobrar(n){if(state
  else if(org==='kominform'){if(state.kominform||state.alineacion!=='urss'||state.mes<32)return;if(!cobrar(20))return;state.kominform=true;aplicarDx({est:2,int:-5});aplicarFa({mar:8,hay:-5,smi:-4});addLog('Valdivia ingresa al <b style="color:#a54a45">Kominform</b>.','#a54a45');}
  else if(org==='salirKomin'){if(!state.kominform)return;if(!cobrar(10))return;state.kominform=false;aplicarDx({int:2});aplicarFa({mar:-8});addLog('Valdivia abandona el <b>Kominform</b>.','#8a7a4f');}
  renderAll();renderSeccion2();}
-function renderSeccion2(){if(!state)return;renderTopbar2();renderMapa();renderNacion();renderAlineacion();renderOrgs();renderIntl();renderTicker();}
-function renderAll(){if(!state)return;renderTop();renderCongreso();renderEfectos();renderCards();renderLog();drawSpark();if(!$('sec2').classList.contains('hidden'))renderSeccion2();if(!$('sec3').classList.contains('hidden'))renderSeccion3();}
-function construirProyecto(id){if(!state||state.over)return;var p=null;PROYECTOS.forEach(function(x){if(x.id===id)p=x;});if(!p||state.proyectos[id])return;if(p.req&&!state.proyectos[p.req]){toast('<b>Requisito previo:</b> '+PROYECTOS.filter(function(x){return x.id===p.req;})[0].nombre);return;}if(state.pp<p.cp){toast('<b>Capital Político insuficiente</b>.');return;}if(state.stats.res<p.res){toast('<b>Reservas insuficientes</b>.');return;}state.pp-=p.cp;state.stats.res=clamp(state.stats.res-p.res,0,100);state.proyectos[id]=true;addLog('Se inaugura el proyecto industrial <b style="color:#c8a24a">'+p.nombre+'</b>.','#c8a24a');renderAll();renderSeccion3();}
-function setModelo(m){if(!state||state.over)return;state.modelo=m;addLog('Política comercial: <b>'+MODELOS[m].nombre+'</b>.','#c8a24a');renderSeccion3();}
+function buildMapa(){if(!state)return;
+ var svg='<defs><radialGradient id="ocean" cx="50%" cy="45%" r="80%"><stop offset="0%" stop-color="#152232"/><stop offset="70%" stop-color="#0e1724"/><stop offset="100%" stop-color="#090f18"/></radialGradient><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#8a6a2f"/><line x1="0" y1="0" x2="0" y2="6" stroke="#3a2f1a" stroke-width="3"/></pattern></defs>';
+ svg+='<rect x="0" y="0" width="1000" height="520" fill="url(#ocean)"/>';
+ var g='';for(var gx=69;gx<1000;gx+=69){g+='M'+gx+' 0 L'+gx+' 520 ';}for(var gy=65;gy<520;gy+=65){g+='M0 '+gy+' L1000 '+gy+' ';}
+ svg+='<path class="grat" d="'+g+'"/><line class="grat" x1="0" y1="260" x2="1000" y2="260" stroke-dasharray="4 4"/>';
+ svg+='<text class="oceanLabel" x="110" y="250">OCÉANO PACÍFICO</text><text class="oceanLabel" x="430" y="300">OCÉANO ATLÁNTICO</text><text class="oceanLabel" x="660" y="340">OCÉANO ÍNDICO</text>';
+ var base='';REGIONES.forEach(function(r){base+='<path class="landBase" d="'+r.d+'"/>';});svg+='<g>'+base+'</g>';
+ var order=REGIONES.slice().sort(function(a,b){return (a.id==='val'?1:0)-(b.id==='val'?1:0);});
+ var tint='';order.forEach(function(r){tint+='<path class="region'+(r.id==='val'?' val':'')+'" data-id="'+r.id+'" d="'+r.d+'"/>';});svg+='<g id="gTint">'+tint+'</g>';
+ order.forEach(function(r){if(r.lb){svg+='<text class="mapLabel" x="'+r.lx+'" y="'+r.ly+'">'+r.lb+'</text>';}});
+ $('worldMap').innerHTML=svg;
+ var tip=$('mapTip');
+ document.querySelectorAll('#gTint .region').forEach(function(p){
+  p.addEventListener('mousemove',function(e){var r=null;REGIONES.forEach(function(x){if(x.id===p.getAttribute('data-id'))r=x;});if(!r||!state)return;var b=bloqueDe(r,state.mes);tip.innerHTML='<b>'+r.nombre+'</b>'+BLOQUE_TXT[b]+'<br><span style="color:var(--dim);font-size:11px">'+r.nota+'</span>';tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+10)+'px';});
+  p.addEventListener('mouseleave',function(){tip.style.display='none';});
+  p.addEventListener('click',function(){if(!state||state.over)return;state.selectedRegion=p.getAttribute('data-id');renderMapa();renderNacion();});});}
+function renderMapa(){if(!state)return;$('mapMes2').textContent=fecha(state.mes).toUpperCase();var mode=state.mapMode;
+ document.querySelectorAll('#gTint .region').forEach(function(p){var r=null;REGIONES.forEach(function(x){if(x.id===p.getAttribute('data-id'))r=x;});if(!r)return;var b=bloqueDe(r,state.mes);var fill=mode==='heg'?BLOQUE_COL[b]:(mode==='dip'?dipColor(b):'#9aa0a6');p.setAttribute('fill',fill);p.classList.toggle('atlas',mode==='atlas');p.classList.toggle('sel',r.id===state.selectedRegion);});
+ var lg=$('legendMapa');
+ if(mode==='dip'){lg.innerHTML='<span><i style="background:#c8a24a"></i>Valdivia</span><span><i style="background:#5c8a5c"></i>Bloque propio</span><span><i style="background:#8a4a4a"></i>Bloque rival</span><span><i style="background:repeating-linear-gradient(45deg,#8a6a2f 0 3px,#3a2f1a 3px 5px)"></i>En disputa</span><span><i style="background:#6b665a"></i>Sin relación definida</span>';}
+ else if(mode==='atlas'){lg.innerHTML='<span style="font-style:italic">Vista Atlas: geografía de referencia sin tintes políticos.</span>';}
+ else{lg.innerHTML='<span><i style="background:#4a7fa5"></i>Bloque estadounidense</span><span><i style="background:#a54a45"></i>Bloque soviético</span><span><i style="background:repeating-linear-gradient(45deg,#8a6a2f 0 3px,#3a2f1a 3px 5px)"></i>En disputa</span><span><i style="background:#6b665a"></i>Neutral</span><span><i style="background:#77778a"></i>Occupada</span><span><i style="background:#c8a24a"></i>Valdivia</span>';}}
+function setMapMode(m){if(!state||state.over)return;state.mapMode=m;$('mmHeg').classList.toggle('active',m==='heg');$('mmDip').classList.toggle('active',m==='dip');$('mmAtlas').classList.toggle('active',m==='atlas');renderMapa();}
+function renderNacion(){if(!state)return;var r=null;REGIONES.forEach(function(x){if(x.id===state.selectedRegion)r=x;});if(!r)r=REGIONES[0];var b=bloqueDe(r,state.mes);var col=(state.mapMode==='dip')?dipColor(b):BLOQUE_COL[b];if(col==='url(#hatch)')col='#8a6a2f';var lider=LIDERES[r.id]||'—';var h='';h+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="npFlag" style="background:'+col+';width:26px;height:18px"></span><b style="font-family:Oswald;font-size:13px;letter-spacing:1px;color:var(--gold);text-transform:uppercase">'+r.nombre+'</b></div>';h+='<div class="npRow"><span class="k">Líder visible</span><span class="v">'+lider+'</span></div><div class="npRow"><span class="k">Bloque</span><span class="v">'+BLOQUE_TXT[b]+'</span></div><div class="npRow"><span class="k">Sistema</span><span class="v" style="font-size:11px">'+SISTEMA[b]+'</span></div>';if(r.id==='val'){var al=state.alineacion==='usa'?'Bloque estadounidense':(state.alineacion==='urss'?'Bloque soviético':'Neutralidad activa');h+='<div class="npRow"><span class="k">Alineación</span><span class="v">'+al+'</span></div>';}h+='<div class="npNote">'+r.nota+'</div>';$('nationPanel').innerHTML=h;}
 function verSeccion(n){if(!state)return;$('sec1').classList.toggle('hidden',n!==1);$('sec2').classList.toggle('hidden',n!==2);$('sec3').classList.toggle('hidden',n!==3);$('tab1').classList.toggle('active',n===1);$('tab2').classList.toggle('active',n===2);$('tab3').classList.toggle('active',n===3);if(n===2)renderSeccion2();if(n===3)renderSeccion3();}
 function iniciar(){
  try{
@@ -834,7 +925,7 @@ function iniciar(){
   addLog('Jura el Gobierno de Emergencia. Comienza el mandato de 192 meses sobre la República de Valdivia (1945–1960).','#d8c48a');
   addLog('Atravesará toda la Guerra Fría temprana: posguerra, Plan Marshall, Corea, Bandung, Suez, Sputnik y Cuba.','#8a7a4f');
   addLog('El mercado mundial reaccionará a la geopolítica; las potencias intervendrán según su alineación.','#c8a24a');
-  aplicarGuerra(0);simEconomia();repartirMano();repartirManoEcon();buildMapa();renderAll();renderSeccion2();renderSeccion3();
+  aplicarGuerra(0);simEconomia();repartirMano();buildMapa();renderAll();renderSeccion2();renderSeccion3();
  }catch(err){var eb2=document.getElementById('errBanner');if(eb2){eb2.style.display='block';eb2.textContent='⚠ Error al iniciar: '+(err&&err.message?err.message:err);}if(typeof console!=='undefined'&&console.error)console.error(err);}
 }
 document.addEventListener('DOMContentLoaded',function(){
@@ -850,8 +941,6 @@ document.addEventListener('DOMContentLoaded',function(){
   $('mmHeg').addEventListener('click',function(){setMapMode('heg');});
   $('mmDip').addEventListener('click',function(){setMapMode('dip');});
   $('mmAtlas').addEventListener('click',function(){setMapMode('atlas');});
-  $('arancelSlider').addEventListener('input',function(){if(!state)return;state.arancel=+this.value;$('arancelVal').textContent=state.arancel+'%';});
-  $('restriccionChk').addEventListener('change',function(){if(!state)return;state.restriccionMP=this.checked;renderSeccion3();});
   if(datosListos()){buildIntroFactions();}else{var f=$('introFactions');if(f)f.innerHTML='<div style="color:var(--neg)">⚠ No se cargaron los datos del juego.</div>';}
  }catch(err){if(typeof console!=='undefined')console.error(err);}
 });
